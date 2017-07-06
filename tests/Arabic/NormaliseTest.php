@@ -54,6 +54,10 @@ class NormaliseTest extends AbstractTestCase
         $expected = 'هولاء';
         $actualText = $this->normalise->normaliseHamza('هؤلآء');
         $this->assertEquals($expected, $actualText, 'It should normalise waw-hamza and Alf-Madda');
+        
+        $expected = 'تهنِية الاصحاب';
+        $actualText = $this->normalise->normaliseHamza('تهنِئة الأصحاب');
+        $this->assertEquals($expected, $actualText, 'It should normalise ALEF_HAMZA_ABOVE and Alf-Madda');
     }
     
     
