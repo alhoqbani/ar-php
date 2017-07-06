@@ -3,7 +3,13 @@
         "illuminate/support": "^5.4"
     },
     "autoload":{
+      "psr-4": {
+        "Tests\\": "tests/"
+      },
         "classmap": ["Arabic/"],
         "files": ["Arabic.php"]
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.2"
     }
 }
