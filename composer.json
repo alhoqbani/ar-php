@@ -1,0 +1,9 @@
+{
+    "require": {
+        "illuminate/support": "^5.4"
+    },
+    "autoload":{
+        "classmap": ["Arabic/"],
+        "files": ["Arabic.php"]
+    }
+}
