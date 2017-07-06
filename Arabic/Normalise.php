@@ -172,7 +172,8 @@ class I18N_Arabic_Normalise
              $this->_chars['ALEF_MADDA'],
              $this->_chars['ALEF_HAMZA_ABOVE'],
              $this->_chars['ALEF_HAMZA_BELOW'],
-             $this->_chars['HAMZA_ABOVE,HAMZA_BELOW']
+             $this->_chars['HAMZA_ABOVE'],
+             $this->_chars['HAMZA_BELOW']
         );
 
         $text = str_replace(array_keys($replace), array_values($replace), $text);
