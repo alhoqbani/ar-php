@@ -26,14 +26,32 @@ class NormaliseTest extends AbstractTestCase
     }
     
     /** @test */
-    public function it_strip_tatweel()
+    public function can_strip_tatweel()
     {
         $text = 'هـذا النــص يتحتــوي علــى تطويــــلات';
         $expected = 'هذا النص يتحتوي على تطويلات';
         $actualText = $this->normalise->stripTatweel($text);
 
         $this->assertEquals($expected, $actualText);
-        
+    }
+    
+    /** @test */
+    public function can_strip_tashkeel()
+    {
+        $text = 'هَذَا النَّصُ يَحْتوي تشكيلاتٍ كُثرٍ';
+        $expected = 'هذا النص يحتوي تشكيلات كثر';
+        $actualText = $this->normalise->stripTashkeel($text);
+    
+        $this->assertEquals($expected, $actualText);
+    }
+    /** @test */
+    public function can_normalise_hamza()
+    {
+        $text = 'إذا أنت أكرمت الكريم ملكته وإن أنت أكرمت اللئيم تمردا';
+        $expected = 'اذا انت اكرمت الكريم ملكته وان انت اكرمت اللئيم تمردا';
+        $actualText = $this->normalise->normaliseHamza($text);
+    
+        $this->assertEquals($expected, $actualText);
     }
     
     
