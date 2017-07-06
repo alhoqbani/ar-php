@@ -64,9 +64,11 @@
  * @return string Returns convert Arabic character encoding 
  *                from HTML entities to UTF-8
  */
-function unichr($u) 
-{
-     return mb_convert_encoding('&#' . intval($u) . ';', 'UTF-8', 'HTML-ENTITIES');
+if (!function_exists('unichr')) {
+    function unichr($u)
+    {
+        return mb_convert_encoding('&#' . intval($u) . ';', 'UTF-8', 'HTML-ENTITIES');
+    }
 }
 
 /**
