@@ -164,6 +164,7 @@ class I18N_Arabic_Normalise
      */ 
     public function normaliseHamza($text) 
     {
+        dump($this->_chars['YEH_HAMZA']);
         $replace = array(
              $this->_chars['WAW_HAMZA'] => $this->_chars['WAW'],
              $this->_chars['YEH_HAMZA'] => $this->_chars['YEH'],
@@ -194,7 +195,7 @@ class I18N_Arabic_Normalise
     public function normaliseLamaleph ($text) 
     {
         $text = str_replace(
-            $this->_chars['LAM_ALEPH'], 
+            $this->_chars['LAM_ALEPH'],
             $simple_LAM_ALEPH, 
             $text
         );
@@ -244,7 +245,7 @@ class I18N_Arabic_Normalise
         $text = $this->stripTashkeel($text);
         $text = $this->stripTatweel($text);
         $text = $this->normaliseHamza($text);
-        $text = $this->normaliseLamaleph($text);
+//        $text = $this->normaliseLamaleph($text);
 
         return $text;
     } 
