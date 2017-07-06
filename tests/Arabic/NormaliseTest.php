@@ -47,11 +47,13 @@ class NormaliseTest extends AbstractTestCase
     /** @test */
     public function can_normalise_hamza()
     {
-        $text = 'إذا أنت أكرمت الكريم ملكته وإن أنت أكرمت اللئيم تمردا';
-        $expected = 'اذا انت اكرمت الكريم ملكته وان انت اكرمت اللئيم تمردا';
-        $actualText = $this->normalise->normaliseHamza($text);
-    
-        $this->assertEquals($expected, $actualText);
+        $expected = 'اذا انت اكرمت الكريم ملكته وان انت اكرمت اللييم تمردا';
+        $actualText = $this->normalise->normaliseHamza('إذا أنت أكرمت الكريم ملكته وإن أنت أكرمت اللئيم تمردا');
+        $this->assertEquals($expected, $actualText, 'It should normalise alf-hamze above and down, and YEH_HAMZA');
+        
+        $expected = 'هولاء';
+        $actualText = $this->normalise->normaliseHamza('هؤلآء');
+        $this->assertEquals($expected, $actualText, 'It should normalise waw-hamza and Alf-Madda');
     }
     
     
