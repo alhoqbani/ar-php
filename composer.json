@@ -1,6 +1,22 @@
 {
-    "require": {
-        "illuminate/support": "^5.4"
+  "name": "alhoqbani/i18n",
+  "description": "Basic i18n utilities to support Arabic in PHP",
+  "type": "library",
+  "keywords": [
+    "arabic"
+  ],
+  "authors": [
+    {
+      "name": "Hamoud Alhoqbani",
+      "email": "h.alhoqbani@gmail.com"
+    }
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/alhoqbani/i18n",
+
+  "require": {
+    "php": ">=5.6.0",
+    "illuminate/support": "^5.4"
     },
     "autoload":{
       "psr-4": {
