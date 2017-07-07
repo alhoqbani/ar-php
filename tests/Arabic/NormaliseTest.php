@@ -31,7 +31,7 @@ class NormaliseTest extends AbstractTestCase
         $text = 'هـذا النــص يتحتــوي علــى تطويــــلات';
         $expected = 'هذا النص يتحتوي على تطويلات';
         $actualText = $this->normalise->stripTatweel($text);
-
+        
         $this->assertEquals($expected, $actualText);
     }
     
@@ -41,9 +41,10 @@ class NormaliseTest extends AbstractTestCase
         $text = 'هَذَا النَّصُ يَحْتوي تشكيلاتٍ كُثرٍ';
         $expected = 'هذا النص يحتوي تشكيلات كثر';
         $actualText = $this->normalise->stripTashkeel($text);
-    
+        
         $this->assertEquals($expected, $actualText);
     }
+    
     /** @test */
     public function can_normalise_hamza()
     {
@@ -57,6 +58,15 @@ class NormaliseTest extends AbstractTestCase
         
         $expected = 'تهنِية الاصحاب';
         $actualText = $this->normalise->normaliseHamza('تهنِئة الأصحاب');
+        $this->assertEquals($expected, $actualText, 'It should normalise ALEF_HAMZA_ABOVE and Alf-Madda');
+    }
+    
+    /** @test */
+    public function it_can_normalise_full_text()
+    {
+        $text = "مَلأْنَا البَرَّ حَتَّى ضَاقَ عَنَّا وَمَاءَ البَحْرِ نَمْلَؤُهُ سَفِينَا إِذَا بَلَغَ الفِطَامَ لَنَا صَبِيٌّ تَخِرُّ لَهُ الجَبَابِرُ سَاجِدِينَا";
+        $expected = 'ملانا البر حتى ضاق عنا وماء البحر نملوه سفينا اذا بلغ الفطام لنا صبي تخر له الجبابر ساجدينا';
+        $actualText = $this->normalise->normalise($text);
         $this->assertEquals($expected, $actualText, 'It should normalise ALEF_HAMZA_ABOVE and Alf-Madda');
     }
     

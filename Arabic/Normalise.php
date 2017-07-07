@@ -164,7 +164,6 @@ class I18N_Arabic_Normalise
      */ 
     public function normaliseHamza($text) 
     {
-        dump($this->_chars['YEH_HAMZA']);
         $replace = array(
              $this->_chars['WAW_HAMZA'] => $this->_chars['WAW'],
              $this->_chars['YEH_HAMZA'] => $this->_chars['YEH'],
