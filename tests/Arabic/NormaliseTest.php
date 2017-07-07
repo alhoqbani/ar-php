@@ -186,4 +186,22 @@ class NormaliseTest extends AbstractTestCase
         $this->assertTrue((bool)$this->normalise->isSmall($smallWaw = 'ۥ'));
         $this->assertFalse((bool)$this->normalise->isSmall('ج'));
     }
+    
+    /** @test */
+    public function it_can_check_if_passed_character_is_moon()
+    {
+        $this->assertTrue((bool)$this->normalise->isMoon('ب'));
+        $this->assertTrue((bool)$this->normalise->isMoon('ج'));
+        $this->assertFalse((bool)$this->normalise->isMoon('ض'));
+        $this->assertFalse((bool)$this->normalise->isMoon('ث'));
+    }
+    
+    /** @test */
+    public function it_can_check_if_passed_character_is_sun()
+    {
+        $this->assertTrue((bool)$this->normalise->isSun('ش'));
+        $this->assertTrue((bool)$this->normalise->isSun('ل'));
+        $this->assertFalse((bool)$this->normalise->isSun('غ'));
+        $this->assertFalse((bool)$this->normalise->isSun('ه'));
+    }
 }
