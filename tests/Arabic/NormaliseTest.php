@@ -176,4 +176,14 @@ class NormaliseTest extends AbstractTestCase
         $this->assertTrue((bool) $this->normalise->isTehlike('ة'));
         $this->assertFalse((bool) $this->normalise->isTehlike('ج'));
     }
+    
+    /** @test */
+    public function it_can_check_if_passed_character_is_small()
+    {
+        $this->markTestSkipped('Until Small alef is fixed and replaces MINI_ALEF #8');
+        $this->assertTrue((bool)$this->normalise->isSmall($smallAlef = 'ٰ'));
+        $this->assertTrue((bool)$this->normalise->isSmall($smallYeh = 'ۦ'));
+        $this->assertTrue((bool)$this->normalise->isSmall($smallWaw = 'ۥ'));
+        $this->assertFalse((bool)$this->normalise->isSmall('ج'));
+    }
 }
