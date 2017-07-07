@@ -105,4 +105,13 @@ class NormaliseTest extends AbstractTestCase
         $this->assertFalse((bool)$this->normalise->isHaraka('أ'));
         $this->assertFalse((bool)$this->normalise->isHaraka($shadda));
     }
+    
+    /** @test */
+    public function it_can_check_if_passed_character_is_short_haraka()
+    {
+        $fatha = 'َ';
+        $tanweenFatha = 'ً';
+        $this->assertTrue((bool)$this->normalise->isShortharaka($fatha));
+        $this->assertFalse((bool)$this->normalise->isShortharaka($tanweenFatha));
+    }
 }
