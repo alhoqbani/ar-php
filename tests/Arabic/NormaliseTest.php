@@ -131,4 +131,11 @@ class NormaliseTest extends AbstractTestCase
         $this->assertTrue((bool)$this->normalise->isLigature('ﻷ'));
         $this->assertFalse((bool)$this->normalise->isLigature('ج'));
     }
+    
+    /** @test */
+    public function it_can_check_if_passed_character_is_hamza()
+    {
+        $this->assertTrue((bool)$this->normalise->isHamza('ء'));
+        $this->assertFalse((bool)$this->normalise->isHamza('ج'));
+    }
 }
