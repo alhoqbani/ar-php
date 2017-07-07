@@ -24,4 +24,15 @@ class StemmerTest extends AbstractTestCase
     {
         $this->assertInstanceOf(I18N_Arabic_Stemmer::class, $this->stemmer->myObject);
     }
+    
+    /** @test */
+    public function it_return_a_rough_stem_of_the_given_Arabic_word()
+    {
+        $this->assertEquals('خيول', $this->stemmer->stem('الخيول'));
+        $this->assertEquals('مختبر', $this->stemmer->stem('المختبرات'));
+        $this->assertEquals('تطبيق', $this->stemmer->stem('التطبيقات'));
+        $this->assertEquals('عامل', $this->stemmer->stem('العاملين'));
+        $this->assertEquals('ذهب', $this->stemmer->stem('ذهبوا'));
+//        $this->assertEquals('محكم', $this->stemmer->stem('المحكمين'));
+    }
 }
