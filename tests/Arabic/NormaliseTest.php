@@ -176,32 +176,41 @@ class NormaliseTest extends AbstractTestCase
         $this->assertTrue((bool) $this->normalise->isTehlike('ة'));
         $this->assertFalse((bool) $this->normalise->isTehlike('ج'));
     }
-    
+
     /** @test */
     public function it_can_check_if_passed_character_is_small()
     {
         $this->markTestSkipped('Until Small alef is fixed and replaces MINI_ALEF #8');
-        $this->assertTrue((bool)$this->normalise->isSmall($smallAlef = 'ٰ'));
-        $this->assertTrue((bool)$this->normalise->isSmall($smallYeh = 'ۦ'));
-        $this->assertTrue((bool)$this->normalise->isSmall($smallWaw = 'ۥ'));
-        $this->assertFalse((bool)$this->normalise->isSmall('ج'));
+        $this->assertTrue((bool) $this->normalise->isSmall($smallAlef = 'ٰ'));
+        $this->assertTrue((bool) $this->normalise->isSmall($smallYeh = 'ۦ'));
+        $this->assertTrue((bool) $this->normalise->isSmall($smallWaw = 'ۥ'));
+        $this->assertFalse((bool) $this->normalise->isSmall('ج'));
     }
-    
+
     /** @test */
     public function it_can_check_if_passed_character_is_moon()
     {
-        $this->assertTrue((bool)$this->normalise->isMoon('ب'));
-        $this->assertTrue((bool)$this->normalise->isMoon('ج'));
-        $this->assertFalse((bool)$this->normalise->isMoon('ض'));
-        $this->assertFalse((bool)$this->normalise->isMoon('ث'));
+        $this->assertTrue((bool) $this->normalise->isMoon('ب'));
+        $this->assertTrue((bool) $this->normalise->isMoon('ج'));
+        $this->assertFalse((bool) $this->normalise->isMoon('ض'));
+        $this->assertFalse((bool) $this->normalise->isMoon('ث'));
     }
-    
+
     /** @test */
     public function it_can_check_if_passed_character_is_sun()
     {
-        $this->assertTrue((bool)$this->normalise->isSun('ش'));
-        $this->assertTrue((bool)$this->normalise->isSun('ل'));
-        $this->assertFalse((bool)$this->normalise->isSun('غ'));
-        $this->assertFalse((bool)$this->normalise->isSun('ه'));
+        $this->assertTrue((bool) $this->normalise->isSun('ش'));
+        $this->assertTrue((bool) $this->normalise->isSun('ل'));
+        $this->assertFalse((bool) $this->normalise->isSun('غ'));
+        $this->assertFalse((bool) $this->normalise->isSun('ه'));
+    }
+
+    /** @test */
+    public function can_tell_the_letter_name()
+    {
+        $this->assertEquals('شين', $this->normalise->charName('ش'));
+        $this->assertEquals('لام', $this->normalise->charName('ل'));
+        $this->assertEquals('غين', $this->normalise->charName('غ'));
+        $this->assertEquals('هاء', $this->normalise->charName('ه'));
     }
 }
