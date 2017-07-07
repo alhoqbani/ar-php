@@ -219,7 +219,7 @@ class I18N_Arabic_Normalise
 
     /**
      * Return unicode char by its code point.
-     *
+     * @deprecated Unused, should be removed
      * @param char $u code point
      *      
      * @return string the result character.
