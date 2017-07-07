@@ -79,4 +79,12 @@ class NormaliseTest extends AbstractTestCase
         $this->assertEquals($expected, $actualText, 'Text should by unshaped');
     }
     
+    /** @test */
+    public function it_reverse_utf8_string()
+    {
+        $actualText = $this->normalise->utf8Strrev('هذا النص معكوس');
+        $expectedText = 'سوكعم صنلا اذه';
+        
+        $this->assertEquals($expectedText, $actualText, 'The actual text should be reversed');
+    }
 }
