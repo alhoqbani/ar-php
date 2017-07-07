@@ -123,4 +123,12 @@ class NormaliseTest extends AbstractTestCase
         $this->assertTrue((bool)$this->normalise->isTanwin($tanweenFatha));
         $this->assertFalse((bool)$this->normalise->isTanwin($fatha));
     }
+    
+    /** @test */
+    public function it_can_check_if_passed_character_is_ligature()
+    {
+        $this->assertTrue((bool)$this->normalise->isLigature(unichr(0xFEF7)));
+        $this->assertTrue((bool)$this->normalise->isLigature('ﻷ'));
+        $this->assertFalse((bool)$this->normalise->isLigature('ج'));
+    }
 }
