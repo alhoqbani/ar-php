@@ -87,4 +87,12 @@ class NormaliseTest extends AbstractTestCase
         
         $this->assertEquals($expectedText, $actualText, 'The actual text should be reversed');
     }
+    
+    /** @test */
+    public function it_can_check_if_passed_character_is_tashkeel()
+    {
+        $tashkeel = "ً";
+        $this->assertTrue((bool)$this->normalise->isTashkeel($tashkeel));
+        $this->assertFalse((bool)$this->normalise->isTashkeel('أ'));
+    }
 }
