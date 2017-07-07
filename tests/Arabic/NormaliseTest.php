@@ -100,7 +100,9 @@ class NormaliseTest extends AbstractTestCase
     public function it_can_check_if_passed_character_is_harakat()
     {
         $tashkeel = "ً";
+        $shadda = 'ّ';
         $this->assertTrue((bool)$this->normalise->isHaraka($tashkeel));
         $this->assertFalse((bool)$this->normalise->isHaraka('أ'));
+        $this->assertFalse((bool)$this->normalise->isHaraka($shadda));
     }
 }
