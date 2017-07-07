@@ -114,4 +114,13 @@ class NormaliseTest extends AbstractTestCase
         $this->assertTrue((bool)$this->normalise->isShortharaka($fatha));
         $this->assertFalse((bool)$this->normalise->isShortharaka($tanweenFatha));
     }
+    
+    /** @test */
+    public function it_can_check_if_passed_character_is_tanween()
+    {
+        $tanweenFatha = 'ً';
+        $fatha = 'َ';
+        $this->assertTrue((bool)$this->normalise->isTanwin($tanweenFatha));
+        $this->assertFalse((bool)$this->normalise->isTanwin($fatha));
+    }
 }
