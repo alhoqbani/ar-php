@@ -67,7 +67,7 @@ class NormaliseTest extends AbstractTestCase
         $text = "مَلأْنَا البَرَّ حَتَّى ضَاقَ عَنَّا وَمَاءَ البَحْرِ نَمْلَؤُهُ سَفِينَا إِذَا بَلَغَ الفِطَامَ لَنَا صَبِيٌّ تَخِرُّ لَهُ الجَبَابِرُ سَاجِدِينَا";
         $expected = 'ملانا البر حتى ضاق عنا وماء البحر نملوه سفينا اذا بلغ الفطام لنا صبي تخر له الجبابر ساجدينا';
         $actualText = $this->normalise->normalise($text);
-        $this->assertEquals($expected, $actualText, 'It should normalise ALEF_HAMZA_ABOVE and Alf-Madda');
+        $this->assertEquals($expected, $actualText, 'Text should by normalized');
     }
     
     
