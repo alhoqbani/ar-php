@@ -95,4 +95,12 @@ class NormaliseTest extends AbstractTestCase
         $this->assertTrue((bool)$this->normalise->isTashkeel($tashkeel));
         $this->assertFalse((bool)$this->normalise->isTashkeel('أ'));
     }
+    
+    /** @test */
+    public function it_can_check_if_passed_character_is_harakat()
+    {
+        $tashkeel = "ً";
+        $this->assertTrue((bool)$this->normalise->isHaraka($tashkeel));
+        $this->assertFalse((bool)$this->normalise->isHaraka('أ'));
+    }
 }
