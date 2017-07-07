@@ -10,14 +10,8 @@
          stopOnFailure="false"
          syntaxCheck="false">
 
-    <filter>
-        <whitelist>
-            <directory>src/ArUtil</directory>
-        </whitelist>
-    </filter>
-
     <testsuites>
-        <testsuite name="ArUtil Test Suite">
+        <testsuite name="Package Test Suite">
             <directory suffix="Test.php">./tests</directory>
         </testsuite>
     </testsuites>
