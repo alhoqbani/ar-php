@@ -70,5 +70,13 @@ class NormaliseTest extends AbstractTestCase
         $this->assertEquals($expected, $actualText, 'Text should by normalized');
     }
     
+    /** @test */
+    public function can_unshape_text_by_separating_letters()
+    {
+        $this->markTestSkipped('Skipped until I figured out how the method should work');
+        $actualText = $this->normalise->unshape('هذا النص بحروف متقعطه');
+        $expected = 'هذا ال نص ب ح ر وف متقعطه';
+        $this->assertEquals($expected, $actualText, 'Text should by unshaped');
+    }
     
 }
