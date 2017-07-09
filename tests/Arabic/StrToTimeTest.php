@@ -2,6 +2,7 @@
 
 namespace Tests\Arabic;
 
+use Carbon\Carbon;
 use I18N_Arabic_StrToTime;
 use Tests\AbstractTestCase;
 
@@ -33,5 +34,25 @@ class StrToTimeTest extends AbstractTestCase
     public function it_loads_date_class()
     {
         $this->assertInstanceOf(I18N_Arabic_StrToTime::class, $this->strToTime->myObject);
+    }
+    
+    /** @test */
+    public function it_convert_next_occurrence_of_day_to_time()
+    {
+        $timestamp = Carbon::create()->next(Carbon::FRIDAY)->timestamp;
+        $this->confirmTimestamp('الجمعة القادم', $timestamp);
+    }
+    
+    /** @test */
+    public function it_convert_last_occurrence_of_day_to_time()
+    {
+        $timestamp = Carbon::parse('last sunday')->timestamp;
+        $this->confirmTimestamp('الأحد الماضي', $timestamp);
+    }
+    
+    protected function confirmTimestamp($string, $timestamp, $compareTo = null)
+    {
+        $compareTo = $compareTo ? $compareTo : time();
+        $this->assertEquals($timestamp, $this->strToTime->strtotime($string, $compareTo));
     }
 }
