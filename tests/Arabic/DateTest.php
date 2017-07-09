@@ -30,4 +30,11 @@ class DateTest extends AbstractTestCase
     {
         $this->assertEquals(4, $this->date->setMode(4)->getMode());
     }
+    
+    /** @test */
+    public function it_converts_gregorian_year_to_hijri_year_year()
+    {
+        $actualYear = $this->date->date('Y', strtotime('2017'));
+        $this->assertEquals(1438, $actualYear);
+    }
 }
