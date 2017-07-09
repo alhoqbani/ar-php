@@ -8,6 +8,8 @@ use Tests\AbstractTestCase;
 class DateTest extends AbstractTestCase
 {
     
+    protected $timeStamp = 1499611163;
+    
     /**
      * @var I18N_Arabic_Date
      */
@@ -54,6 +56,60 @@ class DateTest extends AbstractTestCase
         $timestamp = 1499611163;
         $expectedString = 'الأحد 14 شوال 1438 07:39:23 صباحاً';
         $actualString = $this->date->date('l dS F Y h:i:s A', $timestamp);
+        $this->assertEquals($expectedString, $actualString);
+    }
+    
+    /** @test */
+    public function it_returns_correct_format_with_mode_1()
+    {
+        $this->VerifyFormatWithMode(1, 'الأحد 14 شوال 1438 07:39:23 صباحاً');
+    }
+    
+    /** @test */
+    public function it_returns_correct_format_with_mode_2()
+    {
+        $this->VerifyFormatWithMode(2, 'الأحد 09 تموز 2017 07:39:23 صباحاً');
+    }
+    
+    /** @test */
+    public function it_returns_correct_format_with_mode_3()
+    {
+        $this->VerifyFormatWithMode(3, 'الأحد 09 يوليو 2017 07:39:23 صباحاً');
+    }
+    
+    /** @test */
+    public function it_returns_correct_format_with_mode_4()
+    {
+        $this->VerifyFormatWithMode(4, 'الأحد 09 تموز/يوليو 2017 07:39:23 صباحاً');
+    }
+    /** @test */
+    public function it_returns_correct_format_with_mode_5()
+    {
+        $this->VerifyFormatWithMode(5, 'الأحد 09 ناصر 1385 07:39:23 صباحاً');
+    }
+    
+    /** @test */
+    public function it_returns_correct_format_with_mode_6()
+    {
+        $this->VerifyFormatWithMode(6, 'الأحد 09 جويلية 2017 07:39:23 صباحاً');
+    }
+    
+    /** @test */
+    public function it_returns_correct_format_with_mode_7()
+    {
+        $this->VerifyFormatWithMode(7, 'الأحد 09 يوليوز 2017 07:39:23 صباحاً');
+    }
+    
+    /** @test */
+    public function it_returns_correct_format_with_mode_8()
+    {
+        $this->VerifyFormatWithMode(8, 'Sunday 14 Shawwal 1438 07:39:23 AM');
+    }
+    
+    protected function VerifyFormatWithMode($mode, $expectedString)
+    {
+        $this->date->setMode($mode);
+        $actualString = $this->date->date('l dS F Y h:i:s A', $this->timeStamp);
         $this->assertEquals($expectedString, $actualString);
     }
 }
