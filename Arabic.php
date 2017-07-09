@@ -277,7 +277,9 @@ class I18N_Arabic
             ) {
                 $params[$name] = $value;
             } else {
-                $params[$name] = iconv($this->getInputCharset(), 'utf-8', $value);
+                if (is_string($value)) {
+                    $params[$name] = iconv($this->getInputCharset(), 'utf-8', $value);
+                }
             }
         }
 
@@ -293,7 +295,9 @@ class I18N_Arabic
                   || $methodName == 'str2graph'
         ) {
         } else {
-            $value = iconv('utf-8', $this->getOutputCharset(), $value);
+            if (is_string($value)) {
+                $value = iconv('utf-8', $this->getOutputCharset(), $value);
+            }
         }
 
         return $value;
