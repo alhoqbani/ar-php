@@ -50,6 +50,12 @@ class StrToTimeTest extends AbstractTestCase
         $this->confirmTimestamp('الأحد الماضي', $timestamp);
     }
     
+    /** @test */
+    public function it_convert_hijri_date_string_to_time()
+    {
+        $this->confirmTimestamp('1 ذو القعدة 1429', 1225350000);
+    }
+    
     protected function confirmTimestamp($string, $timestamp, $compareTo = null)
     {
         $compareTo = $compareTo ? $compareTo : time();
