@@ -10,6 +10,16 @@
          stopOnFailure="false"
          syntaxCheck="false">
 
+    <filter>
+        <whitelist>
+            <directory suffix=".php">Arabic/</directory>
+            <file>Arabic.php</file>
+            <exclude>
+                <directory suffix=".php">Arabic/*</directory>
+            </exclude>
+        </whitelist>
+    </filter>
+
     <testsuites>
         <testsuite name="Package Test Suite">
             <directory suffix="Test.php">./tests</directory>
