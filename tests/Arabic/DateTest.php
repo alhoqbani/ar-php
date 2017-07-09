@@ -24,4 +24,10 @@ class DateTest extends AbstractTestCase
     {
         $this->assertInstanceOf(I18N_Arabic_Date::class, $this->date->myObject);
     }
+    
+    /** @test */
+    public function it_set_mode_and_get_mode()
+    {
+        $this->assertEquals(1, $this->date->setMode(4)->getMode());
+    }
 }
