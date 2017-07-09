@@ -36,4 +36,13 @@ class MktimeTest extends AbstractTestCase
     {
         $this->assertInstanceOf(I18N_Arabic_Mktime::class, $this->mktime->myObject);
     }
+    
+    /** @test */
+    public function it_returns_timestamp_from_hijri_date()
+    {
+        $actualTimestamp = $this->mktime->mktime(1, 30, 15, 10, 15, 1400, -1);
+        $this->assertEquals(336126615, $actualTimestamp);
+    }
+    
+    
 }
