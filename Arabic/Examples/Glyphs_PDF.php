@@ -16,7 +16,7 @@ header('Content-type: application/pdf');
 /*
  * Needed for fpdf library not for ArPHP library
  */
-error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT);
+error_reporting(E_ALL);
 
 date_default_timezone_set('UTC');
 

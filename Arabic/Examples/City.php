@@ -23,7 +23,7 @@
  * @link      http://www.ar-php.org
  */
 
-error_reporting(E_STRICT);
+error_reporting(E_ALL);
 $time_start = microtime(true);
 
 try {

@@ -11,7 +11,7 @@
  * @link      http://www.ar-php.org
  */
 
-error_reporting(E_STRICT);
+error_reporting(E_ALL);
 
 // Set the content-type
 header("Content-type: image/png");

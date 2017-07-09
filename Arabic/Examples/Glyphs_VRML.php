@@ -11,7 +11,7 @@
  * @link      http://www.ar-php.org
  */
 
-error_reporting(E_STRICT);
+error_reporting(E_ALL);
 header("Content-type: model/vrml");
 ?>
 #VRML V2.0 utf8

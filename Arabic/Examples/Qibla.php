@@ -11,7 +11,7 @@
  * @link      http://www.ar-php.org
  */
 
-error_reporting(E_STRICT);
+error_reporting(E_ALL);
 
 if (isset($_GET['d'])) { 
     $degree = $_GET['d']; 

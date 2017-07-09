@@ -24,10 +24,10 @@
  * @link      http://www.ar-php.org
  */
 
-error_reporting(E_STRICT);
+error_reporting(E_ALL);
 $time_start = microtime(true);
 
-$text = 'ÈÓã Çááå ÇáÑÍãä ÇáÑÍíã';
+$text = 'ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½';
 
 require '../../Arabic.php';
 $Arabic = new I18N_Arabic('CharsetD');
@@ -45,7 +45,7 @@ print_r($Arabic->guess($text));
 <?php
 $code = <<< END
 <?php
-    \$text = 'ÈÓã Çááå ÇáÑÍãä ÇáÑÍíã';
+    \$text = 'ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½';
 
     require '../../Arabic.php';
     \$Arabic = new I18N_Arabic('CharsetD');
