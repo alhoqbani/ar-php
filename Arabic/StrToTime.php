@@ -133,7 +133,7 @@ class I18N_Arabic_StrToTime
             if (strpos($text, self::$_hj[$i]) > 0) {
                 preg_match('/.*(\d{1,2}).*(\d{4}).*/', $text, $matches);
 
-                include dirname(__FILE__).DIRECTORY_SEPARATOR.'Mktime.php';
+                include_once dirname(__FILE__).DIRECTORY_SEPARATOR.'Mktime.php';
                 $temp = new I18N_Arabic_Mktime();
                 $fix  = $temp->mktimeCorrection($i+1, $matches[2]); 
                 $int  = $temp->mktime(0, 0, 0, $i+1, $matches[1], $matches[2], $fix);
