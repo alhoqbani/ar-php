@@ -25,4 +25,14 @@ class Transliteration extends AbstractTestCase
         $this->assertInstanceOf(I18N_Arabic_Transliteration::class, $this->transliterator->myObject);
     }
     
+    /** @test */
+    public function it_transliterate_English_string_into_Arabic()
+    {
+        $text = 'This text will be converted into Arabic letters';
+        $expectedText = ' ذيس تكست ويل ب كونفرتد انتو ارابيك لترس';
+        $actualText = $this->transliterator->en2ar($text);
+        
+        $this->assertEquals($expectedText, $actualText);
+    }
+    
 }
