@@ -67,9 +67,16 @@ class QueryTest extends AbstractTestCase
     /** @test */
     public function it_return_the_where_condition_based_on_multiple_search_term_with_phrase_term()
     {
-            $this->assertEquals("( LIKE 'نص كامل\') OR ( REPLACE(, 'ـ', '') REGEXP 'فلسط(ين)?') OR ( REPLACE(, 'ـ', '') REGEXP '\') OR ( REPLACE(, 'ـ', '') REGEXP 'حر(ة|(ا|أ|إ|آ)ت)?')",
+        $this->assertEquals("( LIKE 'نص كامل\') OR ( REPLACE(, 'ـ', '') REGEXP 'فلسط(ين)?') OR ( REPLACE(, 'ـ', '') REGEXP '\') OR ( REPLACE(, 'ـ', '') REGEXP 'حر(ة|(ا|أ|إ|آ)ت)?')",
             $this->query->getWhereCondition('فلسطين "نص كامل" حرة')
         );
+    }
+    
+    /** @test */
+    public function it_return_the_order_by_clause_based_on_search_term()
+    {
+        $this->assertEquals("(( LIKE 'عن مخرجات') + (CASE WHEN  REPLACE(, 'ـ', '') REGEXP '((ا|أ|إ|آ)ل)?بحث' THEN 1 ELSE 0 END) + (CASE WHEN  REPLACE(, 'ـ', '') REGEXP 'جيد(ة|(ا|أ|إ|آ)ت)?' THEN 1 ELSE 0 END)) DESC",
+            $this->query->getOrderBy('البحث "عن مخرجات" جيدة'));
     }
     
 }
