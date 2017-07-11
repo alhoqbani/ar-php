@@ -14,7 +14,7 @@
 error_reporting(E_ALL);
 
 // Set the content-type
-//header("Content-type: image/png");
+header("Content-type: image/png");
 
 // Create the image
 $im = @imagecreatefromgif('GD/bg.gif');
