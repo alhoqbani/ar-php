@@ -33,6 +33,7 @@ error_reporting(E_ALL);
 $time_start = microtime(true);
 
 require '../../Arabic.php';
+/** @var \I18N_Arabic_AutoSummarize $Arabic */
 $Arabic = new I18N_Arabic('AutoSummarize');
 
 $rate     = 25;
@@ -79,9 +80,9 @@ $contents = <<<END
 END;
 
     $contents = str_replace("\n", '', $contents);
-
-    $highlighted = $Arabic->highlightRateSummary($contents, $rate, $_GET['q'], 'summary');
-    $summary = $Arabic->doRateSummarize($contents, $rate, $_GET['q']);
+    $q = isset($_GET['q']) ? $_GET['q'] : null;
+    $highlighted = $Arabic->highlightRateSummary($contents, $rate, $q, 'summary');
+    $summary = $Arabic->doRateSummarize($contents, $rate, $q);
 
     echo "<h3>$title:</h3>";
     echo '<a href="AutoSummarize.php">ملخص عادي</a> | ';

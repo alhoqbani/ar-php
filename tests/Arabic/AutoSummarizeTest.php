@@ -48,6 +48,15 @@ class AutoSummarizeTest extends AbstractTestCase
     }
     
     /** @test */
+    public function it_loads_extra_strop_words()
+    {
+        $this->assertEquals('فبذلك', $this->autoSummarize->cleanCommon('فبذلك'));
+        $this->autoSummarize->loadExtra();
+        
+        $this->assertEquals('', trim($this->autoSummarize->cleanCommon('فبذلك')));
+    }
+    
+    /** @test */
     public function it_extract_keywords_from_a_given_arabic_string()
     {
         $str = file_get_contents(__DIR__ . '/../data/article.txt');
