@@ -25,4 +25,17 @@ class QueryTest extends AbstractTestCase
         $this->assertInstanceOf(I18N_Arabic_Query::class, $this->query->myObject);
     }
     
+    /** @test */
+    public function set_and_get_search_fields_from_string()
+    {
+        $this->assertEquals("name, title", $this->query->setStrFields("name, title")->getStrFields());
+    }
+    
+    /** @test */
+    public function set_and_get_search_fields_from_array()
+    {
+        $fields = ["name, title"];
+        $this->assertEquals($fields, $this->query->setStrFields($fields)->getStrFields());
+    }
+    
 }
