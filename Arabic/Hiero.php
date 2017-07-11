@@ -149,11 +149,11 @@ class I18N_Arabic_Hiero
         $word, $dir = 'ltr', $lang = 'en', $red = null, $green = null, $blue = null
     ) {
         if ($this->_language == 'phoenician') {
-            define(MAXH, 40);
-            define(MAXW, 50);
+            define('MAXH', 40);
+            define('MAXW', 50);
         } else {
-            define(MAXH, 100);
-            define(MAXW, 75);
+            define('MAXH', 100);
+            define('MAXW', 75);
         }
 
         // Note: there is no theh, khah, thal, dad, zah, and ghain in Phoenician
