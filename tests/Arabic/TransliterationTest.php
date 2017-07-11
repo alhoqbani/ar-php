@@ -30,9 +30,20 @@ class Transliteration extends AbstractTestCase
     {
         $text = 'This text will be converted into Arabic letters';
         $expectedText = ' ذيس تكست ويل ب كونفرتد انتو ارابيك لترس';
-        $actualText = $this->transliterator->en2ar($text);
+        $actualText = $this->transliterator->en2ar($text); // Extra space ?!
         
         $this->assertEquals($expectedText, $actualText);
+    }
+    
+    /** @test */
+    public function it_transliterate_Arabic_string_into_English()
+    {
+        $text = 'هذا النص سوف يكتب بأحرف إنجليزية';
+        $expectedText = " Hdha An-Ns Swf Yktb B'ahrf Injlyzyh"; // Extra space ?!
+        $actualText = $this->transliterator->ar2en($text);
+    
+        $this->assertEquals($expectedText, $actualText);
+    
     }
     
 }
