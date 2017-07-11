@@ -25,4 +25,11 @@ class HieroTest extends AbstractTestCase
         $this->assertInstanceOf(I18N_Arabic_Hiero::class, $this->hiero->myObject);
     }
     
+    
+    /** @test */
+    public function set_and_get_the_language()
+    {
+        $this->assertEquals('Hiero', $this->hiero->setLanguage('Hiero')->getLanguage());
+        $this->assertEquals('Phoenician', $this->hiero->setLanguage('Phoenician')->getLanguage());
+    }
 }
