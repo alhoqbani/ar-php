@@ -279,6 +279,11 @@ class I18N_Arabic
             } else {
                 if (is_string($value) || is_numeric($value)) {
                     $params[$name] = iconv($this->getInputCharset(), 'utf-8', $value);
+                } elseif (is_array($value)) {
+                    foreach ($value as $key => $element) {
+                        $value[$key] = iconv($this->getInputCharset(), 'utf-8', $element);
+                    }
+                    $params[$name] = $value;
                 }
             }
         }

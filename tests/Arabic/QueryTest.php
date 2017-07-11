@@ -35,7 +35,7 @@ class QueryTest extends AbstractTestCase
     public function set_and_get_search_fields_from_array()
     {
         $fields = ["name, title"];
-        $this->assertEquals($fields, $this->query->setStrFields($fields)->getStrFields());
+        $this->assertEquals($fields, $this->query->setArrFields($fields)->getArrFields());
     }
     
 }
