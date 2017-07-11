@@ -25,4 +25,11 @@ class WordTagTest extends AbstractTestCase
         $this->assertInstanceOf(I18N_Arabic_WordTag::class, $this->wordTag->myObject);
     }
     
+    /** @test */
+    public function it_detect_nouns()
+    {
+        $this->assertTrue($this->wordTag->isNoun('محمد', 'مع'));
+        $this->assertFalse($this->wordTag->isNoun('يذهب', 'و'));
+    }
+    
 }
