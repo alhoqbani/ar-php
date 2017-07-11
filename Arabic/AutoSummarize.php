@@ -296,7 +296,7 @@ class I18N_Arabic_AutoSummarize
     public function doSummarize($str, $int, $keywords)
     {
         $summary = $this->summarize(
-            $str, $keywords, $int, 'number', 'summary', $style
+            $str, $keywords, $int, 'number', 'summary'
         );
         
         return $summary;
