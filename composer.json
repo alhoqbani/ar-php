@@ -1,18 +1,23 @@
 {
-  "name": "alhoqbani/i18n",
-  "description": "Basic i18n utilities to support Arabic in PHP",
+  "name": "alhoqbani/ar-php",
+  "description": "Arabic php utilities from Khaled Al-Sham'aa's library http://ar-php.org/",
   "type": "library",
   "keywords": [
-    "arabic"
+    "Arabic", "Hijri", "Islamic"
   ],
   "authors": [
+    {
+      "name": "Khaled Al-Shamaa",
+      "email": "khaled@ar-php.org",
+      "homepage":"http://www.ar-php.org"
+    },
     {
       "name": "Hamoud Alhoqbani",
       "email": "h.alhoqbani@gmail.com"
     }
   ],
   "license": "LGPL-3.0",
-  "homepage": "https://github.com/alhoqbani/i18n",
+  "homepage": "https://github.com/alhoqbani/ar-php",
 
   "require": {
     "php": ">=5.6.0"
