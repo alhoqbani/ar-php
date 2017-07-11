@@ -27,8 +27,10 @@ class GlyphsTest extends AbstractTestCase
     
     
     /** @test */
-    public function it_loads_date_class()
+    public function it_loads_glyphs_class()
     {
         $this->assertInstanceOf(I18N_Arabic_Glyphs::class, $this->glyphs->myObject);
     }
+    
+    
 }
