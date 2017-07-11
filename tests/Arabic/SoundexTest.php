@@ -2,6 +2,7 @@
 
 namespace Tests\Arabic;
 
+use ArUtil\Arabic;
 use I18N_Arabic_Soundex;
 use Tests\AbstractTestCase;
 
@@ -16,7 +17,7 @@ class SoundexTest extends AbstractTestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->soundex = new \I18N_Arabic('Soundex');
+        $this->soundex = new Arabic('Soundex');
     }
     
     /** @test */

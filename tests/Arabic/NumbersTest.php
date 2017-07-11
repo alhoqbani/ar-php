@@ -2,6 +2,7 @@
 
 namespace Tests\Arabic;
 
+use ArUtil\Arabic;
 use I18N_Arabic_Numbers;
 use Tests\AbstractTestCase;
 
@@ -16,7 +17,7 @@ class NumbersTest extends AbstractTestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->numbers = new \I18N_Arabic('Numbers');
+        $this->numbers = new Arabic('Numbers');
     }
     
     /** @test */
@@ -61,7 +62,7 @@ class NumbersTest extends AbstractTestCase
     public function it_can_read_required_files()
     {
         $this->assertFileIsReadable(
-            __DIR__ . '/../../Arabic/data/ArNumbers.xml',
+            __DIR__ . '/../../src/data/ArNumbers.xml',
             "Required file ArNumbers.xml is missing");
     }
     

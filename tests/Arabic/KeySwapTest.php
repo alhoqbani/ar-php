@@ -2,6 +2,7 @@
 
 namespace Tests\Arabic;
 
+use ArUtil\Arabic;
 use I18N_Arabic_KeySwap;
 use Tests\AbstractTestCase;
 
@@ -16,7 +17,7 @@ class KeySwapTest extends AbstractTestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->keySwap = new \I18N_Arabic('KeySwap');
+        $this->keySwap = new Arabic('KeySwap');
     }
     
     /** @test */

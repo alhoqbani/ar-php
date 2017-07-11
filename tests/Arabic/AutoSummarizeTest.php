@@ -2,6 +2,7 @@
 
 namespace Tests\Arabic;
 
+use ArUtil\Arabic;
 use I18N_Arabic_AutoSummarize;
 use Tests\AbstractTestCase;
 
@@ -16,7 +17,7 @@ class AutoSummarizeTest extends AbstractTestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->autoSummarize = new \I18N_Arabic('AutoSummarize');
+        $this->autoSummarize = new Arabic('AutoSummarize');
     }
     
     /** @test */
@@ -29,13 +30,13 @@ class AutoSummarizeTest extends AbstractTestCase
     public function it_can_read_required_txt_files()
     {
         $this->assertFileIsReadable(
-            __DIR__ . '/../../Arabic/data/ar-stopwords.txt',
+            __DIR__ . '/../../src/data/en-stopwords.txt',
             "Required file ar-stopwords.txt is missing");
         $this->assertFileIsReadable(
-            __DIR__ . '/../../Arabic/data/en-stopwords.txt',
+            __DIR__ . '/../../src/data/en-stopwords.txt',
             "Required file en-stopwords.txt is missing");
         $this->assertFileIsReadable(
-            __DIR__ . '/../../Arabic/data/important-words.txt',
+            __DIR__ . '/../../src/data/important-words.txt',
             "Required file important is missing");
     }
     
@@ -240,7 +241,7 @@ END;
  المنظمة بأنه "الفيزياء الجديدة" بما يدفع المعرفة لتجاوز ما يسمى النموذج المعياري
 
 END;
-;
+        ;
         
         $actualText = $this->autoSummarize->doSummarize($text, 25, 'هيجنز');
 

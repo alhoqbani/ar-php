@@ -2,6 +2,7 @@
 
 namespace Tests\Arabic;
 
+use ArUtil\Arabic;
 use I18N_Arabic_Hiero;
 use Tests\AbstractTestCase;
 
@@ -16,7 +17,7 @@ class HieroTest extends AbstractTestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->hiero = new \I18N_Arabic('Hiero');
+        $this->hiero = new Arabic('Hiero');
     }
     
     /** @test */

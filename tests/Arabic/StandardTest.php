@@ -2,6 +2,7 @@
 
 namespace Tests\Arabic;
 
+use ArUtil\Arabic;
 use I18N_Arabic_Standard;
 use Tests\AbstractTestCase;
 
@@ -16,7 +17,7 @@ class StandardTest extends AbstractTestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->standard = new \I18N_Arabic('Standard');
+        $this->standard = new Arabic('Standard');
     }
     
     /** @test */

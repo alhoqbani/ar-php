@@ -2,6 +2,7 @@
 
 namespace Tests\Arabic;
 
+use ArUtil\Arabic;
 use I18N_Arabic_Salat;
 use Tests\AbstractTestCase;
 
@@ -20,7 +21,7 @@ class SalatTest extends AbstractTestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->salat = new \I18N_Arabic('Salat');
+        $this->salat = new Arabic('Salat');
         $this->timezone = date_default_timezone_get();
         date_default_timezone_set('America/Los_Angeles');
     }

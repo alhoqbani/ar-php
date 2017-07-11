@@ -2,6 +2,7 @@
 
 namespace Tests\Arabic;
 
+use ArUtil\Arabic;
 use Carbon\Carbon;
 use I18N_Arabic_StrToTime;
 use Tests\AbstractTestCase;
@@ -18,7 +19,7 @@ class StrToTimeTest extends AbstractTestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->strToTime = new \I18N_Arabic('StrToTime');
+        $this->strToTime = new Arabic('StrToTime');
         $this->timezone = date_default_timezone_get();
         date_default_timezone_set('America/Los_Angeles');
     }

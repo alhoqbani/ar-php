@@ -2,6 +2,7 @@
 
 namespace Tests\Arabic;
 
+use ArUtil\Arabic;
 use I18N_Arabic_CharsetD;
 use Tests\AbstractTestCase;
 
@@ -16,7 +17,7 @@ class CharsetDTest extends AbstractTestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->charsetD = new \I18N_Arabic('CharsetD');
+        $this->charsetD = new Arabic('CharsetD');
     }
     
     /** @test */

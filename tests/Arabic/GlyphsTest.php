@@ -2,6 +2,7 @@
 
 namespace Tests\Arabic;
 
+use ArUtil\Arabic;
 use I18N_Arabic_Glyphs;
 use Tests\AbstractTestCase;
 
@@ -17,7 +18,7 @@ class GlyphsTest extends AbstractTestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->glyphs = new \I18N_Arabic('Glyphs');
+        $this->glyphs = new Arabic('Glyphs');
     }
     
     protected function tearDown()

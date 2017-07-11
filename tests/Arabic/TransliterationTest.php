@@ -2,8 +2,9 @@
 
 namespace Tests\Arabic;
 
-use I18N_Arabic_Transliteration;
+use ArUtil\Arabic;
 use Tests\AbstractTestCase;
+use I18N_Arabic_Transliteration;
 
 class Transliteration extends AbstractTestCase
 {
@@ -16,7 +17,7 @@ class Transliteration extends AbstractTestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->transliterator = new \I18N_Arabic('Transliteration');
+        $this->transliterator = new Arabic('Transliteration');
     }
     
     /** @test */

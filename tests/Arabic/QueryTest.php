@@ -2,6 +2,7 @@
 
 namespace Tests\Arabic;
 
+use ArUtil\Arabic;
 use I18N_Arabic_Query;
 use Tests\AbstractTestCase;
 
@@ -16,7 +17,7 @@ class QueryTest extends AbstractTestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->query = new \I18N_Arabic('Query');
+        $this->query = new Arabic('Query');
     }
     
     /** @test */

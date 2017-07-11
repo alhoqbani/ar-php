@@ -2,6 +2,7 @@
 
 namespace Tests\Arabic;
 
+use ArUtil\Arabic;
 use I18N_Arabic_Identifier;
 use Tests\AbstractTestCase;
 
@@ -16,7 +17,7 @@ class IdentifierTest extends AbstractTestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->identifier = new \I18N_Arabic('Identifier');
+        $this->identifier = new Arabic('Identifier');
     }
     
     /** @test */

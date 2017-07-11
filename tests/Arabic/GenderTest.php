@@ -2,6 +2,7 @@
 
 namespace Tests\Arabic;
 
+use ArUtil\Arabic;
 use I18N_Arabic_Gender;
 use Tests\AbstractTestCase;
 
@@ -16,7 +17,7 @@ class GenderTest extends AbstractTestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->gender = new \I18N_Arabic('Gender');
+        $this->gender = new Arabic('Gender');
     }
     
     /** @test */

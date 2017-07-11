@@ -2,6 +2,7 @@
 
 namespace Tests\Arabic;
 
+use ArUtil\Arabic;
 use I18N_Arabic_Date;
 use Tests\AbstractTestCase;
 
@@ -19,7 +20,7 @@ class DateTest extends AbstractTestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->date = new \I18N_Arabic('Date');
+        $this->date = new Arabic('Date');
         $this->timezone = date_default_timezone_get();
         date_default_timezone_set('America/Los_Angeles');
     }

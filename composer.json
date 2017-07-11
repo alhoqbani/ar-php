@@ -24,10 +24,10 @@
     },
     "autoload":{
       "psr-4": {
+        "ArUtil\\": "src/ArUtil",
         "Tests\\": "tests/"
       },
-        "classmap": ["Arabic/"],
-        "files": ["Arabic.php"]
+        "classmap": ["Arabic/"]
     },
     "require-dev": {
         "phpunit/phpunit": "^5.7",

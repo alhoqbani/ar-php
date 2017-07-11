@@ -2,6 +2,7 @@
 
 namespace Tests\Arabic;
 
+use ArUtil\Arabic;
 use I18N_Arabic_WordTag;
 use Tests\AbstractTestCase;
 
@@ -16,7 +17,7 @@ class WordTagTest extends AbstractTestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->wordTag = new \I18N_Arabic('WordTag');
+        $this->wordTag = new Arabic('WordTag');
     }
     
     /** @test */

@@ -2,6 +2,7 @@
 
 namespace Tests\Arabic;
 
+use ArUtil\Arabic;
 use I18N_Arabic_Mktime;
 use Tests\AbstractTestCase;
 
@@ -19,7 +20,7 @@ class MktimeTest extends AbstractTestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->mktime = new \I18N_Arabic('Mktime');
+        $this->mktime = new Arabic('Mktime');
         $this->timezone = date_default_timezone_get();
         date_default_timezone_set('America/Los_Angeles');
     }

@@ -2,6 +2,7 @@
 
 namespace Tests\Arabic;
 
+use ArUtil\Arabic;
 use I18N_Arabic_CompressStr;
 use Tests\AbstractTestCase;
 
@@ -16,7 +17,7 @@ class CompressStrTest extends AbstractTestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->compressStr = new \I18N_Arabic('CompressStr');
+        $this->compressStr = new Arabic('CompressStr');
     }
     
     /** @test */
