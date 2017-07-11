@@ -79,4 +79,11 @@ class QueryTest extends AbstractTestCase
             $this->query->getOrderBy('البحث "عن مخرجات" جيدة'));
     }
     
+    /** @test */
+    public function it_return_all_forms_of_search_term()
+    {
+        $this->assertEquals('البحث بحث "عن مخرجات" جيدة جيد جيده جيدت جيدات',
+            $this->query->allForms('البحث "عن مخرجات" جيدة'));
+    }
+    
 }
