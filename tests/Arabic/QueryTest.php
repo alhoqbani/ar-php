@@ -46,4 +46,30 @@ class QueryTest extends AbstractTestCase
         $this->assertEquals(1, $this->query->setMode(1)->getMode());
     }
     
+    /** @test */
+    public function it_return_the_where_condition_based_on_single_search_term()
+    {
+        $this->assertEquals(
+            "( REPLACE(, 'ـ', '') REGEXP 'فلسط(ين)?')",
+            $this->query->getWhereCondition('فلسطين')
+        );
+    }
+    
+    /** @test */
+    public function it_return_the_where_condition_based_on_multiple_search_term()
+    {
+        
+        $this->assertEquals("( REPLACE(, 'ـ', '') REGEXP 'فلسط(ين)?') OR ( REPLACE(, 'ـ', '') REGEXP 'حر(ة|(ا|أ|إ|آ)ت)?')",
+            $this->query->getWhereCondition('فلسطين حرة')
+        );
+    }
+    
+    /** @test */
+    public function it_return_the_where_condition_based_on_multiple_search_term_with_phrase_term()
+    {
+            $this->assertEquals("( LIKE 'نص كامل\') OR ( REPLACE(, 'ـ', '') REGEXP 'فلسط(ين)?') OR ( REPLACE(, 'ـ', '') REGEXP '\') OR ( REPLACE(, 'ـ', '') REGEXP 'حر(ة|(ا|أ|إ|آ)ت)?')",
+            $this->query->getWhereCondition('فلسطين "نص كامل" حرة')
+        );
+    }
+    
 }
