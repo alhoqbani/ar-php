@@ -1,5 +1,5 @@
 {
-  "name": "alhoqbani/ar-php",
+  "name": "arutil/ar-php",
   "description": "Arabic php utilities from Khaled Al-Sham'aa's library http://ar-php.org/",
   "type": "library",
   "keywords": [

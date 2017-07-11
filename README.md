@@ -12,12 +12,12 @@ This is the great library of Khaled Al-Shamaa with small bug fixes.
 Install it using composer:
 
 ```
-composer require "alhoqbani/ar-php:0.0.*"
+composer require "arutil/ar-php:0.0.*"
 ```
 or add it your `composer.json` file:
 ```
     "require": {
-        "alhoqbani/ar-php": "0.0.*"
+        "arutil/ar-php": "0.0.*"
     }
 ```
 
