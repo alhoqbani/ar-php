@@ -16,7 +16,7 @@ class CharsetDTest extends AbstractTestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->charsetD = new \I18N_Arabic('CharsetDTest');
+        $this->charsetD = new \I18N_Arabic('CharsetD');
     }
     
     /** @test */
@@ -24,4 +24,31 @@ class CharsetDTest extends AbstractTestCase
     {
         $this->assertInstanceOf(I18N_Arabic_CharsetD::class, $this->charsetD->myObject);
     }
+    
+    /** @test */
+    public function it_guess_given_text_charset()
+    {
+        $text = 'بسم الله الرحمن الرحيم';
+        
+        $expectedArray = [
+            'windows-1256' => 0.0,
+            'iso-8859-6'   => 0.0,
+            'utf-8'        => 89.0,
+        ];
+        
+        $actualArray = $this->charsetD->guess($text);
+        $this->assertEquals($expectedArray, $actualArray);
+    }
+    
+    /** @test */
+    public function it_return_guessed_charset()
+    {
+        $text = 'بسم الله الرحمن الرحيم';
+        $expected = 'utf-8';
+        $actual = $this->charsetD->getCharset($text);
+        
+        $this->assertEquals($expected, $actual);
+    }
+    
+    
 }
