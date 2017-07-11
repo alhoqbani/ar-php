@@ -430,7 +430,7 @@ class I18N_Arabic_Numbers
                 }
             }
             
-            if ($segment[$key] != '') {
+            if (isset($segment[$key]) && $segment[$key] != '') {
                 $segment[$key] = trim($segment[$key]);
             }
         }
