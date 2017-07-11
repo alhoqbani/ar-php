@@ -32,4 +32,14 @@ class HieroTest extends AbstractTestCase
         $this->assertEquals('Hiero', $this->hiero->setLanguage('Hiero')->getLanguage());
         $this->assertEquals('Phoenician', $this->hiero->setLanguage('Phoenician')->getLanguage());
     }
+    
+    /** @test */
+    public function it_return_image_resource()
+    {
+        /** @var resource $image */
+        $image = $this->hiero->str2graph('العربية');
+
+        $this->assertTrue(is_resource($image));
+        imagedestroy($image);
+    }
 }
