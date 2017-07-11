@@ -287,7 +287,7 @@ class I18N_Arabic_KeySwap
             $values = preg_split("/\t/", $line);
             $first  = array_shift($values);
             
-            for ($i=0; $i<28; $i++) {
+            for ($i=0; $i<27; $i++) {
                 $logodd["$first"]["{$second[$i]}"] = $values[$i];
             }
         }
