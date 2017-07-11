@@ -47,4 +47,13 @@ class WordTagTest extends AbstractTestCase
         $this->assertEquals(1, $taggedText[3][1]);
     }
     
+    /** @test */
+    public function it_highlight_text_with_given_class()
+    {
+        $text = 'ذهب الطالب إلى';
+        $higlightedText = $this->wordTag->highlightText($text, 'higlighted');
+        
+        $this->assertContains('<span class="higlighted">  الطالب</span>', $higlightedText);
+    }
+    
 }
