@@ -12,12 +12,25 @@ class SalatTest extends AbstractTestCase
      * @var I18N_Arabic_Salat
      */
     protected $salat;
+    /**
+     * @var string
+     */
+    protected $timezone;
     
     protected function setUp()
     {
         parent::setUp();
         $this->salat = new \I18N_Arabic('Salat');
+        $this->timezone = date_default_timezone_get();
+        date_default_timezone_set('America/Los_Angeles');
     }
+    
+    protected function tearDown()
+    {
+        date_default_timezone_set($this->timezone);
+        parent::tearDown();
+    }
+    
     
     /** @test */
     public function it_loads_salat_class()
