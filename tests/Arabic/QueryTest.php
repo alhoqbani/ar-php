@@ -38,4 +38,12 @@ class QueryTest extends AbstractTestCase
         $this->assertEquals($fields, $this->query->setArrFields($fields)->getArrFields());
     }
     
+    /** @test */
+    public function set_and_get_search_mode()
+    {
+        $this->markTestSkipped('Conflict with Date::method should be fixed first, see #20');
+        $this->assertEquals(0, $this->query->setMode(0)->getMode());
+        $this->assertEquals(1, $this->query->setMode(1)->getMode());
+    }
+    
 }
