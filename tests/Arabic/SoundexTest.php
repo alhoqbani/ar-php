@@ -25,4 +25,11 @@ class SoundexTest extends AbstractTestCase
         $this->assertInstanceOf(I18N_Arabic_Soundex::class, $this->soundex->myObject);
     }
     
+    /** @test */
+    public function it_returns_phonetically_alike_word_to_given_Arabic_word()
+    {
+        $actualText  = $this->soundex->soundex('كتاب');
+
+        $this->assertEquals('K310' ,$actualText);
+    }
 }
