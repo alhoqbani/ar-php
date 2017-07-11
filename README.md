@@ -14,7 +14,7 @@ Install it using composer:
 ```
 composer require "arutil/ar-php:0.0.*"
 ```
-or add it your `composer.json` file:
+or add it in your `composer.json` file:
 ```
     "require": {
         "arutil/ar-php": "0.0.*"
