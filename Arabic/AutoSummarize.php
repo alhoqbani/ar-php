@@ -583,7 +583,9 @@ class I18N_Arabic_AutoSummarize
             if (!in_array($first, $this->_separators)) {
                 $sentence = $first . $sentence;
             }
-            
+            if (! isset($stemmedSentences[$i])) {
+                continue;
+            }
             $stemStr = $stemmedSentences[$i];
             $stemStr = mb_substr($stemStr, 0, -1);
             
