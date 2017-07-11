@@ -317,7 +317,7 @@ class I18N_Arabic_AutoSummarize
     public function doRateSummarize($str, $rate, $keywords)
     {
         $summary = $this->summarize(
-            $str, $keywords, $rate, 'rate', 'summary', $style
+            $str, $keywords, $rate, 'rate', 'summary'
         );
         
         return $summary;
