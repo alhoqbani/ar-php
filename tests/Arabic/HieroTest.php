@@ -39,7 +39,17 @@ class HieroTest extends AbstractTestCase
     public function it_return_image_resource()
     {
         /** @var resource $image */
-        $image = $this->hiero->str2graph('العربية');
+        $image = $this->hiero->str2graph('Hamoud Alhoqbani');
+
+        $this->assertTrue(is_resource($image));
+        imagedestroy($image);
+    }
+    
+    /** @test */
+    public function it_return_image_resource_when_language_is_arabic()
+    {
+        /** @var resource $image */
+        $image = $this->hiero->str2graph('خالد الشمعة', 'rtl', 'ar');
 
         $this->assertTrue(is_resource($image));
         imagedestroy($image);
