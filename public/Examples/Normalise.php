@@ -17,6 +17,7 @@ require_once __DIR__ . '/../../vendor/autoload.php';
 <body>
 <div class="Paragraph" dir="rtl">
     <h1 dir="ltr">Normalize</h1>
+    <h3><a style="float: right" href="index.php">Back to Index</a></h3>
     <h2 dir="ltr">Arabic Normalise Examples Output:</h2>
     
     

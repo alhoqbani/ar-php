@@ -18,6 +18,7 @@ require_once __DIR__ . '/../../vendor/autoload.php';
 <div class="Paragraph">
     <div class="Paragraph">
         <h1 dir="ltr">Transliteration</h1>
+        <h3><a style="float: right" href="index.php">Back to Index</a></h3>
         <h2 dir="ltr">Safe Upload Examples Output:</h2>
         <p><i>PHP5 is not capable of addressing files with multi-byte characters in their names at all (including Arabic
                 language).</i></p>

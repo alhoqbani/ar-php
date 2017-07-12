@@ -16,7 +16,8 @@ require_once __DIR__ . '/../../vendor/autoload.php';
 </head>
 <body>
 <div class="Paragraph" dir="rtl">
-    <h1 dir="ltr">Date</h1>
+    <h1 dir="ltr">Numbers</h1>
+    <h3><a style="float: right" href="index.php">Back to Index</a></h3>
     <h2 dir="ltr">Example Output 1: المعدود مذكر مرفوع</h2>
     
     <?php

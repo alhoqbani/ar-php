@@ -53,6 +53,7 @@ $time_start = microtime(true);
 <body>
 <div class="Paragraph" dir="rtl">
     <h1 dir="ltr">Query</h1>
+    <h3><a style="float: right" href="index.php">Back to Index</a></h3>
     <h2 dir="ltr">Example Output:</h2>
 
     <table border="0" width="100%" dir="ltr">

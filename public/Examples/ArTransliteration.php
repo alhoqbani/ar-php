@@ -15,6 +15,7 @@ use ArUtil\Arabic;
 <body>
 <div class="Paragraph">
     <h1>English-Arabic Transliteration</h1>
+    <h3><a style="float: right" href="index.php">Back to Index</a></h3>
     <h2>Example Output:</h2>
     <?php
     /**

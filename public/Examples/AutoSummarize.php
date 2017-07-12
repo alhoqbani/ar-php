@@ -17,6 +17,7 @@ use ArUtil\Arabic;
 
 <div class="Paragraph " dir="rtl">
     <h1 dir="ltr">AutoSummarize</h1>
+    <h3><a style="float: right" href="index.php">Back to Index</a></h3>
     <h2 dir="ltr">Example Output:</h2>
     <?php
     /**

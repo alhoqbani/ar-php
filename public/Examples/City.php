@@ -15,6 +15,7 @@ require_once __DIR__ . '/../../vendor/autoload.php';
 <div class="Paragraph">
     <h1></h1>
     <h1 dir="ltr">Cities</h1>
+    <h3><a style="float: right" href="index.php">Back to Index</a></h3>
     <h2 dir="ltr">Cities Example Output</h2>
     <?php
     /**
