@@ -20,10 +20,10 @@
         </whitelist>
     </filter>
 
-    <logging>
-    <log type="coverage-html" target="tests/results" lowUpperBound="35"
-         highLowerBound="85"/>
-    </logging>
+    <!--<logging>-->
+    <!--<log type="coverage-html" target="tests/results" lowUpperBound="35"-->
+         <!--highLowerBound="85"/>-->
+    <!--</logging>-->
 
     <testsuites>
         <testsuite name="Package Test Suite">

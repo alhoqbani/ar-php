@@ -3,14 +3,14 @@
 namespace Tests\Arabic;
 
 use ArUtil\Arabic;
-use I18N_Arabic_CharsetD;
+use CharsetD;
 use Tests\AbstractTestCase;
 
 class CharsetDTest extends AbstractTestCase
 {
     
     /**
-     * @var I18N_Arabic_CharsetD
+     * @var CharsetD
      */
     protected $charsetD;
     
@@ -23,7 +23,7 @@ class CharsetDTest extends AbstractTestCase
     /** @test */
     public function it_loads_charsetD_class()
     {
-        $this->assertInstanceOf(I18N_Arabic_CharsetD::class, $this->charsetD->myObject);
+        $this->assertInstanceOf(CharsetD::class, $this->charsetD->myObject);
     }
     
     /** @test */

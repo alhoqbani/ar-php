@@ -219,8 +219,8 @@ class Arabic
         }
 
         $this->myFile  = $library;
-        $this->myClass = 'I18N_Arabic_' . $library;
-        $class         = 'I18N_Arabic_' . $library;
+        $this->myClass = $library;
+        $class         = $library;
 
         if (!$this->_useAutoload) {
             include_once self::getClassFile($this->myFile);
@@ -252,9 +252,9 @@ class Arabic
         ) {
             $methodName = $this->_compatible[$methodName];
         }
-
         // setMode & getMode [Date*|Query], setLang [Soundex*|CompressStr]
-        if ('I18N_Arabic_'.$this->_lazyLoading[$methodName] != $this->myClass) {
+        if ($this->_lazyLoading[$methodName] != $this->myClass) {
+
             $this->load($this->_lazyLoading[$methodName]);
         }
 

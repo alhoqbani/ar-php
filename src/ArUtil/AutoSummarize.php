@@ -140,7 +140,7 @@
  * @license   LGPL <http://www.gnu.org/licenses/lgpl.txt>
  * @link      http://www.ar-php.org 
  */ 
-class I18N_Arabic_AutoSummarize
+class AutoSummarize
 {
     private $_normalizeAlef       = array('أ','إ','آ');
     private $_normalizeDiacritics = array('َ','ً','ُ','ٌ','ِ','ٍ','ْ','ّ');
@@ -185,7 +185,6 @@ class I18N_Arabic_AutoSummarize
     {
         $extra_words = file(__DIR__ . '/../data/ar-extra-stopwords.txt');
         $extra_words = array_map('trim', $extra_words);
-
         $this->_commonWords = array_merge($this->_commonWords, $extra_words);
     }
 

@@ -3,14 +3,14 @@
 namespace Tests\Arabic;
 
 use ArUtil\Arabic;
-use I18N_Arabic_AutoSummarize;
+use AutoSummarize;
 use Tests\AbstractTestCase;
 
 class AutoSummarizeTest extends AbstractTestCase
 {
     
     /**
-     * @var I18N_Arabic_AutoSummarize
+     * @var AutoSummarize
      */
     protected $autoSummarize;
     
@@ -23,7 +23,7 @@ class AutoSummarizeTest extends AbstractTestCase
     /** @test */
     public function it_loads_salat_class()
     {
-        $this->assertInstanceOf(I18N_Arabic_AutoSummarize::class, $this->autoSummarize->myObject);
+        $this->assertInstanceOf(AutoSummarize::class, $this->autoSummarize->myObject);
     }
     
     /** @test */

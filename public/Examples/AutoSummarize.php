@@ -33,7 +33,7 @@ error_reporting(E_ALL);
 $time_start = microtime(true);
 
 require '../../Arabic.php';
-/** @var \I18N_Arabic_AutoSummarize $Arabic */
+/** @var \AutoSummarize $Arabic */
 $Arabic = new I18N_Arabic('AutoSummarize');
 
 $rate     = 25;
