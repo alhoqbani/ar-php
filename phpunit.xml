@@ -12,7 +12,7 @@
 
     <filter>
         <whitelist>
-            <directory suffix=".php">Arabic/</directory>
+            <directory suffix=".php">src/</directory>
             <file>Arabic.php</file>
             <exclude>
                 <directory suffix=".php">Arabic/*</directory>
