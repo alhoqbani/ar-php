@@ -17,11 +17,12 @@ html, body {
 }
 
 body {
+    margin: 10px auto;
+    padding: 50px 20px 10px;
     background: #f2f2f2;
     color: #000;
-    margin: 10px;
-    padding: 0;
     text-align: center;
+    width: 80%;
 }
 
 table {
@@ -44,3 +45,8 @@ h2 {
 .centered {
 
 }
+
+.summary {
+    background-color: #eeee80;
+}
+
