@@ -113,4 +113,11 @@ class DateTest extends AbstractTestCase
         $actualString = $this->date->date('l dS F Y h:i:s A', $this->timeStamp);
         $this->assertEquals($expectedString, $actualString);
     }
+    
+    /** @test */
+    public function it_calculate_correction_factor_for_Um_Alqura_calendar()
+    {
+        // Is this accurate?
+        $this->assertEquals(0, $this->date->dateCorrection(1009843200));
+    }
 }
