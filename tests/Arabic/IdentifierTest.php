@@ -1,10 +1,10 @@
 <?php
 
-namespace Tests\Arabic;
+namespace ArUtil\Tests\Arabic;
 
-use ArUtil\Arabic;
 use Identifier;
-use Tests\AbstractTestCase;
+use ArUtil\Arabic;
+use ArUtil\Tests\AbstractTestCase;
 
 class IdentifierTest extends AbstractTestCase
 {

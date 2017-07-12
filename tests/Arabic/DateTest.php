@@ -1,10 +1,10 @@
 <?php
 
-namespace Tests\Arabic;
+namespace ArUtil\Tests\Arabic;
 
-use ArUtil\Arabic;
 use Date;
-use Tests\AbstractTestCase;
+use ArUtil\Arabic;
+use ArUtil\Tests\AbstractTestCase;
 
 class DateTest extends AbstractTestCase
 {

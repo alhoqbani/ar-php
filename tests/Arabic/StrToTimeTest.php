@@ -1,11 +1,11 @@
 <?php
 
-namespace Tests\Arabic;
+namespace ArUtil\Tests\Arabic;
 
+use StrToTime;
 use ArUtil\Arabic;
 use Carbon\Carbon;
-use StrToTime;
-use Tests\AbstractTestCase;
+use ArUtil\Tests\AbstractTestCase;
 
 class StrToTimeTest extends AbstractTestCase
 {

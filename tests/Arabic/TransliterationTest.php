@@ -1,10 +1,10 @@
 <?php
 
-namespace Tests\Arabic;
+namespace ArUtil\Tests\Arabic;
 
 use ArUtil\Arabic;
-use Tests\AbstractTestCase;
 use Transliteration;
+use ArUtil\Tests\AbstractTestCase;
 
 class TransliterationTest extends AbstractTestCase
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace Tests\Arabic;
+namespace ArUtil\Tests\Arabic;
 
 use ArUtil\Arabic;
 use AutoSummarize;
-use Tests\AbstractTestCase;
+use ArUtil\Tests\AbstractTestCase;
 
 class AutoSummarizeTest extends AbstractTestCase
 {
@@ -170,7 +170,6 @@ END;
 END;
         
         
-        
         $actualText = $this->autoSummarize->highlightSummary($text, 10, 'هيجنز', 'summary');
         
         $this->assertEquals($expectedText, $actualText);
@@ -244,7 +243,7 @@ END;
         ;
         
         $actualText = $this->autoSummarize->doSummarize($text, 25, 'هيجنز');
-
+        
         $this->assertEquals($expectedText, $actualText);
     }
     
