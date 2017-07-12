@@ -58,6 +58,9 @@
  */
 
 namespace ArUtil;
+
+use ArUtil\Exceptions\ArabicException;
+
 /**
  * Core PHP and Arabic language class
  *
@@ -170,7 +173,7 @@ class Arabic
     {
         include_once self::getClassFile($className);
     }
-
+    
     /**
      * Error handler function
      *
@@ -179,7 +182,8 @@ class Arabic
      * @param string $errfile The filename that the error was raised in
      * @param int    $errline The line number the error was raised at
      *
-     * @return boolean FALSE
+     * @return bool FALSE
+     * @throws \ArUtil\Exceptions\ArabicException
      * @author Khaled Al-Shamaa <khaled@ar-php.org>
      */
     public static function myErrorHandler($errno, $errstr, $errfile, $errline)
@@ -195,7 +199,7 @@ class Arabic
             $msg .= " in <b>$errfile</b>";
             $msg .= " on line <b>$errline</b><br />";
     
-            throw new \ArabicException($msg, $errno);
+            throw new ArabicException($msg, $errno);
         }
         
         // If the function returns false then the normal error handler continues
@@ -525,27 +529,3 @@ class Arabic
     }
 }
 
-/**
- * Arabic Exception class defined by extending the built-in Exception class.
- *
- * @category  I18N
- * @package   I18N_Arabic
- * @author    Khaled Al-Shamaa <khaled@ar-php.org>
- * @copyright 2006-2013 Khaled Al-Shamaa
- *
- * @license   LGPL <http://www.gnu.org/licenses/lgpl.txt>
- * @link      http://www.ar-php.org
- */
-class ArabicException extends \Exception
-{
-    /**
-     * Make sure everything is assigned properly
-     *
-     * @param string $message Exception message
-     * @param int    $code    User defined exception code
-     */
-    public function __construct($message, $code=0)
-    {
-        parent::__construct($message, $code);
-    }
-}
