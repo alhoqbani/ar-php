@@ -5,6 +5,7 @@ namespace ArUtil\Tests\Arabic;
 use ArUtil\Arabic;
 use ArUtil\Hiero;
 use ArUtil\Tests\AbstractTestCase;
+use FilesystemIterator;
 
 class HieroTest extends AbstractTestCase
 {
@@ -43,4 +44,20 @@ class HieroTest extends AbstractTestCase
         $this->assertTrue(is_resource($image));
         imagedestroy($image);
     }
+    
+    /** @test */
+    public function it_has_the_images_folder_available()
+    {
+        $hieroPath = __DIR__ . '/../../src/images/hiero';
+        $this->assertIsReadable($hieroPath);
+        $numberOfFiles = iterator_count(new FilesystemIterator($hieroPath, FilesystemIterator::SKIP_DOTS));
+        $this->assertEquals(58, $numberOfFiles);
+        
+        $phoenicianPath = __DIR__ . '/../../src/images/phoenician';
+        $this->assertIsReadable($phoenicianPath);
+        $numberOfFiles = iterator_count(new FilesystemIterator($phoenicianPath, FilesystemIterator::SKIP_DOTS));
+        $this->assertEquals(28, $numberOfFiles);
+    }
+    
+    
 }
