@@ -3,14 +3,14 @@
 namespace Tests\Arabic;
 
 use ArUtil\Arabic;
-use I18N_Arabic_Numbers;
+use Numbers;
 use Tests\AbstractTestCase;
 
 class NumbersTest extends AbstractTestCase
 {
     
     /**
-     * @var I18N_Arabic_Numbers
+     * @var Numbers
      */
     protected $numbers;
     
@@ -23,7 +23,7 @@ class NumbersTest extends AbstractTestCase
     /** @test */
     public function it_loads_numbers_class()
     {
-        $this->assertInstanceOf(I18N_Arabic_Numbers::class, $this->numbers->myObject);
+        $this->assertInstanceOf(Numbers::class, $this->numbers->myObject);
     }
     
     /** @test */

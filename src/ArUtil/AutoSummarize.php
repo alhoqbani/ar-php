@@ -63,7 +63,7 @@
  * - Location: leading sentences of paragraph, title, introduction, and conclusion.
  * - Fixed phrases: in-text summaries.
  * - Frequencies of words, phrases, proper names
- * - Contextual material: query, title, headline, initial paragraph
+ * - Contextual material: Query, title, headline, initial paragraph
  * 
  * The motivation for this class is the range of applications for key phrases:
  * 

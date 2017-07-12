@@ -3,7 +3,7 @@
 namespace Tests\Arabic;
 
 use ArUtil\Arabic;
-use I18N_Arabic_Mktime;
+use Mktime;
 use Tests\AbstractTestCase;
 
 class MktimeTest extends AbstractTestCase
@@ -12,7 +12,7 @@ class MktimeTest extends AbstractTestCase
     protected $timeStamp = 1499611163;
     
     /**
-     * @var I18N_Arabic_Mktime
+     * @var Mktime
      */
     protected $mktime;
     protected $timezone;
@@ -35,7 +35,7 @@ class MktimeTest extends AbstractTestCase
     /** @test */
     public function it_loads_date_class()
     {
-        $this->assertInstanceOf(I18N_Arabic_Mktime::class, $this->mktime->myObject);
+        $this->assertInstanceOf(Mktime::class, $this->mktime->myObject);
     }
     
     /** @test */

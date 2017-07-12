@@ -143,7 +143,7 @@
  *         $StrSQL = "SELECT `headline` FROM `aljazeera` WHERE $strCondition";
  * 
  *         $i = 0;
- *         foreach ($dbh->query($StrSQL) as $row) {
+ *         foreach ($dbh->Query($StrSQL) as $row) {
  *             $headline = $row['headline'];
  *             $i++;
  *             if ($i % 2 == 0) {
@@ -183,7 +183,7 @@
  * @license   LGPL <http://www.gnu.org/licenses/lgpl.txt>
  * @link      http://www.ar-php.org 
  */ 
-class I18N_Arabic_Query
+class Query
 {
     private $_fields          = array();
     private $_lexPatterns     = array();
@@ -453,7 +453,7 @@ class I18N_Arabic_Query
      *      
      * @param string $arg String of one word user want to search for
      *      
-     * @return string Regular Expression format to be used in MySQL query statement
+     * @return string Regular Expression format to be used in MySQL Query statement
      * @author Khaled Al-Sham'aa <khaled@ar-php.org>
      */
     protected function lex($arg)

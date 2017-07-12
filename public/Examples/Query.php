@@ -85,7 +85,7 @@ $time_start = microtime(true);
                     $Arabic->setStrFields('headline');
                     $Arabic->setMode($_GET['mode']);
     
-                    /** @var \I18N_Arabic_Query $Arabic */
+                    /** @var \Query $Arabic */
                     $strCondition = $Arabic->getWhereCondition($keyword);
                     $strOrderBy = $Arabic->getOrderBy($keyword);
                 } else {
@@ -97,7 +97,7 @@ $time_start = microtime(true);
                     $StrSQL .= "  ORDER BY $strOrderBy";
                 }
                 $i = 0;
-                foreach ($dbh->query($StrSQL) as $row) {
+                foreach ($dbh->Query($StrSQL) as $row) {
                     $headline = $row['headline'];
                     $i++;
                     if ($i % 2 == 0) {
@@ -165,7 +165,7 @@ $time_start = microtime(true);
         \$StrSQL = "SELECT `headline` FROM `aljazeera` WHERE \$strCondition ORDER BY \$strOrderBy";
 
         \$i = 0;
-        foreach (\$dbh->query(\$StrSQL) as \$row) {
+        foreach (\$dbh->Query(\$StrSQL) as \$row) {
             \$headline = \$row['headline'];
             \$i++;
             if (\$i % 2 == 0) {

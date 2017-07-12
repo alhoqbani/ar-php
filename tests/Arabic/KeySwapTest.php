@@ -3,14 +3,14 @@
 namespace Tests\Arabic;
 
 use ArUtil\Arabic;
-use I18N_Arabic_KeySwap;
+use KeySwap;
 use Tests\AbstractTestCase;
 
 class KeySwapTest extends AbstractTestCase
 {
     
     /**
-     * @var I18N_Arabic_KeySwap
+     * @var KeySwap
      */
     protected $keySwap;
     
@@ -23,7 +23,7 @@ class KeySwapTest extends AbstractTestCase
     /** @test */
     public function it_loads_keySwap_class()
     {
-        $this->assertInstanceOf(I18N_Arabic_KeySwap::class, $this->keySwap->myObject);
+        $this->assertInstanceOf(KeySwap::class, $this->keySwap->myObject);
     }
     
     /** @test */

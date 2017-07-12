@@ -83,7 +83,7 @@ END;
 require '../../Arabic.php';
 $Arabic = new I18N_Arabic('Identifier');
 
-$pos = I18N_Arabic_Identifier::identify($text);
+$pos = Identifier::identify($text);
 
 $total = count($pos);
 
@@ -106,7 +106,7 @@ $code = <<< END
     require '../../Arabic.php';
     \$Arabic = new I18N_Arabic('Identifier');
 
-    \$pos = I18N_Arabic_Identifier::identify(\$text);
+    \$pos = Identifier::identify(\$text);
 
     \$total = count(\$pos);
 

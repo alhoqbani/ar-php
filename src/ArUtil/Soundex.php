@@ -106,7 +106,7 @@
  * @license   LGPL <http://www.gnu.org/licenses/lgpl.txt>
  * @link      http://www.ar-php.org 
  */ 
-class I18N_Arabic_Soundex
+class Soundex
 {
     private $_asoundexCode    = array();
     private $_aphonixCode     = array();

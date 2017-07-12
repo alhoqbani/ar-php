@@ -3,14 +3,14 @@
 namespace Tests\Arabic;
 
 use ArUtil\Arabic;
-use I18N_Arabic_Stemmer;
+use Stemmer;
 use Tests\AbstractTestCase;
 
 class StemmerTest extends AbstractTestCase
 {
     
     /**
-     * @var \I18N_Arabic_Stemmer
+     * @var \Stemmer
      */
     protected $stemmer;
     
@@ -23,7 +23,7 @@ class StemmerTest extends AbstractTestCase
     /** @test */
     public function it_loads_stemmer_class()
     {
-        $this->assertInstanceOf(I18N_Arabic_Stemmer::class, $this->stemmer->myObject);
+        $this->assertInstanceOf(Stemmer::class, $this->stemmer->myObject);
     }
     
     /** @test */

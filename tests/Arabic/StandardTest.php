@@ -3,14 +3,14 @@
 namespace Tests\Arabic;
 
 use ArUtil\Arabic;
-use I18N_Arabic_Standard;
+use Standard;
 use Tests\AbstractTestCase;
 
 class StandardTest extends AbstractTestCase
 {
     
     /**
-     * @var I18N_Arabic_Standard
+     * @var Standard
      */
     protected $standard;
     
@@ -23,7 +23,7 @@ class StandardTest extends AbstractTestCase
     /** @test */
     public function it_loads_normalise_class()
     {
-        $this->assertInstanceOf(I18N_Arabic_Standard::class, $this->standard->myObject);
+        $this->assertInstanceOf(Standard::class, $this->standard->myObject);
     }
     
     /** @test */

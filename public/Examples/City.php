@@ -69,7 +69,7 @@ try {
     * at a time and thus large result sets become manageable without hogging
     * memory.
     */             
-    foreach ($dbh->query($sql) as $row) {
+    foreach ($dbh->Query($sql) as $row) {
         echo '<option value="' . $row['id'] . '">';
 
         if ($row['arabic'] == '') {
@@ -161,7 +161,7 @@ $code = <<< END
       * at a time and thus large result sets become manageable without hogging 
       * memory.
       */             
-      foreach (\$dbh->query(\$sql) as \$row) {
+      foreach (\$dbh->Query(\$sql) as \$row) {
           echo '<option value="' . \$row['id'] . '">';
 
           if (\$row['arabic'] == '') {

@@ -3,14 +3,14 @@
 namespace Tests\Arabic;
 
 use ArUtil\Arabic;
-use I18N_Arabic_WordTag;
+use WordTag;
 use Tests\AbstractTestCase;
 
 class WordTagTest extends AbstractTestCase
 {
     
     /**
-     * @var I18N_Arabic_WordTag
+     * @var WordTag
      */
     protected $wordTag;
     
@@ -23,7 +23,7 @@ class WordTagTest extends AbstractTestCase
     /** @test */
     public function it_loads_normalise_class()
     {
-        $this->assertInstanceOf(I18N_Arabic_WordTag::class, $this->wordTag->myObject);
+        $this->assertInstanceOf(WordTag::class, $this->wordTag->myObject);
     }
     
     /** @test */

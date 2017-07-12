@@ -4,14 +4,14 @@ namespace Tests\Arabic;
 
 use ArUtil\Arabic;
 use Carbon\Carbon;
-use I18N_Arabic_StrToTime;
+use StrToTime;
 use Tests\AbstractTestCase;
 
 class StrToTimeTest extends AbstractTestCase
 {
     
     /**
-     * @var I18N_Arabic_StrToTime
+     * @var StrToTime
      */
     protected $strToTime;
     protected $timezone;
@@ -34,7 +34,7 @@ class StrToTimeTest extends AbstractTestCase
     /** @test */
     public function it_loads_date_class()
     {
-        $this->assertInstanceOf(I18N_Arabic_StrToTime::class, $this->strToTime->myObject);
+        $this->assertInstanceOf(StrToTime::class, $this->strToTime->myObject);
     }
     
     /** @test */

@@ -3,14 +3,14 @@
 namespace Tests\Arabic;
 
 use ArUtil\Arabic;
-use I18N_Arabic_Salat;
+use Salat;
 use Tests\AbstractTestCase;
 
 class SalatTest extends AbstractTestCase
 {
     
     /**
-     * @var I18N_Arabic_Salat
+     * @var Salat
      */
     protected $salat;
     /**
@@ -36,7 +36,7 @@ class SalatTest extends AbstractTestCase
     /** @test */
     public function it_loads_salat_class()
     {
-        $this->assertInstanceOf(I18N_Arabic_Salat::class, $this->salat->myObject);
+        $this->assertInstanceOf(Salat::class, $this->salat->myObject);
     }
     
     /** @test */

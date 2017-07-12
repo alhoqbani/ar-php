@@ -3,14 +3,14 @@
 namespace Tests\Arabic;
 
 use ArUtil\Arabic;
-use I18N_Arabic_Soundex;
+use Soundex;
 use Tests\AbstractTestCase;
 
 class SoundexTest extends AbstractTestCase
 {
     
     /**
-     * @var I18N_Arabic_Soundex
+     * @var Soundex
      */
     protected $soundex;
     
@@ -23,7 +23,7 @@ class SoundexTest extends AbstractTestCase
     /** @test */
     public function it_loads_normalise_class()
     {
-        $this->assertInstanceOf(I18N_Arabic_Soundex::class, $this->soundex->myObject);
+        $this->assertInstanceOf(Soundex::class, $this->soundex->myObject);
     }
     
     /** @test */

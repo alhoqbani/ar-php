@@ -115,7 +115,7 @@
  * @license   LGPL <http://www.gnu.org/licenses/lgpl.txt>
  * @link      http://www.ar-php.org 
  */ 
-class I18N_Arabic_WordTag
+class WordTag
 {
     private static $_particlePreNouns = array('عن', 'في', 'مذ', 'منذ',
                                               'من', 'الى', 'على', 'حتى',

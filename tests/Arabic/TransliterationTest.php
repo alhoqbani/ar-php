@@ -4,13 +4,13 @@ namespace Tests\Arabic;
 
 use ArUtil\Arabic;
 use Tests\AbstractTestCase;
-use I18N_Arabic_Transliteration;
+use Transliteration;
 
-class Transliteration extends AbstractTestCase
+class TransliterationTest extends AbstractTestCase
 {
     
     /**
-     * @var I18N_Arabic_Transliteration
+     * @var Transliteration
      */
     protected $transliterator;
     
@@ -23,7 +23,7 @@ class Transliteration extends AbstractTestCase
     /** @test */
     public function it_loads_normalise_class()
     {
-        $this->assertInstanceOf(I18N_Arabic_Transliteration::class, $this->transliterator->myObject);
+        $this->assertInstanceOf(Transliteration::class, $this->transliterator->myObject);
     }
     
     /** @test */

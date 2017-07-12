@@ -3,14 +3,14 @@
 namespace Tests\Arabic;
 
 use ArUtil\Arabic;
-use I18N_Arabic_Hiero;
+use Hiero;
 use Tests\AbstractTestCase;
 
 class HieroTest extends AbstractTestCase
 {
     
     /**
-     * @var I18N_Arabic_Hiero
+     * @var Hiero
      */
     protected $hiero;
     
@@ -23,7 +23,7 @@ class HieroTest extends AbstractTestCase
     /** @test */
     public function it_loads_hiero_class()
     {
-        $this->assertInstanceOf(I18N_Arabic_Hiero::class, $this->hiero->myObject);
+        $this->assertInstanceOf(Hiero::class, $this->hiero->myObject);
     }
     
     

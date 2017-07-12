@@ -87,7 +87,7 @@
  * @license   LGPL <http://www.gnu.org/licenses/lgpl.txt>
  * @link      http://www.ar-php.org 
  */ 
-class I18N_Arabic_StrToTime
+class StrToTime
 {
     private static $_hj = array();
 
@@ -134,7 +134,7 @@ class I18N_Arabic_StrToTime
                 preg_match('/.*(\d{1,2}).*(\d{4}).*/', $text, $matches);
 
                 include_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'Mktime.php';
-                $temp = new I18N_Arabic_Mktime();
+                $temp = new Mktime();
                 $fix  = $temp->mktimeCorrection($i+1, $matches[2]); 
                 $int  = $temp->mktime(0, 0, 0, $i+1, $matches[1], $matches[2], $fix);
                 $temp = null;

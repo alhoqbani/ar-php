@@ -46,7 +46,7 @@
  * Out of vocabulary (OOV) words are a common source of errors in cross language 
  * information retrieval. Bilingual dictionaries are often limited in their coverage 
  * of named- entities, numbers, technical terms and acronyms. There is a need to 
- * generate translations for these "on-the-fly" or at query time.
+ * generate translations for these "on-the-fly" or at Query time.
  * 
  * A significant proportion of OOV words are named entities and technical terms. 
  * Typical analyses find around 50% of OOV words to be named entities. Yet these 
@@ -54,9 +54,9 @@
  * performance (average precision) reduced more than 50% when named entities in the 
  * queries were not translated.
  * 
- * When the query language and the document language share the same alphabet it may 
+ * When the Query language and the document language share the same alphabet it may
  * be sufficient to use the OOV word as its own translation. However, when the two 
- * languages have different alphabets, the query term must somehow be rendered in 
+ * languages have different alphabets, the Query term must somehow be rendered in
  * the orthography of the other language. The process of converting a word from one 
  * orthography into another is called transliteration.
  * 
@@ -93,7 +93,7 @@
  * @license   LGPL <http://www.gnu.org/licenses/lgpl.txt>
  * @link      http://www.ar-php.org 
  */ 
-class I18N_Arabic_Transliteration
+class Transliteration
 {
     private static $_arFinePatterns     = array("/'+/u", "/([\- ])'/u", '/(.)#/u');
     private static $_arFineReplacements = array("'", '\\1', "\\1'\\1");
