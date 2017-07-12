@@ -39,7 +39,7 @@ require_once __DIR__ . '/../../vendor/autoload.php';
     
     $Arabic->setInputCharset('windows-1256');
     
-    $file = 'Compress/ar_example.txt';
+    $file = __DIR__ . '/data/CompressStr_ar_example.txt';
     $fh = fopen($file, 'r');
     $str = fread($fh, filesize($file));
     fclose($fh);
@@ -84,7 +84,7 @@ require_once __DIR__ . '/../../vendor/autoload.php';
 
     \$Arabic->setInputCharset('windows-1256');
 
-    \$file = 'Compress/ar_example.txt';
+    \$file = 'Compress/CompressStr_ar_example.txt';
     \$fh = fopen(\$file, 'r');
     \$str = fread(\$fh, filesize(\$file));
     fclose(\$fh);

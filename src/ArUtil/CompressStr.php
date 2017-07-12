@@ -75,7 +75,7 @@
  * $obj->setInputCharset('windows-1256');
  * $obj->setOutputCharset('windows-1256');
  * 
- * $file = 'Compress/ar_example.txt';
+ * $file = 'Compress/CompressStr_ar_example.txt';
  * $fh   = fopen($file, 'r');
  * $str  = fread($fh, filesize($file));
  * fclose($fh);
