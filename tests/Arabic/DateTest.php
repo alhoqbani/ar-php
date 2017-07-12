@@ -3,7 +3,7 @@
 namespace Tests\Arabic;
 
 use ArUtil\Arabic;
-use I18N_Arabic_Date;
+use Date;
 use Tests\AbstractTestCase;
 
 class DateTest extends AbstractTestCase
@@ -12,7 +12,7 @@ class DateTest extends AbstractTestCase
     protected $timeStamp = 1499611163;
     
     /**
-     * @var I18N_Arabic_Date
+     * @var Date
      */
     protected $date;
     protected $timezone;
@@ -35,7 +35,7 @@ class DateTest extends AbstractTestCase
     /** @test */
     public function it_loads_date_class()
     {
-        $this->assertInstanceOf(I18N_Arabic_Date::class, $this->date->myObject);
+        $this->assertInstanceOf(Date::class, $this->date->myObject);
     }
     
     /** @test */

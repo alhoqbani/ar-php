@@ -3,14 +3,14 @@
 namespace Tests\Arabic;
 
 use ArUtil\Arabic;
-use I18N_Arabic_CompressStr;
+use CompressStr;
 use Tests\AbstractTestCase;
 
 class CompressStrTest extends AbstractTestCase
 {
     
     /**
-     * @var I18N_Arabic_CompressStr
+     * @var CompressStr
      */
     protected $compressStr;
     
@@ -23,7 +23,7 @@ class CompressStrTest extends AbstractTestCase
     /** @test */
     public function it_loads_keySwap_class()
     {
-        $this->assertInstanceOf(I18N_Arabic_CompressStr::class, $this->compressStr->myObject);
+        $this->assertInstanceOf(CompressStr::class, $this->compressStr->myObject);
     }
     
     /** @test */

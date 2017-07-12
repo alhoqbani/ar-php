@@ -163,7 +163,7 @@
  * @license   LGPL <http://www.gnu.org/licenses/lgpl.txt>
  * @link      http://www.ar-php.org 
  */ 
-class I18N_Arabic_Date
+class Date
 {
     private $_mode = 1;
     private $_xml  = null;

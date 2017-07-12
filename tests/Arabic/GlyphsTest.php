@@ -3,7 +3,7 @@
 namespace Tests\Arabic;
 
 use ArUtil\Arabic;
-use I18N_Arabic_Glyphs;
+use Glyphs;
 use Tests\AbstractTestCase;
 
 class GlyphsTest extends AbstractTestCase
@@ -30,7 +30,7 @@ class GlyphsTest extends AbstractTestCase
     /** @test */
     public function it_loads_glyphs_class()
     {
-        $this->assertInstanceOf(I18N_Arabic_Glyphs::class, $this->glyphs->myObject);
+        $this->assertInstanceOf(Glyphs::class, $this->glyphs->myObject);
     }
     
     /** @test */

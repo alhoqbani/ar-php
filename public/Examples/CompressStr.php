@@ -104,7 +104,7 @@ $code = <<< END
         echo "Search for \$word in zipped string and do not find it<hr>";
     }
 
-    \$len = I18N_Arabic_CompressStr::length(\$zip);
+    \$len = CompressStr::length(\$zip);
     echo "Original length of zipped string is \$len Byte<hr>";
 
     echo '<div dir="rtl" align="justify">'.nl2br(\$str).'</div>';

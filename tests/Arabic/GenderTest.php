@@ -3,14 +3,14 @@
 namespace Tests\Arabic;
 
 use ArUtil\Arabic;
-use I18N_Arabic_Gender;
+use Gender;
 use Tests\AbstractTestCase;
 
 class GenderTest extends AbstractTestCase
 {
     
     /**
-     * @var I18N_Arabic_Gender
+     * @var Gender
      */
     protected $gender;
     
@@ -23,7 +23,7 @@ class GenderTest extends AbstractTestCase
     /** @test */
     public function it_loads_keySwap_class()
     {
-        $this->assertInstanceOf(I18N_Arabic_Gender::class, $this->gender->myObject);
+        $this->assertInstanceOf(Gender::class, $this->gender->myObject);
     }
     
     /** @test */
