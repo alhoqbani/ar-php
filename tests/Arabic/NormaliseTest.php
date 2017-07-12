@@ -2,8 +2,8 @@
 
 namespace ArUtil\Tests\Arabic;
 
-use Normalise;
 use ArUtil\Arabic;
+use ArUtil\Normalise;
 use ArUtil\Tests\AbstractTestCase;
 
 class NormaliseTest extends AbstractTestCase

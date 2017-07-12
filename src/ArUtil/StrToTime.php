@@ -75,6 +75,8 @@
  * @link      http://www.ar-php.org 
  */
 
+namespace ArUtil;
+
 /**
  * This PHP class parse about any Arabic textual datetime description into a 
  * Unix timestamp

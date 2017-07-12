@@ -104,6 +104,8 @@
  * @link      http://www.ar-php.org 
  */
 
+namespace ArUtil;
+
 /**
  * This PHP class to tagging Arabic Word
  *  

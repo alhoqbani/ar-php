@@ -2,8 +2,8 @@
 
 namespace ArUtil\Tests\Arabic;
 
-use Hiero;
 use ArUtil\Arabic;
+use ArUtil\Hiero;
 use ArUtil\Tests\AbstractTestCase;
 
 class HieroTest extends AbstractTestCase

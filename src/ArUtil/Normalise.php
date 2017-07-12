@@ -73,6 +73,8 @@
  * @link      http://www.ar-php.org 
  */
 
+namespace ArUtil;
+
 /**
  *  This class provides various functions to manipulate arabic text and
  *  normalise it by applying filters, for example, to strip tatweel and

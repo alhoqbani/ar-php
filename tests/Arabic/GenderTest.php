@@ -2,7 +2,7 @@
 
 namespace ArUtil\Tests\Arabic;
 
-use Gender;
+use ArUtil\Gender;
 use ArUtil\Arabic;
 use ArUtil\Tests\AbstractTestCase;
 

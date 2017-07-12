@@ -2,8 +2,8 @@
 
 namespace ArUtil\Tests\Arabic;
 
-use Mktime;
 use ArUtil\Arabic;
+use ArUtil\Mktime;
 use ArUtil\Tests\AbstractTestCase;
 
 class MktimeTest extends AbstractTestCase

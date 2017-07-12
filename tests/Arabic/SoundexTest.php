@@ -2,8 +2,8 @@
 
 namespace ArUtil\Tests\Arabic;
 
-use Soundex;
 use ArUtil\Arabic;
+use ArUtil\Soundex;
 use ArUtil\Tests\AbstractTestCase;
 
 class SoundexTest extends AbstractTestCase

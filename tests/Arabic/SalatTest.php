@@ -2,7 +2,7 @@
 
 namespace ArUtil\Tests\Arabic;
 
-use Salat;
+use ArUtil\Salat;
 use ArUtil\Arabic;
 use ArUtil\Tests\AbstractTestCase;
 

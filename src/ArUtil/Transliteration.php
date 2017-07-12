@@ -82,6 +82,8 @@
  * @link      http://www.ar-php.org 
  */
 
+namespace ArUtil;
+
 /**
  * This PHP class transliterate English words into Arabic
  *  

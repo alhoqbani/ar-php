@@ -2,7 +2,7 @@
 
 namespace ArUtil\Tests\Arabic;
 
-use Query;
+use ArUtil\Query;
 use ArUtil\Arabic;
 use ArUtil\Tests\AbstractTestCase;
 

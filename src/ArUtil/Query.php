@@ -171,6 +171,8 @@
  * @link      http://www.ar-php.org 
  */
 
+namespace ArUtil;
+
 /**
  * This PHP class build WHERE condition for SQL statement using MySQL REGEXP and
  * Arabic lexical  rules

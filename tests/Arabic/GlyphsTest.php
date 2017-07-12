@@ -2,7 +2,7 @@
 
 namespace ArUtil\Tests\Arabic;
 
-use Glyphs;
+use ArUtil\Glyphs;
 use ArUtil\Arabic;
 use ArUtil\Tests\AbstractTestCase;
 

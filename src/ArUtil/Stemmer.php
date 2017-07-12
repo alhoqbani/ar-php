@@ -92,6 +92,8 @@
  * @link      http://www.ar-php.org 
  */
 
+namespace ArUtil;
+
 /**
  * This PHP class get stem of an Arabic word
  *  

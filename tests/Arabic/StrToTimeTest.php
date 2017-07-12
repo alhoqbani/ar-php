@@ -2,9 +2,9 @@
 
 namespace ArUtil\Tests\Arabic;
 
-use StrToTime;
 use ArUtil\Arabic;
 use Carbon\Carbon;
+use ArUtil\StrToTime;
 use ArUtil\Tests\AbstractTestCase;
 
 class StrToTimeTest extends AbstractTestCase

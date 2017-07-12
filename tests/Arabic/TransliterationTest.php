@@ -3,7 +3,7 @@
 namespace ArUtil\Tests\Arabic;
 
 use ArUtil\Arabic;
-use Transliteration;
+use ArUtil\Transliteration;
 use ArUtil\Tests\AbstractTestCase;
 
 class TransliterationTest extends AbstractTestCase

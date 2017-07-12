@@ -2,7 +2,7 @@
 
 namespace ArUtil\Tests\Arabic;
 
-use Date;
+use ArUtil\Date;
 use ArUtil\Arabic;
 use ArUtil\Tests\AbstractTestCase;
 

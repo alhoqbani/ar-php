@@ -2,8 +2,8 @@
 
 namespace ArUtil\Tests\Arabic;
 
-use CompressStr;
 use ArUtil\Arabic;
+use ArUtil\CompressStr;
 use ArUtil\Tests\AbstractTestCase;
 
 class CompressStrTest extends AbstractTestCase

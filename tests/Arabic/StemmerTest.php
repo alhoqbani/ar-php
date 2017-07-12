@@ -2,8 +2,8 @@
 
 namespace ArUtil\Tests\Arabic;
 
-use Stemmer;
 use ArUtil\Arabic;
+use ArUtil\Stemmer;
 use ArUtil\Tests\AbstractTestCase;
 
 class StemmerTest extends AbstractTestCase

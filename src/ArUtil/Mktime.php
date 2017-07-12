@@ -106,6 +106,8 @@
  * @link      http://www.ar-php.org 
  */
 
+namespace ArUtil;
+
 /**
  * This PHP class is an Arabic customization for PHP mktime function
  *  
