@@ -151,11 +151,11 @@ class Hiero
         $word, $dir = 'ltr', $lang = 'en', $red = null, $green = null, $blue = null
     ) {
         if ($this->_language == 'phoenician') {
-            define('MAXH', 40);
-            define('MAXW', 50);
+            $MAXH = 40;
+            $MAXW =  50;
         } else {
-            define('MAXH', 100);
-            define('MAXW', 75);
+            $MAXH = 100;
+            $MAXW = 75;
         }
 
         // Note: there is no theh, khah, thal, dad, zah, and ghain in Phoenician
@@ -234,8 +234,8 @@ class Hiero
                     dirname(__FILE__)."/images/{$this->_language}/$char.gif"
                 );
             } else {
-                $width  = MAXW;
-                $height = MAXH;
+                $width  = $MAXW;
+                $height = $MAXH;
             }
             
             if ($dir == 'ltr' || $dir == 'rtl') {
@@ -282,7 +282,7 @@ class Hiero
                         0, 0, $width, $height
                     );
                 } else {
-                    $width = MAXW;
+                    $width = $MAXW;
                 }
     
                 $current_x += $width;
@@ -293,7 +293,7 @@ class Hiero
                     $image = imagecreatefromgif($filename);
                     imagecopy($im, $image, 0, $current_y, 0, 0, $width, $height);
                 } else {
-                    $height = MAXH;
+                    $height = $MAXH;
                 }
     
                 $current_y += $height;
