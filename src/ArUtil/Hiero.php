@@ -187,7 +187,8 @@ class Hiero
             'ن' => 'noon',
             'ه' => 'heh',
             'و' => 'waw',
-            'ي' => 'yeh'
+            'ي' => 'yeh',
+            ' ' => '',
         );
                 
         if ($lang != 'ar' && $this->_language == 'phoenician') {
