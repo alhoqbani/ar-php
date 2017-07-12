@@ -191,7 +191,7 @@ class Hiero
         );
                 
         if ($lang != 'ar' && $this->_language == 'phoenician') {
-            include dirname(__FILE__) . '/Transliteration.php';
+//            include dirname(__FILE__) . '/Transliteration.php';
 
             $temp = new Transliteration();
             $word = $temp->en2ar($word);
@@ -269,7 +269,7 @@ class Hiero
             if ($lang == 'ar') {
                 $char = $arabic[$char];
             }
-            $filename = dirname(__FILE__)."/images/{$this->_language}/$char.gif";
+            $filename = __DIR__ . "/../images/{$this->_language}/$char.gif";
             
             if ($dir == 'ltr' || $dir == 'rtl') {
                 if (file_exists($filename)) {
