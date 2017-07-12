@@ -1,4 +1,9 @@
 <?php
+
+use ArUtil\Arabic;
+
+require_once __DIR__ . '/../../vendor/autoload.php';
+
 /**
  * Example of render Hiero language transliteration
  *
@@ -13,10 +18,10 @@
 
 error_reporting(E_ALL);
 
-(!empty($_GET['w'])) ? $word = $_GET['w'] : $word='Khaled Shamaa';
+$word = isset($_GET['w']) ? $_GET['w'] : 'Khaled Shamaa';
 
-require '../../Arabic.php';
-$x = new I18N_Arabic('Hiero');
+/** @var \ArUtil\Hiero $x */
+$x = new Arabic('Hiero');
 
 $im = $x->str2graph($word);
 
@@ -25,4 +30,3 @@ header("Content-type: image/png");
 
 imagepng($im);
 imagedestroy($im);
-?>
