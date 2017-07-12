@@ -4,6 +4,22 @@ use ArUtil\Arabic;
 
 require_once __DIR__ . '/../../vendor/autoload.php';
 
+function set_up_database() {
+    $dbuser = 'root';
+    $dbpwd = '';
+    $dbname = 'test';
+    $sqlFile = file_get_contents(__DIR__ . '/data/ArQuery.sql');
+    
+    $dbh = new PDO('mysql:host=localhost;dbname=' . $dbname, $dbuser, $dbpwd);
+    
+    // Set the error reporting attribute
+    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $dbh->exec($sqlFile);
+    
+}
+
+//  set_up_database();
+
 /**
  * Example of Arabic Query Class
  *

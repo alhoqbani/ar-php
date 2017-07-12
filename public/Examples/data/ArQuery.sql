@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS aljazeera;
 Create table aljazeera(
 ID INT AUTO_INCREMENT ,
 headline VARCHAR (255),
