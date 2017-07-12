@@ -8,16 +8,22 @@ function set_up_database() {
     $dbuser = 'root';
     $dbpwd = '';
     $dbname = 'test';
-    $sqlFile = file_get_contents(__DIR__ . '/data/ArQuery.sql');
+    $sql = file_get_contents(__DIR__ . '/data/ArQuery.sql');
     
+    try {
     $dbh = new PDO('mysql:host=localhost;dbname=' . $dbname, $dbuser, $dbpwd);
     
     // Set the error reporting attribute
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $dbh->exec($sqlFile);
+    $dbh->exec($sql);
+    
+    } catch (\PDOException $e) {
+        echo '<h3 style="color: red">' . $e->getMessage() . '</h3>';
+    }
     
 }
 
+// Uncomment to populate database.
 //  set_up_database();
 
 /**
@@ -134,7 +140,7 @@ $time_start = microtime(true);
                 $dbh = null;
                 
             } catch (PDOException $e) {
-                echo $e->getMessage();
+                echo '<h3 style="color: red">' . $e->getMessage() . '</h3>';
             }
             ?>
         </table>
