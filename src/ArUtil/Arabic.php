@@ -221,14 +221,14 @@ class Arabic
         ) {
             $library = $this->_compatible[$library];
         }
-
+        $library = "\\ArUtil\\$library";
         $this->myFile  = $library;
         $this->myClass = $library;
         $class         = $library;
 
-        if (!$this->_useAutoload) {
-            include_once self::getClassFile($this->myFile);
-        }
+//        if (!$this->_useAutoload) {
+//            include_once self::getClassFile($this->myFile);
+//        }
 
         $this->myObject   = new $class();
         $this->{$library} = &$this->myObject;

@@ -128,6 +128,8 @@
  * @link      http://www.ar-php.org 
  */
 
+namespace ArUtil;
+
 /**
  * This PHP class do automatic keyphrase extraction to provide a quick 
  * mini-summary for a long Arabic document
