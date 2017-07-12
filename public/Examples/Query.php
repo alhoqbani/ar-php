@@ -1,4 +1,9 @@
 <?php
+
+use ArUtil\Arabic;
+
+require_once __DIR__ . '/../../vendor/autoload.php';
+
 /**
  * Example of Arabic Query Class
  *
@@ -15,16 +20,17 @@ error_reporting(E_ALL);
 $time_start = microtime(true);
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <title>Arabic Query Class</title>
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <link rel="stylesheet" type="text/css" href="style.css" media="all"/>
 </head>
-
 <body>
-
 <div class="Paragraph" dir="rtl">
+    <h1 dir="ltr">Query</h1>
     <h2 dir="ltr">Example Output:</h2>
 
     <table border="0" width="100%" dir="ltr">
@@ -50,8 +56,8 @@ $time_start = microtime(true);
         </blockquote>
     </form>
     
-    <?php if (isset($_GET['keyword'])) {
-        $keyword = $_GET['keyword'] ?>
+    <?php if (isset($_GET['submit'])) {
+        $keyword = isset($_GET['keyword']) ? $_GET['keyword'] : null ?>
         <hr/>
         نتائج البحث عن (Search for) <span style="font-weight: bold;">
             <?php echo $keyword; ?></span>:<br/>
@@ -63,8 +69,8 @@ $time_start = microtime(true);
                 </td>
             </tr>
             <?php
-            include '../../Arabic.php';
-            $Arabic = new I18N_Arabic('Query');
+            /** @var \ArUtil\Query $Arabic */
+            $Arabic = new Arabic('Query');
             echo $Arabic->allForms('فلسطينيون');
             
             $dbuser = 'root';
