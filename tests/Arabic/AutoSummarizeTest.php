@@ -4,7 +4,6 @@ namespace ArUtil\Tests\Arabic;
 
 use ArUtil\Arabic;
 use ArUtil\AutoSummarize;
-//use AutoSummarize;
 use ArUtil\Tests\AbstractTestCase;
 
 class AutoSummarizeTest extends AbstractTestCase

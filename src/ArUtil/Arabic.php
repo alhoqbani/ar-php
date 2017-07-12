@@ -230,7 +230,10 @@ class Arabic
 //            include_once self::getClassFile($this->myFile);
 //        }
 
-        $this->myObject   = new $class();
+        if (!isset($this->myObject)) {
+            $this->myObject = new $class();
+        }
+        
         $this->{$library} = &$this->myObject;
     }
     
