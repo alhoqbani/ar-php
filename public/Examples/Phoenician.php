@@ -1,4 +1,7 @@
 <?php
+use ArUtil\Arabic;
+
+require_once __DIR__ . '/../../vendor/autoload.php';
 /**
  * Example of render Phoenician language transliteration
  *
@@ -15,8 +18,8 @@ error_reporting(E_ALL);
 
 (!empty($_GET['w'])) ? $word = $_GET['w'] : $word='خالد الشمعة';
 
-require '../../Arabic.php';
-$x = new I18N_Arabic('Hiero');
+/** @var \ArUtil\Hiero $x */
+$x = new Arabic('Hiero');
 
 $x->setLanguage('Phoenician');
 $im = $x->str2graph($word, 'rtl', 'ar');
