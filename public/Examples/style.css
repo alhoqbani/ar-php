@@ -4,6 +4,7 @@
 }
 
 .Paragraph {
+    margin-top: 10px;
     text-align: justify;
     font: normal 10pt/1.4em Tahoma;
     background: #fff;
@@ -39,7 +40,7 @@ h2 {
     border-bottom: 2px solid #69c;
     color: #333;
     font: normal 22px/18px serif;
-    margin: 5px 10px;
+    margin: 20px 10px;
 }
 
 .centered {
