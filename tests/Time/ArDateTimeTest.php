@@ -24,4 +24,14 @@ class ArDateTimeTest extends AbstractTimeTest
         $this->assertInstanceOf(Carbon::class, new ArDateTime());
     }
     
+    /** @test */
+    public function it_return_carbon_instance_from_hijri_string_date()
+    {
+        /** @var Carbon $carbon */
+        $carbon = ArUtil::date()->arCreateFromDate(1405, 8, 10);
+        $this->assertInstanceOf(Carbon::class, $carbon);
+        $this->assertEquals('1985-05-01', $carbon->toDateString());
+    }
+    
+    
 }
