@@ -2,8 +2,8 @@
 
 namespace ArUtil\Tests\Arabic;
 
-use ArUtil\Arabic;
-use ArUtil\WordTag;
+use ArUtil\I18N\Arabic;
+use ArUtil\I18N\WordTag;
 use ArUtil\Tests\AbstractTestCase;
 
 class WordTagTest extends AbstractTestCase

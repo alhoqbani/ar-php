@@ -2,8 +2,8 @@
 
 namespace ArUtil\Tests\Arabic;
 
-use ArUtil\Arabic;
-use ArUtil\Hiero;
+use ArUtil\I18N\Arabic;
+use ArUtil\I18N\Hiero;
 use ArUtil\Tests\AbstractTestCase;
 use FilesystemIterator;
 

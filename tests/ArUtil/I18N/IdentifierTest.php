@@ -2,8 +2,8 @@
 
 namespace ArUtil\Tests\Arabic;
 
-use ArUtil\Arabic;
-use ArUtil\Identifier;
+use ArUtil\I18N\Arabic;
+use ArUtil\I18N\Identifier;
 use ArUtil\Tests\AbstractTestCase;
 
 class IdentifierTest extends AbstractTestCase

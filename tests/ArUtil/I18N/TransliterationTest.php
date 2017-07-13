@@ -2,8 +2,8 @@
 
 namespace ArUtil\Tests\Arabic;
 
-use ArUtil\Arabic;
-use ArUtil\Transliteration;
+use ArUtil\I18N\Arabic;
+use ArUtil\I18N\Transliteration;
 use ArUtil\Tests\AbstractTestCase;
 
 class TransliterationTest extends AbstractTestCase

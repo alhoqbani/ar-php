@@ -1,9 +1,9 @@
 <?php
 
-namespace ArUtil\Tests\Arabic;
+namespace ArUtil\Tests\I18N;
 
-use ArUtil\Arabic;
-use ArUtil\AutoSummarize;
+use ArUtil\I18N\Arabic;
+use ArUtil\I18N\AutoSummarize;
 use ArUtil\Tests\AbstractTestCase;
 
 class AutoSummarizeTest extends AbstractTestCase

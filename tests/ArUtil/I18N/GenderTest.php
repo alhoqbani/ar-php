@@ -2,8 +2,8 @@
 
 namespace ArUtil\Tests\Arabic;
 
-use ArUtil\Gender;
-use ArUtil\Arabic;
+use ArUtil\I18N\Gender;
+use ArUtil\I18N\Arabic;
 use ArUtil\Tests\AbstractTestCase;
 
 class GenderTest extends AbstractTestCase

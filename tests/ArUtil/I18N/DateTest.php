@@ -2,8 +2,8 @@
 
 namespace ArUtil\Tests\Arabic;
 
-use ArUtil\Date;
-use ArUtil\Arabic;
+use ArUtil\I18N\Date;
+use ArUtil\I18N\Arabic;
 use ArUtil\Tests\AbstractTestCase;
 
 class DateTest extends AbstractTestCase

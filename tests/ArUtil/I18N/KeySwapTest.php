@@ -2,8 +2,8 @@
 
 namespace ArUtil\Tests\Arabic;
 
-use ArUtil\Arabic;
-use ArUtil\KeySwap;
+use ArUtil\I18N\Arabic;
+use ArUtil\I18N\KeySwap;
 use ArUtil\Tests\AbstractTestCase;
 
 class KeySwapTest extends AbstractTestCase

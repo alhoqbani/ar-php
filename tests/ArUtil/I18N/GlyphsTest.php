@@ -2,8 +2,8 @@
 
 namespace ArUtil\Tests\Arabic;
 
-use ArUtil\Glyphs;
-use ArUtil\Arabic;
+use ArUtil\I18N\Glyphs;
+use ArUtil\I18N\Arabic;
 use ArUtil\Tests\AbstractTestCase;
 
 class GlyphsTest extends AbstractTestCase

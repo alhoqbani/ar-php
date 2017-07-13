@@ -2,8 +2,8 @@
 
 namespace ArUtil\Tests\Arabic;
 
-use ArUtil\Query;
-use ArUtil\Arabic;
+use ArUtil\I18N\Query;
+use ArUtil\I18N\Arabic;
 use ArUtil\Tests\AbstractTestCase;
 
 class QueryTest extends AbstractTestCase

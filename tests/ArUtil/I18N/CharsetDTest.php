@@ -2,8 +2,8 @@
 
 namespace ArUtil\Tests\Arabic;
 
-use ArUtil\Arabic;
-use ArUtil\CharsetD;
+use ArUtil\I18N\Arabic;
+use ArUtil\I18N\CharsetD;
 use ArUtil\Tests\AbstractTestCase;
 
 class CharsetDTest extends AbstractTestCase

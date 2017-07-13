@@ -2,8 +2,8 @@
 
 namespace ArUtil\Tests\Arabic;
 
-use ArUtil\Arabic;
-use ArUtil\Numbers;
+use ArUtil\I18N\Arabic;
+use ArUtil\I18N\Numbers;
 use ArUtil\Tests\AbstractTestCase;
 
 class NumbersTest extends AbstractTestCase
