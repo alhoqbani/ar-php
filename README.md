@@ -22,7 +22,7 @@ or add it in your `composer.json` file:
 ```
 
 
-And use it same as the original library at [ar-php.org](www.ar-php.org)
+And use it same as the original library at [ar-php.org](http://www.ar-php.org)
 
 ```
 <?php 
