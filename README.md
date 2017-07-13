@@ -1,6 +1,6 @@
 <p align="center">
-<a href="https://travis-ci.org/alhoqbani/i18n"><img src="https://travis-ci.org/alhoqbani/i18n.svg?branch=master" alt="Build Status"></a>
-<a href="https://packagist.org/packages/alhoqbani/i18n"><img src="https://poser.pugx.org/alhoqbani/i18n/downloads" alt="Total Downloads"></a>
+<a href="https://travis-ci.org/alhoqbani/ar-php"><img src="https://travis-ci.org/alhoqbani/ar-php.svg?branch=master" alt="Build Status"></a>
+<a href="https://packagist.org/packages/alhoqbani/ar-php"><img src="https://poser.pugx.org/alhoqbani/ar-php/downloads" alt="Total Downloads"></a>
 </p>
 
 
