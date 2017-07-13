@@ -119,7 +119,7 @@ class Arabic
         $this->_useException   = $useException;
         $this->_compatibleMode = $compatibleMode;
 
-        $xml = simplexml_load_file(dirname(__FILE__).'/../data/config.xml');
+        $xml = simplexml_load_file(__DIR__ . '/data/config.xml');
 
         foreach ($xml->xpath("//compatible/case") as $case) {
             $this->_compatible["{$case['old']}"] = (string)$case;
