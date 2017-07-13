@@ -1,8 +1,10 @@
 <?php
 
-namespace ArUtil\Tests;
+namespace ArUtil\Tests\Time;
 
+use Carbon\Carbon;
 use ArUtil\Time\ArDateTime;
+use ArUtil\Tests\AbstractTestCase;
 
 class ArDateTimeTest extends AbstractTestCase
 {
@@ -23,5 +25,11 @@ class ArDateTimeTest extends AbstractTestCase
         $this->assertTrue(
             class_exists(ArDateTime::class),
             'Class ArDateTime does not exist.');
+    }
+    
+    /** @test */
+    public function it_extends_carbon()
+    {
+        $this->assertInstanceOf(Carbon::class, new ArDateTime());
     }
 }

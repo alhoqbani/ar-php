@@ -2,7 +2,9 @@
 
 namespace ArUtil\Time;
 
-class ArDateTime
+use Carbon\Carbon;
+
+class ArDateTime extends Carbon
 {
 
 }
