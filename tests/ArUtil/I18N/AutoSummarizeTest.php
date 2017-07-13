@@ -60,7 +60,7 @@ class AutoSummarizeTest extends AbstractTestCase
     /** @test */
     public function it_extract_keywords_from_a_given_arabic_string()
     {
-        $str = file_get_contents(__DIR__ . '/../data/article.txt');
+        $str = file_get_contents(__DIR__ . '/data/article.txt');
         $extracted_keywords = $this->autoSummarize->getMetaKeywords($str, 3);
         $expected_keywords = "اطفال، اكثر، ضرار";
         
