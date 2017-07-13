@@ -2,10 +2,9 @@
 
 namespace ArUtil\Tests;
 
-use ArUtil\ArUtil;
 use ArUtil\Time\ArDateTime;
 
-class ArUtilTest extends AbstractTestCase
+class ArDateTimeTest extends AbstractTestCase
 {
     
     protected function setUp()
@@ -22,14 +21,7 @@ class ArUtilTest extends AbstractTestCase
     public function it_exists()
     {
         $this->assertTrue(
-            class_exists(ArUtil::class),
-            'Class ArUtil does not exist.');
+            class_exists(ArDateTime::class),
+            'Class ArDateTime does not exist.');
     }
-    
-    /** @test */
-    public function it_return_date_time_class()
-    {
-        $this->assertInstanceOf(ArDateTime::class, ArUtil::date());
-    }
-    
 }
