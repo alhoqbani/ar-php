@@ -259,7 +259,7 @@ class Mktime
     {
         if ($y >= 1420 && $y < 1460) {
             $calc = $this->mktime(0, 0, 0, $m, 1, $y);
-            $file = __DIR__ . '/../data/um_alqoura.txt';
+            $file = __DIR__ . '/data/um_alqoura.txt';
 
             $content = file_get_contents($file);
             $offset  = (($y-1420) * 12 + $m) * 11;

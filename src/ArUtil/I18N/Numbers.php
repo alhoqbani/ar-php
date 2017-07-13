@@ -133,7 +133,7 @@ class Numbers
      */         
     public function __construct()
     {
-        $xml = simplexml_load_file(__DIR__ . '/../data/ArNumbers.xml');
+        $xml = simplexml_load_file(__DIR__ . '/data/ArNumbers.xml');
 
         foreach ($xml->xpath("//individual/number[@gender='male']") as $num) {
             if (isset($num['grammar'])) {
@@ -192,7 +192,7 @@ class Numbers
             $this->_spell[$str] = (integer)$num['value'];
         } 
         
-        $xml = simplexml_load_file(__DIR__ . '/../data/arab_countries.xml');
+        $xml = simplexml_load_file(__DIR__ . '/data/arab_countries.xml');
         
         foreach ($xml->xpath("//currency") as $info) {
             $money_ar = $info->money->arabic;

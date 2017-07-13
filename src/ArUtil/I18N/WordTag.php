@@ -137,7 +137,7 @@ class WordTag
      */         
     public function __construct()
     {
-        $words = file(__DIR__ . '/../data/ar-stopwords.txt');
+        $words = file(__DIR__ . '/data/ar-stopwords.txt');
         $words = array_map('trim', $words);
         
         $this->_commonWords = $words;

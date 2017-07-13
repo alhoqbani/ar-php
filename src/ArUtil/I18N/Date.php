@@ -177,7 +177,7 @@ class Date
      */         
     public function __construct()
     {
-        $this->_xml = simplexml_load_file(__DIR__ . '/../data/ArDate.xml');
+        $this->_xml = simplexml_load_file(__DIR__ . '/data/ArDate.xml');
     }
     
     /**
@@ -537,7 +537,7 @@ class Date
     {
         $calc = $time - $this->date('j', $time) * 3600 * 24;
         
-        $file = __DIR__ . '/../data/um_alqoura.txt';
+        $file = __DIR__ . '/data/um_alqoura.txt';
 
         $content = file_get_contents($file);
 

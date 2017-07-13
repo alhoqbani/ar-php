@@ -197,7 +197,7 @@ class Query
      */         
     public function __construct()
     {
-        $xml = simplexml_load_file(__DIR__ . '/../data/ArQuery.xml');
+        $xml = simplexml_load_file(__DIR__ . '/data/ArQuery.xml');
          
         foreach ($xml->xpath("//preg_replace[@function='__construct']/pair")
                  as $pair) { 

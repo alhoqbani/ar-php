@@ -163,8 +163,8 @@ class AutoSummarize
     public function __construct()
     {
         // This common words used in cleanCommon method
-        $words    = file(__DIR__ . '/../data/ar-stopwords.txt');
-        $en_words = file(__DIR__ . '/../data/en-stopwords.txt');
+        $words    = file(__DIR__ . '/data/ar-stopwords.txt');
+        $en_words = file(__DIR__ . '/data/en-stopwords.txt');
 
         $words = array_merge($words, $en_words);
         $words = array_map('trim', $words);
@@ -172,7 +172,7 @@ class AutoSummarize
         $this->_commonWords = $words;
         
         // This important words used in rankSentences method
-        $words = file(__DIR__ . '/../data/important-words.txt');
+        $words = file(__DIR__ . '/data/important-words.txt');
         $words = array_map('trim', $words);
 
         $this->_importantWords = $words;
@@ -185,7 +185,7 @@ class AutoSummarize
      */         
     public function loadExtra()
     {
-        $extra_words = file(__DIR__ . '/../data/ar-extra-stopwords.txt');
+        $extra_words = file(__DIR__ . '/data/ar-extra-stopwords.txt');
         $extra_words = array_map('trim', $extra_words);
         $this->_commonWords = array_merge($this->_commonWords, $extra_words);
     }

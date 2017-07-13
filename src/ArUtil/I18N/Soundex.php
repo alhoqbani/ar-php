@@ -126,7 +126,7 @@ class Soundex
      */         
     public function __construct()
     {
-        $xml = simplexml_load_file(__DIR__ . '/../data/ArSoundex.xml');
+        $xml = simplexml_load_file(__DIR__ . '/data/ArSoundex.xml');
         
         foreach ($xml->asoundexCode->item as $item) {
             $index = $item['id'];

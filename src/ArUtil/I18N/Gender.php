@@ -129,7 +129,7 @@ class Gender
             $female = true;
         } else {
             // List of the most common irregular Arabic female names
-            $names = file(__DIR__ . '/../data/female.txt');
+            $names = file(__DIR__ . '/data/female.txt');
             $names = array_map('trim', $names);
 
             if (array_search($str, $names) > 0) {

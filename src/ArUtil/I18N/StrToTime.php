@@ -103,7 +103,7 @@ class StrToTime
      */         
     public function __construct()
     {
-        $xml = simplexml_load_file(__DIR__ . '/../data/ArStrToTime.xml');
+        $xml = simplexml_load_file(__DIR__ . '/data/ArStrToTime.xml');
     
         foreach ($xml->xpath("//str_replace[@function='strtotime']/pair") as $pair) {
             array_push(self::$_strtotimeSearch, (string)$pair->search);

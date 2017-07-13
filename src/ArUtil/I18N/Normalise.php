@@ -109,7 +109,7 @@ class Normalise
       */
     public function __construct() 
     {
-        include __DIR__ . '/../data/charset/ArUnicode.constants.php';
+        include __DIR__ . '/data/charset/ArUnicode.constants.php';
 
         $this->_unshapeMap    = $ligature_map;
         $this->_unshapeKeys   = array_keys($this->_unshapeMap);

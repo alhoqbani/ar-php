@@ -129,7 +129,7 @@ class Transliteration
      */         
     public function __construct()
     {
-        $xml = simplexml_load_file(__DIR__ . '/../data/Transliteration.xml');
+        $xml = simplexml_load_file(__DIR__ . '/data/Transliteration.xml');
 
         foreach ($xml->xpath("//preg_replace[@function='ar2en']/pair") as $pair) {
             array_push(self::$_ar2enPregSearch, (string)$pair->search);

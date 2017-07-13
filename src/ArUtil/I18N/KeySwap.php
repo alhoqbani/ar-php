@@ -112,14 +112,14 @@ class KeySwap
      */         
     public function __construct()
     {
-        $xml = simplexml_load_file(__DIR__ . '/../data/charset/arabizi.xml');
+        $xml = simplexml_load_file(__DIR__ . '/data/charset/arabizi.xml');
         
         foreach ($xml->transliteration->item as $item) {
             $index = $item['id'];
             $this->_transliteration["$index"] = (string)$item;
         } 
 
-        $xml = simplexml_load_file(__DIR__ . '/../data/ArKeySwap.xml');
+        $xml = simplexml_load_file(__DIR__ . '/data/ArKeySwap.xml');
         
         foreach ($xml->arabic->key as $key) {
             $index = (int)$key['id'];
@@ -136,8 +136,8 @@ class KeySwap
             $this->_frKeyboard[$index] = (string)$key;
         } 
 
-        $this->_arLogodd = file(__DIR__ . '/../data/ar-logodd.php');
-        $this->_enLogodd = file(__DIR__ . '/../data/en-logodd.php');
+        $this->_arLogodd = file(__DIR__ . '/data/ar-logodd.php');
+        $this->_enLogodd = file(__DIR__ . '/data/en-logodd.php');
     }
     
     /**
