@@ -1,6 +1,6 @@
 <p align="center">
 <a href="https://travis-ci.org/alhoqbani/ar-php"><img src="https://travis-ci.org/alhoqbani/ar-php.svg?branch=master" alt="Build Status"></a>
-<a href="https://packagist.org/packages/alhoqbani/ar-php"><img src="https://poser.pugx.org/alhoqbani/ar-php/downloads" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/arutil/ar-php"><img src="https://poser.pugx.org/arutil/ar-php/downloads" alt="Total Downloads"></a>
 </p>
 
 
@@ -17,12 +17,12 @@ composer require "arutil/ar-php:0.0.*"
 or add it in your `composer.json` file:
 ```
     "require": {
-        "arutil/ar-php": "0.0.*"
+        "z/ar-php": "0.0.*"
     }
 ```
 
 
-And use it same as the original library at [ar-php.org](www.ar-php.org)
+And use it same as the original library at [ar-php.org](http://www.ar-php.org)
 
 ```
 <?php 
