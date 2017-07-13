@@ -30,13 +30,13 @@ class AutoSummarizeTest extends AbstractTestCase
     public function it_can_read_required_txt_files()
     {
         $this->assertFileIsReadable(
-            __DIR__ . '/../../src/data/en-stopwords.txt',
+            __DIR__ . '/../../../src/ArUtil/I18N/data/en-stopwords.txt',
             "Required file ar-stopwords.txt is missing");
         $this->assertFileIsReadable(
-            __DIR__ . '/../../src/data/en-stopwords.txt',
+            __DIR__ . '/../../../src/ArUtil/I18N/data/en-stopwords.txt',
             "Required file en-stopwords.txt is missing");
         $this->assertFileIsReadable(
-            __DIR__ . '/../../src/data/important-words.txt',
+            __DIR__ . '/../../../src/ArUtil/I18N/data/important-words.txt',
             "Required file important is missing");
     }
     

@@ -58,12 +58,12 @@ class HieroTest extends AbstractTestCase
     /** @test */
     public function it_has_the_images_folder_available()
     {
-        $hieroPath = __DIR__ . '/../../src/images/hiero';
+        $hieroPath = __DIR__ . '/../../../src/ArUtil/I18N/images/hiero';
         $this->assertIsReadable($hieroPath);
         $numberOfFiles = iterator_count(new FilesystemIterator($hieroPath, FilesystemIterator::SKIP_DOTS));
         $this->assertEquals(58, $numberOfFiles);
         
-        $phoenicianPath = __DIR__ . '/../../src/images/phoenician';
+        $phoenicianPath = __DIR__ . '/../../../src/ArUtil/I18N/images/phoenician';
         $this->assertIsReadable($phoenicianPath);
         $numberOfFiles = iterator_count(new FilesystemIterator($phoenicianPath, FilesystemIterator::SKIP_DOTS));
         $this->assertEquals(28, $numberOfFiles);
