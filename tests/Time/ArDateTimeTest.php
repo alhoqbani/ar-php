@@ -24,27 +24,4 @@ class ArDateTimeTest extends AbstractTimeTest
         $this->assertInstanceOf(Carbon::class, new ArDateTime());
     }
     
-    /** @test */
-    public function it_return_today_hijri_date()
-    {
-        list($arYear, $arMonth, $arDay) = (new Date())->hjConvert(date('Y'), date('m'), date('d'));
-        $arD = ArUtil::date();
-        $this->assertEquals($arDay, $arD->arDay);
-    }
-    
-    /** @test */
-    public function it_return_today_hijri_month()
-    {
-        list($arYear, $arMonth, $arDay) = (new Date())->hjConvert(date('Y'), date('m'), date('d'));
-        $arD = ArUtil::date();
-        $this->assertEquals($arMonth, $arD->arMonth);
-    }
-    
-    /** @test */
-    public function it_return_today_hijri_year()
-    {
-        list($arYear, $arMonth, $arDay) = (new Date())->hjConvert(date('Y'), date('m'), date('d'));
-        $arD = ArUtil::date();
-        $this->assertEquals($arYear, $arD->arYear);
-    }
 }
