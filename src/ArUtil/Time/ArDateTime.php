@@ -8,9 +8,9 @@ use Carbon\Carbon;
 class ArDateTime extends Carbon
 {
     
-    public static function arCreateFromDate($year_h = null, $month_h = null, $day_h = null)
+    public static function arCreateFromDate($year_h = null, $month_h = null, $day_h = null, $tz = null)
     {
-        $instance = new self();
+        $instance = self::now($tz);
         $timestamp = $instance->hijriToTimestamp($year_h, $month_h, $day_h);
         $instance->setTimestamp($timestamp);
         
