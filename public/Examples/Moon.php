@@ -19,7 +19,7 @@ if (isset($_GET['day'])) {
     $day = 24;
 }
 
-$all  = ImageCreateFromJPEG('../images/moon.jpg');
+$all  = ImageCreateFromJPEG('images/moon.jpg');
 $moon = ImageCreateTrueColor(50, 50);
 
 if ($day > 29 || $day < 1) {

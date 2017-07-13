@@ -2,11 +2,27 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-$Arabic = new I18N_Arabic('Transliteration');
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="Examples/style.css">
+    <title>ArUtil - Ar-php</title>
+</head>
+<body>
+<div class="Paragraph">
+    <h1 dir="ltr">Ar-php Example Usage</h1>
+    <h2 dir="ltr">Examples and Documentation:</h2>
+    <hr>
 
+    <ul>
+        <li><a href="Examples/index.php">Examples</a></li>
+        <li><a href="Docs/index.html">Docs</a></li>
+    </ul>
 
-echo $text = $Arabic->enNum('323423' . ' Text in between ' . '٥٥٥٥' . 'ورقم ٢٣٤,٣٤ مع نص عربي');
-dump($text);
-
-echo $text = $Arabic->arNum(345 . ' Text in between ' . 34543 . 'مع نص١٢٣٢١ عربي');
-dump($text);
+</div>
+</body>
+</html>
