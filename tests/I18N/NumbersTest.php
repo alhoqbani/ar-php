@@ -62,7 +62,7 @@ class NumbersTest extends AbstractTestCase
     public function it_can_read_required_files()
     {
         $this->assertFileIsReadable(
-            __DIR__ . '/../../../src/ArUtil/I18N/data/ArNumbers.xml',
+            LIBRARY_ROOT . '/src/ArUtil/I18N/data/ArNumbers.xml',
             "Required file ArNumbers.xml is missing");
     }
     
