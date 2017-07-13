@@ -113,7 +113,7 @@
  * @link      http://www.ar-php.org 
  */
 
-namespace ArUtil;
+namespace ArUtil\I18N;
 
 /**
  * This PHP class compress Arabic string using Huffman-like coding

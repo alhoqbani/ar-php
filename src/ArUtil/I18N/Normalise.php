@@ -73,7 +73,7 @@
  * @link      http://www.ar-php.org 
  */
 
-namespace ArUtil;
+namespace ArUtil\I18N;
 
 /**
  *  This class provides various functions to manipulate arabic text and

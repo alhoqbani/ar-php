@@ -78,7 +78,7 @@
  * @link      http://www.ar-php.org 
  */
 
-namespace ArUtil;
+namespace ArUtil\I18N;
 
 /**
  * Translate English word into Hieroglyphics

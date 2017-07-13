@@ -75,7 +75,7 @@
  * @link      http://www.ar-php.org 
  */
 
-namespace ArUtil;
+namespace ArUtil\I18N;
 
 /**
  * This PHP class parse about any Arabic textual datetime description into a 

@@ -155,7 +155,7 @@
  * @link      http://www.ar-php.org 
  */
 
-namespace ArUtil;
+namespace ArUtil\I18N;
 
 /**
  * This PHP class calculate the time of Muslim prayer according to the geographic 

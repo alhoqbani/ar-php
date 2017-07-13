@@ -171,7 +171,7 @@
  * @link      http://www.ar-php.org 
  */
 
-namespace ArUtil;
+namespace ArUtil\I18N;
 
 /**
  * This PHP class build WHERE condition for SQL statement using MySQL REGEXP and

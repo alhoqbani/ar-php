@@ -57,7 +57,7 @@
  * @link      http://www.ar-php.org
  */
 
-namespace ArUtil;
+namespace ArUtil\I18N;
 
 use ArUtil\Exceptions\ArabicException;
 

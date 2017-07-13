@@ -72,7 +72,7 @@
  * @link      http://www.ar-php.org
  */
 
-namespace ArUtil;
+namespace ArUtil\I18N;
 
 /**
  * This PHP class attempts to guess the gender of Arabic names
