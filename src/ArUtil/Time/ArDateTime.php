@@ -18,16 +18,20 @@ class ArDateTime extends Carbon
     public static function arCreateFromDate($arYear = null, $arMonth = null, $arDay = null, $tz = null)
     {
         $instance = self::now($tz);
-        $timestamp = $instance->hijriToTimestamp($arYear, $arMonth, $arDay);
+        $timestamp = $instance->hijriToTimestamp(
+            isset($arYear) ? $arYear : $instance->arYear,
+            isset($arMonth) ? $arMonth : $instance->arMonth,
+            isset($arDay) ? $arDay : $instance->arDay
+        );
         $instance->setTimestamp($timestamp);
         
         return $instance;
     }
-
+    
     public function __construct($time = null, $tz = null)
     {
         $this->setTodayHijriDate();
-
+        
         parent::__construct($time, $tz);
     }
     
@@ -58,16 +62,16 @@ class ArDateTime extends Carbon
     
     public function __get($name)
     {
-        switch ($name) {
-            case $name === 'arYear':
-                return $this->arYear;
-            case $name === 'arMonth':
-                return $this->arMonth;
-            case $name === 'arDay':
-                return $this->arDay;
-            default:
-                break;
-        }
+//        switch ($name) {
+//            case $name === 'arYear':
+//                return $this->arYear;
+//            case $name === 'arMonth':
+//                return $this->arMonth;
+//            case $name === 'arDay':
+//                return $this->arDay;
+//            default:
+//                break;
+//        }
         return parent::__get($name);
     }
     
