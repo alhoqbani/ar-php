@@ -436,7 +436,7 @@ class Date
      * @return array Hijri date [int Year, int Month, int Day](Islamic calendar)
      * @author Khaled Al-Sham'aa <khaled@ar-php.org>
      */
-    protected function hjConvert($Y, $M, $D)
+    public function hjConvert($Y, $M, $D)
     {
         if (function_exists('GregorianToJD')) {
             $jd = GregorianToJD($M, $D, $Y);
