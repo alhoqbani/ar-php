@@ -35,7 +35,7 @@ require_once __DIR__ . '/../../vendor/autoload.php';
     error_reporting(E_ALL);
     $time_start = microtime(true);
 
-    /** @var \ArUtil\Stemmer $Arabic */
+    /** @var \ArUtil\I18N\Stemmer $Arabic */
     $Arabic = new Arabic('Stemmer');
     
     $examples = [];

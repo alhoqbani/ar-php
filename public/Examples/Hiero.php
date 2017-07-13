@@ -20,7 +20,7 @@ error_reporting(E_ALL);
 
 $word = isset($_GET['w']) ? $_GET['w'] : 'Khaled Shamaa';
 
-/** @var \ArUtil\Hiero $x */
+/** @var \ArUtil\I18N\Hiero $x */
 $x = new Arabic('Hiero');
 
 $im = $x->str2graph($word);

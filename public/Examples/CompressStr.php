@@ -35,7 +35,7 @@ require_once __DIR__ . '/../../vendor/autoload.php';
     error_reporting(E_ALL);
     $time_start = microtime(true);
     
-    /** @var \ArUtil\CompressStr $Arabic */
+    /** @var \ArUtil\I18N\CompressStr $Arabic */
     $Arabic = new Arabic('CompressStr');
     
     $Arabic->setInputCharset('windows-1256');

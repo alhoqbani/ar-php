@@ -41,7 +41,7 @@ require_once __DIR__ . '/../../vendor/autoload.php';
     echo date('l dS F Y', $time);
     echo '<br /><br />';
 
-    /** @var \ArUtil\StrToTime $Arabic */
+    /** @var \ArUtil\I18N\StrToTime $Arabic */
     $Arabic = new Arabic('StrToTime');
     
     $str = 'الخميس القادم';

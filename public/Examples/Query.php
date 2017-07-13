@@ -92,7 +92,7 @@ $time_start = microtime(true);
                 </td>
             </tr>
             <?php
-            /** @var \ArUtil\Query $Arabic */
+            /** @var \ArUtil\I18N\Query $Arabic */
             $Arabic = new Arabic('Query');
             echo $Arabic->allForms('فلسطينيون');
             

@@ -42,7 +42,7 @@ imagefill($im, 0, 0, $white);
 imagettftext($im, 20, 0, 10, 50, $blue, $font, 'UTF-8:');
 imagettftext($im, 20, 0, 250, 50, $black, $font, $text);
 
-/** @var \ArUtil\Glyphs $Arabic */
+/** @var \ArUtil\I18N\Glyphs $Arabic */
 $Arabic = new Arabic('Glyphs');
 
 $text = 'بسم الله الرحمن الرحيم';

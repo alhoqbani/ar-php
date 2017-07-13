@@ -42,7 +42,7 @@ require_once __DIR__ . '/../../vendor/autoload.php';
     echo date('l dS F Y h:i:s A', $time);
     echo '<br /><br />';
 
-    /** @var \ArUtil\Date $Arabic */
+    /** @var \ArUtil\I18N\Date $Arabic */
     $Arabic = new Arabic('Date');
     
     $correction = $Arabic->dateCorrection($time);

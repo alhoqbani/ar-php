@@ -18,7 +18,7 @@ error_reporting(E_ALL);
 
 (!empty($_GET['w'])) ? $word = $_GET['w'] : $word='خالد الشمعة';
 
-/** @var \ArUtil\Hiero $x */
+/** @var \ArUtil\I18N\Hiero $x */
 $x = new Arabic('Hiero');
 
 $x->setLanguage('Phoenician');

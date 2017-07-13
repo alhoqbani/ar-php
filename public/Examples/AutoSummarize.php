@@ -35,7 +35,7 @@ use ArUtil\I18N\Arabic;
     error_reporting(E_ALL);
     $time_start = microtime(true);
     
-    /** @var \ArUtil\AutoSummarize $Arabic */
+    /** @var \ArUtil\I18N\AutoSummarize $Arabic */
     $Arabic = new Arabic('AutoSummarize');
     
     $rate = 25;

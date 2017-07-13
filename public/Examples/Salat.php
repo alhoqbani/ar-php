@@ -37,7 +37,7 @@ require_once __DIR__ . '/../../vendor/autoload.php';
     
     date_default_timezone_set('UTC');
     
-    /** @var \ArUtil\Salat $Arabic */
+    /** @var \ArUtil\I18N\Salat $Arabic */
     $Arabic = new Arabic('Salat');
     
     // Latitude, Longitude, Zone, and Elevation

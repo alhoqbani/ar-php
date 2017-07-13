@@ -66,7 +66,7 @@ require_once __DIR__ . '/../../vendor/autoload.php';
     error_reporting(E_ALL);
     $time_start = microtime(true);
 
-    /** @var \ArUtil\WordTag $Arabic */
+    /** @var \ArUtil\I18N\WordTag $Arabic */
     $Arabic = new Arabic('WordTag');
     
     $str = 'وحسب إحصائية لوزارة الدفاع الأميركية ما زال نحو 375 معتقلا يقبعون في

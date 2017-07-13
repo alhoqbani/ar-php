@@ -38,7 +38,7 @@ require_once __DIR__ . '/../../vendor/autoload.php';
         
         if (isset($_POST['submit'])) {
     
-            /** @var \ArUtil\Transliteration $Arabic */
+            /** @var \ArUtil\I18N\Transliteration $Arabic */
             $Arabic = new Arabic('Transliteration');
             
             // Continue only if the file was uploaded via HTTP POST

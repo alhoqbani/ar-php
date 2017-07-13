@@ -36,7 +36,7 @@ require_once __DIR__ . '/../../vendor/autoload.php';
     error_reporting(E_ALL);
     $time_start = microtime(true);
     
-    /** @var \ArUtil\KeySwap $Arabic */
+    /** @var \ArUtil\I18N\KeySwap $Arabic */
     $Arabic = new Arabic('KeySwap');
     
     $str = "Hpf lk hgkhs hglj'vtdkK Hpf hg`dk dldg,k f;gdjil Ygn
