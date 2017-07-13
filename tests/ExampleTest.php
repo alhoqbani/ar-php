@@ -2,7 +2,7 @@
 
 namespace ArUtil\Tests;
 
-use ArUtil\Arabic;
+use ArUtil\I18N\Arabic;
 
 class ExampleTest extends AbstractTestCase
 {

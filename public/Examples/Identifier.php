@@ -1,7 +1,7 @@
 ﻿<?php
 
-use ArUtil\Arabic;
-use ArUtil\Identifier;
+use ArUtil\I18N\Arabic;
+use ArUtil\I18N\Identifier;
 
 require_once __DIR__ . '/../../vendor/autoload.php';
 
