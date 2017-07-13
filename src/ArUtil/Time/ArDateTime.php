@@ -8,18 +8,19 @@ use Carbon\Carbon;
 class ArDateTime extends Carbon
 {
     
-    public static function arCreateFromDate($year_h = null, $month_h = null, $day_h = null, $tz = null)
+    public static function arCreateFromDate($arYear = null, $arMonth = null, $arDay = null, $tz = null)
     {
         $instance = self::now($tz);
-        $timestamp = $instance->hijriToTimestamp($year_h, $month_h, $day_h);
+        $timestamp = $instance->hijriToTimestamp($arYear, $arMonth, $arDay);
         $instance->setTimestamp($timestamp);
         
         return $instance;
     }
     
-    protected function hijriToTimestamp($year_h, $month, $day_h)
+    protected function hijriToTimestamp($arYear, $arMonth, $arDay)
     {
-        return (new Mktime())->mktime($this->hour, $this->minute, $this->second, $month, $day_h, $year_h);
+        return (new Mktime())->mktime(date('H'), date('i'), date('s'), $arMonth, $arDay, $arYear,
+            $correction = 0);
     }
     
 }
