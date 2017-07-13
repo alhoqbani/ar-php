@@ -4,9 +4,8 @@ namespace ArUtil\Tests\Time;
 
 use Carbon\Carbon;
 use ArUtil\Time\ArDateTime;
-use ArUtil\Tests\AbstractTestCase;
 
-class ArDateTimeTest extends AbstractTestCase
+class ArDateTimeTest extends TimeAbstractTest
 {
     
     protected function setUp()
