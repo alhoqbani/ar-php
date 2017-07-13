@@ -15,15 +15,22 @@ use InvalidArgumentException;
 class ArDateTime extends Carbon
 {
     
+    /**
+     * @var boolean The instance date is modified.
+     */
+    private $isDirty;
+    
     public static function arCreateFromDate($arYear = null, $arMonth = null, $arDay = null, $tz = null)
     {
         $instance = self::now($tz);
-        $timestamp = $instance->hijriToTimestamp(
-            isset($arYear) ? $arYear : $instance->arYear,
-            isset($arMonth) ? $arMonth : $instance->arMonth,
-            isset($arDay) ? $arDay : $instance->arDay
-        );
+        
+        $arYear = isset($arYear) ? $arYear : $instance->arYear;
+        $arMonth = isset($arMonth) ? $arMonth : $instance->arMonth;
+        $arDay = isset($arDay) ? $arDay : $instance->arDay;
+        
+        $timestamp = $instance->hijriToTimestamp($arYear, $arMonth, $arDay);
         $instance->setTimestamp($timestamp);
+        $instance->updateHijriDate($arYear, $arMonth, $arDay);
         
         return $instance;
     }
@@ -91,6 +98,13 @@ class ArDateTime extends Carbon
             }
         }
         
+    }
+    
+    private function updateHijriDate($arYear, $arMonth, $arDay)
+    {
+        $this->arYear = $arYear;
+        $this->arMonth = $arMonth;
+        $this->arDay = $arDay;
     }
     
     
