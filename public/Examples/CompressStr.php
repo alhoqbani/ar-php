@@ -1,5 +1,5 @@
-<?php
-use ArUtil\Arabic;
+﻿<?php
+use ArUtil\I18N\Arabic;
 
 require_once __DIR__ . '/../../vendor/autoload.php';
 
