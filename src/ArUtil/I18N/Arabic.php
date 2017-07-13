@@ -221,7 +221,7 @@ class Arabic
         ) {
             $library = $this->_compatible[$library];
         }
-        $library = "\\ArUtil\\$library";
+        $library = "\\ArUtil\\I18N\\$library";
         $this->myFile  = $library;
         $this->myClass = $library;
         $class         = $library;
