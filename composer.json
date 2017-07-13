@@ -25,7 +25,8 @@
     "autoload":{
       "psr-4": {
         "ArUtil\\": "src/ArUtil"
-      }
+      },
+      "files": ["src/bootstrap.php"]
     },
     "autoload-dev":{
       "psr-4": {
