@@ -6,7 +6,7 @@ use ArUtil\I18N\Date;
 use ArUtil\Tests\AbstractTestCase;
 use Carbon\Carbon;
 
-abstract class TimeAbstractTest extends AbstractTestCase
+abstract class AbstractTimeTest extends AbstractTestCase
 {
     
     /**

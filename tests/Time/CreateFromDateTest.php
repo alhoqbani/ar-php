@@ -5,7 +5,7 @@ namespace ArUtil\Tests\Time;
 use ArUtil\ArUtil;
 use Carbon\Carbon;
 
-class CreateFromDateTest extends TimeAbstractTest
+class CreateFromDateTest extends AbstractTimeTest
 {
     
     /** @test */

@@ -7,7 +7,7 @@ use ArUtil\I18N\Date;
 use ArUtil\Time\ArDateTime;
 use Carbon\Carbon;
 
-class ArDateTimeTest extends TimeAbstractTest
+class ArDateTimeTest extends AbstractTimeTest
 {
     
     /** @test */
