@@ -37,7 +37,7 @@ require_once __DIR__ . '/../../vendor/autoload.php';
     
     date_default_timezone_set('UTC');
 
-    /** @var \ArUtil\Mktime $Arabic */
+    /** @var \ArUtil\I18N\Mktime $Arabic */
     $Arabic = new Arabic('Mktime');
     
     $correction = $Arabic->mktimeCorrection(9, 1429);

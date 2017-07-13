@@ -36,7 +36,7 @@ require_once __DIR__ . '/../../vendor/autoload.php';
     error_reporting(E_ALL);
     $time_start = microtime(true);
 
-    /** @var \ArUtil\Numbers $Arabic */
+    /** @var \ArUtil\I18N\Numbers $Arabic */
     $Arabic = new Arabic('Numbers');
     
     $Arabic->setFeminine(1);

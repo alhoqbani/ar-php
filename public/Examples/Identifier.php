@@ -94,7 +94,7 @@ just as well with respect and communication.  The Internet Internationalization
 </dl>
 END;
     
-    /** @var \ArUtil\Identifier $Arabic */
+    /** @var \ArUtil\I18N\Identifier $Arabic */
     $Arabic = new Arabic('Identifier');
     
     $pos = Identifier::identify($text);

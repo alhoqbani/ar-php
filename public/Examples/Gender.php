@@ -34,7 +34,7 @@ require_once __DIR__ . '/../../vendor/autoload.php';
     error_reporting(E_ALL);
     $time_start = microtime(true);
     
-    /** @var \ArUtil\Gender $Arabic */
+    /** @var \ArUtil\I18N\Gender $Arabic */
     $Arabic = new Arabic('Gender');
     
     $names = [

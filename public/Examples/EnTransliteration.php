@@ -35,7 +35,7 @@ require_once __DIR__ . '/../../vendor/autoload.php';
     error_reporting(E_ALL);
     $time_start = microtime(true);
 
-    /** @var \ArUtil\Transliteration $Arabic */
+    /** @var \ArUtil\I18N\Transliteration $Arabic */
     $Arabic = new Arabic('Transliteration');
     
     $ar_terms = [

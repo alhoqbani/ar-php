@@ -36,7 +36,7 @@ require_once __DIR__ . '/../../vendor/autoload.php';
     $time_start = microtime(true);
     
     $text = '��� ���� ������ ������';
-    /** @var \ArUtil\CharsetD $Arabic */
+    /** @var \ArUtil\I18N\CharsetD $Arabic */
     $Arabic = new Arabic('CharsetD');
     
     $charset = $Arabic->getCharset($text);
