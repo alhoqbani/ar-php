@@ -20,6 +20,38 @@ class ArDateTime extends Carbon
      */
     private $isDirty;
     
+    public static function arCreate(
+        $arYear = null,
+        $arMonth = null,
+        $arDay = null,
+        $hour = null,
+        $minute = null,
+        $second = null,
+        $tz = null,
+        $correction = null
+    ) {
+        $instance = self::createFromTime($hour, $minute, $second, $tz);
+        $arYear = isset($arYear) ? $arYear : $instance->arYear;
+        $arMonth = isset($arMonth) ? $arMonth : $instance->arMonth;
+        $arDay = isset($arDay) ? $arDay : $instance->arDay;
+    
+        if ($hour === null) {
+            $hour = date('G');
+            $minute = $minute === null ? date('i') : $minute;
+            $second = $second === null ? date('s') : $second;
+        } else {
+            $minute = $minute === null ? 0 : $minute;
+            $second = $second === null ? 0 : $second;
+        }
+        $timestamp = $instance->hijriToTimestamp($arYear, $arMonth, $arDay, $hour, $minute, $second, $correction);
+        $instance->setDate(date('Y', $timestamp), date('m', $timestamp), date('d', $timestamp));
+//        dd($hour, $instance->hour, date('G', $timestamp));
+//        dd($instance->toDateString());
+//        dd(date('G', $timestamp), date('i', $timestamp), date('s', $timestamp));
+        $instance->updateHijriDate($arYear, $arMonth, $arDay);
+        return $instance;
+    }
+    
     public static function arCreateFromDate($arYear = null, $arMonth = null, $arDay = null, $tz = null)
     {
         $instance = self::now($tz);
@@ -42,10 +74,16 @@ class ArDateTime extends Carbon
         parent::__construct($time, $tz);
     }
     
-    protected function hijriToTimestamp($arYear, $arMonth, $arDay)
-    {
-        return (new Mktime())->mktime(date('H'), date('i'), date('s'), $arMonth, $arDay, $arYear,
-            $correction = 0);
+    protected function hijriToTimestamp(
+        $arYear, $arMonth, $arDay, $hour = null, $minute = null, $second = null, $correction = 0
+    ) {
+        
+        $hour = isset($hour) ? $hour : date('H');
+        $minute = isset($minute) ? $minute : date('i');
+        $second = isset($second) ? $second : date('s');
+        
+        return (new Mktime())->mktime($hour, $minute, $second, $arMonth, $arDay, $arYear,
+            $correction);
     }
     
     private function convertTodayToHijri()

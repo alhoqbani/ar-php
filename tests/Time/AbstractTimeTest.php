@@ -52,4 +52,36 @@ abstract class AbstractTimeTest extends AbstractTestCase
             'arDay'   => $arDay,
         ];
     }
+    
+    protected function assertCarbon(Carbon $d, $year, $month, $day, $hour = null, $minute = null, $second = null)
+    {
+        $actual = array(
+            'years' => $year,
+            'months' => $month,
+            'day' => $day,
+        );
+        
+        $expected = array(
+            'years' => $d->year,
+            'months' => $d->month,
+            'day' => $d->day,
+        );
+        
+        if ($hour !== null) {
+            $expected['hours'] = $d->hour;
+            $actual['hours'] = $hour;
+        }
+        
+        if ($minute !== null) {
+            $expected['minutes'] = $d->minute;
+            $actual['minutes'] = $minute;
+        }
+        
+        if ($second !== null) {
+            $expected['seconds'] = $d->second;
+            $actual['seconds'] = $second;
+        }
+        
+        $this->assertSame($expected, $actual);
+    }
 }
