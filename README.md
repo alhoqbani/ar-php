@@ -12,28 +12,22 @@ composer require arutil/ar-php
 ```
 
 ### ArDateTime
-To use the ArDateTime: check the documentation. 
+A wrapper to the hijri methods in ar-php library. 
+
+To use the ArDateTime: [check the documentation](https://github.com/alhoqbani/ar-php/blob/master/docs/ArDateTime.md). 
 
 
-### Original library from http://ar-php.org/
+
+
+## Ar-php
+
+The Original library from http://ar-php.org/
 
 This is the great library of Khaled Al-Shamaa with small bug fixes. 
 
-Install it using composer:
+You can use the original ar-php same as the docs at [ar-php.org](http://www.ar-php.org)
 
-```
-composer require "arutil/ar-php:0.0.*"
-```
-or add it in your `composer.json` file:
-```
-    "require": {
-        "arutil/ar-php": "0.0.*"
-    }
-```
-
-
-And use it same as the original library at [ar-php.org](http://www.ar-php.org)
-
+The only diffirence is the the main class `I18N_Arabic` is renamed and namedspaced under `ArUtil\I18N\Arabic`
 ```
 <?php 
     
