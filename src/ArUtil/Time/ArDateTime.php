@@ -89,6 +89,16 @@ class ArDateTime extends Carbon
         );
     }
     
+    public static function arCreateFromFormat($format, $time, $tz = null, $correction = null)
+    {
+        $arDate = self::parseDateFormat($format, $time);
+
+        return self::arCreate($arDate['arYear'], $arDate['arMonth'], $arDate['arDay'], $arDate['hour'], $arDate['minute'],
+            $arDate['second'],
+            $tz, $correction);
+    }
+    
+    
     /**
      * ArDateTime constructor, Instantiate new instance and set Today's date in Hijri.
      *
@@ -100,6 +110,26 @@ class ArDateTime extends Carbon
         $this->setTodayHijriDate();
         
         parent::__construct($time, $tz);
+    }
+    
+    /**
+     * @param $format
+     * @param $date
+     *
+     * @return array Parsed date
+     */
+    private static function parseDateFormat($format, $date)
+    {
+        $arDate = date_parse_from_format($format, $date);
+        
+        return [
+            'arYear'  => ($arDate['year'] != false) ? $arDate['year'] : null,
+            'arMonth' => ($arDate['month'] != false) ? $arDate['month'] : null,
+            'arDay'   => ($arDate['day'] != false) ? $arDate['day'] : null,
+            'hour'    => ($arDate['hour'] != false) ? $arDate['hour'] : null,
+            'minute'  => ($arDate['minute'] != false) ? $arDate['minute'] : null,
+            'second'  => ($arDate['second'] != false) ? $arDate['second'] : null,
+        ];
     }
     
     public function arFormat($format)

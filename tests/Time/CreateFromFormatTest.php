@@ -37,6 +37,11 @@ class CreateFromFormatTest extends AbstractTimeTest
         $this->assertEquals('Asia/Riyadh', $arD->timezoneName);
     }
     
-    
-    
+    /** @test */
+    public function it_create_from_format()
+    {
+        $arD = ArUtil::date()->arCreateFromFormat('d/m/Y', '١٩/١٠/١٤٣٨');
+        $this->assertArDateTime($arD, 1438, 10, 19);
+        $this->assertCarbon($arD, 2017, 7, 14);
+    }
 }
