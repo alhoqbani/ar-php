@@ -4,6 +4,7 @@ namespace ArUtil\Tests\Time;
 
 use ArUtil\I18N\Date;
 use ArUtil\Tests\AbstractTestCase;
+use ArUtil\Time\ArDateTime;
 use Carbon\Carbon;
 
 abstract class AbstractTimeTest extends AbstractTestCase
@@ -55,17 +56,17 @@ abstract class AbstractTimeTest extends AbstractTestCase
     
     protected function assertCarbon(Carbon $d, $year, $month, $day, $hour = null, $minute = null, $second = null)
     {
-        $actual = array(
-            'years' => $year,
+        $actual = [
+            'years'  => $year,
             'months' => $month,
-            'day' => $day,
-        );
+            'day'    => $day,
+        ];
         
-        $expected = array(
-            'years' => $d->year,
+        $expected = [
+            'years'  => $d->year,
             'months' => $d->month,
-            'day' => $d->day,
-        );
+            'day'    => $d->day,
+        ];
         
         if ($hour !== null) {
             $expected['hours'] = $d->hour;
@@ -79,6 +80,39 @@ abstract class AbstractTimeTest extends AbstractTestCase
         
         if ($second !== null) {
             $expected['seconds'] = $d->second;
+            $actual['seconds'] = $second;
+        }
+        
+        $this->assertSame($expected, $actual);
+    }
+    
+    protected function assertArDateTime(
+        ArDateTime $arD, $arYear, $arMonth, $arDay, $hour = null, $minute = null, $second = null
+    ) {
+        $actual = [
+            'years'  => $arYear,
+            'months' => $arMonth,
+            'day'    => $arDay,
+        ];
+        
+        $expected = [
+            'years'  => $arD->arYear,
+            'months' => $arD->arMonth,
+            'day'    => $arD->arDay,
+        ];
+        
+        if ($hour !== null) {
+            $expected['hours'] = $arD->hour;
+            $actual['hours'] = $hour;
+        }
+        
+        if ($minute !== null) {
+            $expected['minutes'] = $arD->minute;
+            $actual['minutes'] = $minute;
+        }
+        
+        if ($second !== null) {
+            $expected['seconds'] = $arD->second;
             $actual['seconds'] = $second;
         }
         
