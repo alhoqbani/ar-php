@@ -7,7 +7,7 @@ built on top of [Carbon](http://carbon.nesbot.com/) and [ar-php](http://ar-php.o
 ### Create an instance from Hijri date:
 ```php
 $arD =  ArUtil::date()->arCreateFromDate(1405, 8, 10);
-echo $arD->toDateString();      // 1985-06-14
+echo $arD->arToDateString();      // 1985-06-14
 ```
 `$arD` is an instance of `ArUtil\ArDateTime` which extends `Carbon\Carbon`.
 
