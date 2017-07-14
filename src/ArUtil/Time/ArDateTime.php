@@ -91,6 +91,21 @@ class ArDateTime extends Carbon
         return $d->date($format, $this->timestamp);
     }
     
+    public function arToDateTimeString()
+    {
+        return $this->arFormat('Y-m-d H:i:s');
+    }
+    
+    public function arToDayDateTimeString()
+    {
+        return $this->arFormat('D, M j, Y g:i A');
+    }
+    
+    public function arToDateString()
+    {
+        return $this->arFormat('Y-m-d');
+    }
+    
     /**
      * Set the instance Hijri date for today.
      */
