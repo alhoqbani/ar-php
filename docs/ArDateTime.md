@@ -14,9 +14,29 @@ echo $arD->arToDateString();      // 1985-06-14
 In addition to the methods available from `Carbon`, 
 `ArDateTime` provides some methods to deal with Hijri Date:
 
+
+#### Create methods:
 ```
 $arD = ArUtil::date()->arCreate($arYear, $arMonth, $arDay, $hour, $minute, $second, $tz); 
+$arD = ArUtil::date()->arCreateFromDate(1405, 8, 10);
+$arD = ArUtil::date()->arCreateFromDateString('1438-10-19', 'Asia/Riyadh');
+$arD = ArUtil::date()->arCreateFromDateTimeString('1438-10-19 4:30:45');
+$arD = ArUtil::date()->arCreateFromFormat('Y/m/d', '1430/10/01');
 
+```
+
+
+#### Getters methods:
+```
+
+echo sprintf('Toady is AH %s', ArUtil::date()->arToDateString());
+// Toady is AH 1438-10-19
+
+echo sprintf('Toady is %s', ArUtil::date()->ToDateString());
+// Toady is 2017-07-14
+
+echo sprintf('تاريخ اليوم %sهـ', ArUtil::date()->arFormat('Y/m/d'));
+// تاريخ اليوم 1438/10/19هـ
 
 $arD = ArUtil::date()->arCreate(1438, 10, 19, 02, 21, 39); 
 
