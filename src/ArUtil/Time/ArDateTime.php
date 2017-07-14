@@ -72,6 +72,23 @@ class ArDateTime extends Carbon
         return $instance;
     }
     
+    public static function arCreateFromDateString($dateString, $tz = null, $correction = null)
+    {
+        $arDate = date_parse($dateString);
+        
+        return self::arCreateFromDate($arDate['year'], $arDate['month'], $arDate['day'], $tz, $correction);
+    }
+    
+    public static function arCreateFromDateTimeString($dateString, $tz = null, $correction = null)
+    {
+        $arDate = date_parse($dateString);
+        
+        return self::arCreate(
+            $arDate['year'], $arDate['month'], $arDate['day'], $arDate['hour'], $arDate['minute'], $arDate['second'],
+            $tz, $correction
+        );
+    }
+    
     /**
      * ArDateTime constructor, Instantiate new instance and set Today's date in Hijri.
      *
@@ -88,6 +105,7 @@ class ArDateTime extends Carbon
     public function arFormat($format)
     {
         $d = new Date();
+        
         return $d->date($format, $this->timestamp);
     }
     
