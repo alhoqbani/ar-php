@@ -6,6 +6,10 @@ built on top of [Carbon](http://carbon.nesbot.com/) and [ar-php](http://ar-php.o
 
 ### Create DateTime from Hijri date:
 ```php
+require_once __DIR__ . '/vendor/autoload.php';
+
+use ArUtil\ArUtil;
+
 $arD =  ArUtil::date()->arCreateFromDate(1405, 8, 10);
 echo $arD->arToDateString();      // 1985-06-14
 ```
