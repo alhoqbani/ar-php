@@ -3,9 +3,19 @@
 <a href="https://packagist.org/packages/arutil/ar-php"><img src="https://poser.pugx.org/arutil/ar-php/downloads" alt="Total Downloads"></a>
 </p>
 
+## ArUtil
+### Arabic PHP Utilities
 
-## Arabic PHP Utilities
-### From http://ar-php.org/
+Installation:
+```
+composer require arutil/ar-php
+```
+
+### ArDateTime
+To use the ArDateTime: check the documentation. 
+
+
+### Original library from http://ar-php.org/
 
 This is the great library of Khaled Al-Shamaa with small bug fixes. 
 
