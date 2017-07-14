@@ -85,6 +85,12 @@ class ArDateTime extends Carbon
         parent::__construct($time, $tz);
     }
     
+    public function arFormat($format)
+    {
+        $d = new Date();
+        return $d->date($format, $this->timestamp);
+    }
+    
     /**
      * Set the instance Hijri date for today.
      */
