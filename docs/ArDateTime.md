@@ -1,4 +1,4 @@
-# ArDate 
+# ArDateTime
  Date utility for Hijri Date conversion and calendar 
 built on top of [Carbon](http://carbon.nesbot.com/) and [ar-php](http://ar-php.org/)
 
