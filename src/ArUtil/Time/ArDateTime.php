@@ -73,6 +73,62 @@ class ArDateTime extends Carbon
     }
     
     /**
+     * Create new instance from DateString format: 1438-10-15
+     *
+     * @param string                    $dateString Hijri date in Y-m-d format
+     * @param \DateTimeZone|string|null $tz
+     * @param int|null                  $correction Date conversion factor (+1, +2, -1, -2)
+     *
+     * @return \ArUtil\Time\ArDateTime
+     */
+    public static function arCreateFromDateString($dateString, $tz = null, $correction = null)
+    {
+        $arDate = date_parse($dateString);
+        
+        return self::arCreateFromDate($arDate['year'], $arDate['month'], $arDate['day'], $tz, $correction);
+    }
+    
+    /**
+     * Create new instance from DateTimeString format: 1438-10-19 4:30:45
+     *
+     * @param string                    $dateTimeString Hijri date in Y-m-d H:i:s format
+     * @param \DateTimeZone|string|null $tz
+     * @param int|null                  $correction     Date conversion factor (+1, +2, -1, -2)
+     *
+     * @return \ArUtil\Time\ArDateTime
+     */
+    public static function arCreateFromDateTimeString($dateTimeString, $tz = null, $correction = null)
+    {
+        $arDate = date_parse($dateTimeString);
+        
+        return self::arCreate(
+            $arDate['year'], $arDate['month'], $arDate['day'], $arDate['hour'], $arDate['minute'], $arDate['second'],
+            $tz, $correction
+        );
+    }
+    
+    /**
+     * Create new instance from Hijri date in the format provided.
+     *
+     * @param string                    $format
+     * @param string                   $date
+     * @param \DateTimeZone|string|null $tz
+     * @param int|null                  $correction Date conversion factor (+1, +2, -1, -2)
+     *
+     * @return \ArUtil\Time\ArDateTime
+     */
+    public static function arCreateFromFormat($format, $date, $tz = null, $correction = null)
+    {
+        $arDate = self::parseDateFormat($format, $date);
+        
+        return self::arCreate($arDate['arYear'], $arDate['arMonth'], $arDate['arDay'], $arDate['hour'],
+            $arDate['minute'],
+            $arDate['second'],
+            $tz, $correction);
+    }
+    
+    
+    /**
      * ArDateTime constructor, Instantiate new instance and set Today's date in Hijri.
      *
      * @param string|null               $time
@@ -85,9 +141,31 @@ class ArDateTime extends Carbon
         parent::__construct($time, $tz);
     }
     
+    /**
+     * Parse the Hijri date according to the format provided.
+     * @param $format
+     * @param $date
+     *
+     * @return array Parsed date
+     */
+    private static function parseDateFormat($format, $date)
+    {
+        $arDate = date_parse_from_format($format, $date);
+        
+        return [
+            'arYear'  => ($arDate['year'] != false) ? $arDate['year'] : null,
+            'arMonth' => ($arDate['month'] != false) ? $arDate['month'] : null,
+            'arDay'   => ($arDate['day'] != false) ? $arDate['day'] : null,
+            'hour'    => ($arDate['hour'] != false) ? $arDate['hour'] : null,
+            'minute'  => ($arDate['minute'] != false) ? $arDate['minute'] : null,
+            'second'  => ($arDate['second'] != false) ? $arDate['second'] : null,
+        ];
+    }
+    
     public function arFormat($format)
     {
         $d = new Date();
+        
         return $d->date($format, $this->timestamp);
     }
     
