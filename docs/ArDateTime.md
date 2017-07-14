@@ -11,7 +11,9 @@ require_once __DIR__ . '/vendor/autoload.php';
 use ArUtil\ArUtil;
 
 $arD =  ArUtil::date()->arCreateFromDate(1405, 8, 10);
-echo $arD->arToDateString();      // 1985-06-14
+echo $arD->arToDateString();     // 1405-08-10
+echo $arD->ToDateString();       // 1985-05-01
+
 ```
 `$arD` is an instance of `ArDateTime` which extends `Carbon`.
 
