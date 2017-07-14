@@ -20,6 +20,20 @@ class ArDateTime extends Carbon
      */
     private $isDirty;
     
+    /**
+     * Create new instance of ArDateTime and set the hijri date to the date provided.
+     *
+     * @param int|null                  $arYear     Hijri year Ex: 1430
+     * @param int|null                  $arMonth    Hijri month Ex: 10
+     * @param int|null                  $arDay      Hijri Day date Ex: 01
+     * @param int|null                  $hour
+     * @param int|null                  $minute
+     * @param int|null                  $second
+     * @param \DateTimeZone|string|null $tz
+     * @param int|null                  $correction Date conversion factor (+1, +2, -1, -2)
+     *
+     * @return \ArUtil\Time\ArDateTime
+     */
     public static function arCreate(
         $arYear = null, $arMonth = null, $arDay = null, $hour = null, $minute = null, $second = null, $tz = null,
         $correction = null
@@ -39,13 +53,31 @@ class ArDateTime extends Carbon
         return $instance;
     }
     
-    public static function arCreateFromDate($arYear = null, $arMonth = null, $arDay = null, $tz = null)
-    {
-        $instance = self::arCreate($arYear, $arMonth, $arDay, null, null, null, $tz);
+    /**
+     * Create new instance of ArDateTime and set the hijri date to the date provided.
+     *
+     * @param int|null                  $arYear     Hijri year Ex: 1430
+     * @param int|null                  $arMonth    Hijri month Ex: 10
+     * @param int|null                  $arDay      Hijri Day date Ex: 01
+     * @param \DateTimeZone|string|null $tz
+     * @param int|null                  $correction Date conversion factor (+1, +2, -1, -2)
+     *
+     * @return \ArUtil\Time\ArDateTime
+     */
+    public static function arCreateFromDate(
+        $arYear = null, $arMonth = null, $arDay = null, $tz = null, $correction = null
+    ) {
+        $instance = self::arCreate($arYear, $arMonth, $arDay, null, null, null, $tz, $correction);
         
         return $instance;
     }
     
+    /**
+     * ArDateTime constructor, Instantiate new instance and set Today's date in Hijri.
+     *
+     * @param string|null               $time
+     * @param \DateTimeZone|string|null $tz
+     */
     public function __construct($time = null, $tz = null)
     {
         $this->setTodayHijriDate();
@@ -53,10 +85,33 @@ class ArDateTime extends Carbon
         parent::__construct($time, $tz);
     }
     
+    /**
+     * Set the instance Hijri date for today.
+     */
+    private function setTodayHijriDate()
+    {
+        $today = $this->convertTodayToHijri();
+        $this->arYear = (int)$today['arYear'];
+        $this->arMonth = (int)$today['arMonth'];
+        $this->arDay = (int)$today['arDay'];
+    }
+    
+    /**
+     * Convert given Hijri date to Gregorian Date in timestamp
+     *
+     * @param int|null $arYear     Hijri year Ex: 1430
+     * @param int|null $arMonth    Hijri month Ex: 10
+     * @param int|null $arDay      Hijri Day date Ex: 01
+     * @param int|null $hour
+     * @param int|null $minute
+     * @param int|null $second
+     * @param int|null $correction Date conversion factor (+1, +2, -1, -2)
+     *
+     * @return int Timestamp for Converted date
+     */
     protected function hijriToTimestamp(
         $arYear, $arMonth, $arDay, $hour = null, $minute = null, $second = null, $correction = 0
     ) {
-        
         $hour = isset($hour) ? $hour : date('H');
         $minute = isset($minute) ? $minute : date('i');
         $second = isset($second) ? $second : date('s');
@@ -65,6 +120,11 @@ class ArDateTime extends Carbon
             $correction);
     }
     
+    /**
+     * Convert Toady's Gregorian date to Hijri date.
+     *
+     * @return array The hijri date.
+     */
     private function convertTodayToHijri()
     {
         list($arYear, $arMonth, $arDay) = (new Date())->hjConvert(date('Y'), date('m'), date('d'));
@@ -76,27 +136,18 @@ class ArDateTime extends Carbon
         ];
     }
     
-    private function setTodayHijriDate()
+    /**
+     * Update the instance Hijri Date, used by static create methods.
+     *
+     * @param int|null $arYear  Hijri year
+     * @param int|null $arMonth Hijri month
+     * @param int|null $arDay   Hijri Day date
+     */
+    private function updateHijriDate($arYear, $arMonth, $arDay)
     {
-        $today = $this->convertTodayToHijri();
-        $this->arYear = (int)$today['arYear'];
-        $this->arMonth = (int)$today['arMonth'];
-        $this->arDay = (int)$today['arDay'];
-    }
-    
-    public function __get($name)
-    {
-//        switch ($name) {
-//            case $name === 'arYear':
-//                return $this->arYear;
-//            case $name === 'arMonth':
-//                return $this->arMonth;
-//            case $name === 'arDay':
-//                return $this->arDay;
-//            default:
-//                break;
-//        }
-        return parent::__get($name);
+        $this->arYear = $arYear;
+        $this->arMonth = $arMonth;
+        $this->arDay = $arDay;
     }
     
     public function __set($name, $value)
@@ -114,15 +165,20 @@ class ArDateTime extends Carbon
                     throw $e;
             }
         }
-        
     }
     
-    private function updateHijriDate($arYear, $arMonth, $arDay)
+    public function __get($name)
     {
-        $this->arYear = $arYear;
-        $this->arMonth = $arMonth;
-        $this->arDay = $arDay;
+        //        switch ($name) {
+//            case $name === 'arYear':
+//                return $this->arYear;
+//            case $name === 'arMonth':
+//                return $this->arMonth;
+//            case $name === 'arDay':
+//                return $this->arDay;
+//            default:
+//                break;
+//        }
+        return parent::__get($name);
     }
-    
-    
 }
