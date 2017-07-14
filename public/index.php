@@ -20,7 +20,6 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
     <ul>
         <li><a href="Examples/index.php">Examples</a></li>
-        <li><a href="Docs/index.html">Docs</a></li>
     </ul>
 
 </div>
