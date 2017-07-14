@@ -17,7 +17,7 @@ composer require "arutil/ar-php:0.0.*"
 or add it in your `composer.json` file:
 ```
     "require": {
-        "z/ar-php": "0.0.*"
+        "arutil/ar-php": "0.0.*"
     }
 ```
 
@@ -28,8 +28,9 @@ And use it same as the original library at [ar-php.org](http://www.ar-php.org)
 <?php 
     
     require_once __DIR__ . '/../vendor/autoload.php';
-
-    $obj = new I18N_Arabic('Numbers');
+    use ArUtil\I18N\Arabic;
+    
+    $obj = new Arabic('Numbers');
     echo $obj->int2str(1975); 
 
 ```
