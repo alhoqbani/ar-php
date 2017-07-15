@@ -28,11 +28,18 @@ class QueryBuilder extends Query
     
     public function regexpy($string)
     {
+        if (is_array($string)) {
+            return array_map(function ($word) {
+                return $this->lex($word);
+            }, $string);
+        }
+        
         $words = preg_split("/\s+/", trim($string));
         if (count($words) == 1) {
-    
-            return  $this->lex($string);
+            
+            return $this->lex($string);
         }
+        $patterns = [];
         foreach ($words as $word) {
             $patterns[] = $this->lex($word);
         }
