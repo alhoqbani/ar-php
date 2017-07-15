@@ -27,18 +27,18 @@ class QueryBuilder extends Query
         return $this->wheresReg;
     }
     
-    public function regexpy($string)
+    public function regexpy($text)
     {
-        if (is_array($string)) {
+        if (is_array($text)) {
             return array_map(function ($word) {
                 return $this->lex($word);
-            }, $string);
+            }, $text);
         }
         
-        $words = preg_split("/\s+/", trim($string));
+        $words = preg_split("/\s+/", trim($text));
         if (count($words) == 1) {
             
-            return $this->lex($string);
+            return $this->lex(trim($text));
         }
         $patterns = [];
         foreach ($words as $word) {
