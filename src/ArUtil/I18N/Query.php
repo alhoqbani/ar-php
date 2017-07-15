@@ -564,19 +564,25 @@ class Query
     
     /**
      * Get most possible Arabic lexical forms of user search keywords
-     *      
+     *
      * @param string $arg String that user search for
-     *                    
-     * @return string list of most possible Arabic lexical forms for given keywords 
+     *
+     * @param boolean $array whether to return words as a string or an array
+     *
+     * @return string list of most possible Arabic lexical forms for given keywords
      * @author Khaled Al-Sham'aa <khaled@ar-php.org>
      */
-    public function allForms($arg)
+    public function allForms($arg, $array = false)
     {
         $wordForms = array();
         $words     = explode(' ', $arg);
         
         foreach ($words as $word) {
             $wordForms = array_merge($wordForms, $this->allWordForms($word));
+        }
+        
+        if ($array) {
+            return $wordForms;
         }
         
         $str = implode(' ', $wordForms);

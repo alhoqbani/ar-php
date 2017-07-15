@@ -2,8 +2,8 @@
 
 namespace ArUtil\Tests\Arabic;
 
-use ArUtil\I18N\Query;
 use ArUtil\I18N\Arabic;
+use ArUtil\I18N\Query;
 use ArUtil\Tests\AbstractTestCase;
 
 class QueryTest extends AbstractTestCase
@@ -85,6 +85,28 @@ class QueryTest extends AbstractTestCase
     {
         $this->assertEquals('البحث بحث "عن مخرجات" جيدة جيد جيده جيدت جيدات',
             $this->Query->allForms('البحث "عن مخرجات" جيدة'));
+    }
+    
+    /** @test */
+    public function it_return_all_forms_of_search_terms_as_an_array()
+    {
+        $expectedArray = [
+            0  => "يقوم",
+            1  => "العلماء",
+            2  => "علماء",
+            3  => "بأبحاث",
+            4  => "بابحاث",
+            5  => "علمية",
+            6  => "علمي",
+            7  => "علم",
+            8  => "علميه",
+            9  => "علميت",
+            10 => "علميات",
+        ];
+        $actualArray = $this->Query->allForms('يقوم العلماء بأبحاث علمية', true);
+        
+        $this->assertSame($expectedArray, $actualArray);
+        
     }
     
 }
