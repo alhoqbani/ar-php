@@ -44,6 +44,14 @@ class QueryBuilderTest extends AbstractTestCase
         $this->assertEquals('or', $query->getWheresReg()[0]['boolean']);
     }
     
+    /** @test */
+    public function it_splits_sentences_into_multiple_clauses()
+    {
+        $q = ArUtil::query()->whereReg('title', 'مؤتمر أبل للمطورين');
+           $wheres =  $q->getWheresReg();
+        $this->assertCount(3, $wheres);
+    }
+    
     
     /** @test */
     public function it_regexpy_all_values_of_where_statement()

@@ -11,6 +11,16 @@ class QueryBuilder extends Query
     
     public function whereReg($field, $value, $boolean = 'and')
     {
+        $words = preg_split("/\s+/", trim($value));
+        
+        if (count($words) > 1) {
+            foreach ($words as $word) {
+                $this->whereReg($field, $word, $boolean);
+            }
+            
+            return $this;
+        }
+        
         array_push(
             $this->wheresReg,
             [
