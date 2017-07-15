@@ -108,6 +108,37 @@ class QueryBuilderTest extends AbstractTestCase
     }
     
     /** @test */
+    public function it_return_full_sol_statement_with_multiple_wheres()
+    {
+        $this->arQ->select(['id', 'title', 'body'])->from('posts')->whereReg('title', 'book');
+        $this->arQ->whereReg('text', 'paper');
+        $expectedSql = "SELECT `id`, `title`, `body` FROM `posts` WHERE `title` REGEXP 'book' AND `text` REGEXP 'paper'";
+        $this->assertEquals($expectedSql, $this->arQ->toFullSql());
+    }
+    
+    /** @test */
+    public function it_return_full_sol_statement_with_multiple_and_and_or_wheres()
+    {
+        $this->arQ->select(['id', 'title', 'body'])->from('posts')->whereReg('title', 'book');
+        $this->arQ->whereReg('text', 'paper', 'OR');
+        $this->arQ->whereReg('body', 'someBody');
+        $expectedSql = "SELECT `id`, `title`, `body` FROM `posts` WHERE `title` REGEXP 'book' AND `body` REGEXP 'someBody' OR `text` REGEXP 'paper'";
+        $this->assertEquals($expectedSql, $this->arQ->toFullSql());
+    }
+    
+    /** @test */
+    public function it_return_full_sol_statement_with_multiple_terms()
+    {
+        $this->arQ->select(['id', 'title', 'body'])->from('posts')->whereReg('title', 'book wa other book');
+        $this->arQ->whereReg('text', 'paper plastic', 'OR');
+        $this->arQ->whereReg('body', 'someBody');
+        $expectedSql = "SELECT `id`, `title`, `body` FROM `posts` WHERE `title` REGEXP 'book' ";
+        $expectedSql .= "AND `title` REGEXP 'wa' AND `title` REGEXP 'other' AND `title` REGEXP 'book' ";
+        $expectedSql .= "OR `text` REGEXP 'paper' OR `text` REGEXP 'plastic' AND `body` REGEXP 'someBody'";
+        $this->assertEquals($expectedSql, $this->arQ->toFullSql());
+    }
+    
+    /** @test */
     public function it_returns_regexp_pattern_for_single_word()
     {
         $expectedPattern = '(ا|أ|إ|آ)بل';

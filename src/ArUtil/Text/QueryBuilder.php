@@ -11,7 +11,7 @@ class QueryBuilder extends Query
     protected $columns;
     protected $table;
     
-    public function whereReg($field, $value, $boolean = 'and')
+    public function whereReg($field, $value, $boolean = 'AND')
     {
         $words = preg_split("/\s+/", trim($value));
         
@@ -95,9 +95,9 @@ class QueryBuilder extends Query
     
     private function getWheresRegString()
     {
-        $whereClauses = '';
+        $whereClauses = " WHERE ";
         foreach ($this->prepareWheresReg() as $clause) {
-            $whereClauses .= " WHERE " . $clause;
+            $whereClauses .= $clause;
         }
         
         return $whereClauses;
@@ -108,13 +108,15 @@ class QueryBuilder extends Query
         $count = count($this->wheresReg);
         $i = 0;
         $wheres = [];
+        $clause = '';
         for (; $i < $count; $i++) {
             $params = $this->wheresReg[$i];
-            $clause = $params['field'] . " REGEXP '" . $params['pattern'] . "'";
-            if ($i < $count - 1) {
-                $clause .= " " . $params['boolean'];
+            if ($i > 0) {
+                $clause .= ' ' . $params['boolean'] . ' ';
             }
+            $clause .= $params['field'] . " REGEXP '" . $params['pattern'] . "'";
             $wheres[] = $clause;
+            $clause = '';
         }
         
         return $wheres;
