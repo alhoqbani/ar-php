@@ -80,6 +80,13 @@ class QueryBuilderTest extends AbstractTestCase
     }
     
     /** @test */
+    public function it_defines_which_table_to_search()
+    {
+        $this->arQ->from('posts');
+        $this->assertEquals('`posts`', $this->arQ->getTable());
+    }
+    
+    /** @test */
     public function it_regexpy_all_values_of_where_statement()
     {
         $expectedPattern = '(ا|أ|إ|آ)بل';
