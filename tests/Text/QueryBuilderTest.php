@@ -12,8 +12,9 @@ class QueryBuilderTest extends AbstractTestCase
     public function it_prepares_single_where_regexp_statement()
     {
         $expectedStatement = [
-            'field' => 'title',
-            'value' => 'book',
+            'field'   => 'title',
+            'value'   => 'book',
+            'pattern' => 'book',
         ];
         $query = ArUtil::query()->whereReg('title', 'book');
         $actualStatement = $query->getWheresReg()[0];
@@ -33,12 +34,24 @@ class QueryBuilderTest extends AbstractTestCase
     }
     
     /** @test */
+    public function it_regexpy_all_values_of_where_statement()
+    {
+        $expectedPattern = '(ا|أ|إ|آ)بل';
+        
+        $query = ArUtil::query()->whereReg('title', 'أبل');
+        $actualPattern = $query->getWheresReg()[0]['pattern'];
+        
+        $this->assertEquals($expectedPattern, $actualPattern);
+        
+    }
+    
+    /** @test */
     public function it_returns_regexp_pattern_for_single_word()
     {
-        $expectedRegex = '(ا|أ|إ|آ)بل';
+        $expectedPattern = '(ا|أ|إ|آ)بل';
         $actualPattern = ArUtil::query()->regexpy('أبل');
         
-        $this->assertEquals($expectedRegex, $actualPattern);
+        $this->assertEquals($expectedPattern, $actualPattern);
     }
     
     /** @test */

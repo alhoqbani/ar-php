@@ -14,8 +14,9 @@ class QueryBuilder extends Query
         array_push(
             $this->wheresReg,
             [
-                'field' => $field,
-                'value' => $value,
+                'field'   => $field,
+                'value'   => $value,
+                'pattern' => $this->regexpy($value),
             ]);
         
         return $this;
