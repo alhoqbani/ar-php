@@ -2,7 +2,9 @@
 
 namespace ArUtil\Text;
 
-class QueryBuilder
+use ArUtil\I18N\Query;
+
+class QueryBuilder extends Query
 {
     
     protected $wheresReg = [];
@@ -17,5 +19,10 @@ class QueryBuilder
     public function getWheresReg()
     {
         return $this->wheresReg;
+    }
+    
+    public function regexpy($string)
+    {
+        return $this->lex($string);
     }
 }

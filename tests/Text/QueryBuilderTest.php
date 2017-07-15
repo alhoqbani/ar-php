@@ -18,4 +18,13 @@ class QueryBuilderTest extends AbstractTestCase
         $this->assertEquals($expectedStatement, $actualStatement);
         
     }
+    
+    /** @test */
+    public function it_returns_regexp_pattern_for_single_word()
+    {
+        $expectedRegex = '(ا|أ|إ|آ)بل';
+        $actualPattern = ArUtil::query()->regexpy('أبل');
+        
+        $this->assertEquals($expectedRegex, $actualPattern);
+    }
 }
