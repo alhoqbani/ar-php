@@ -127,7 +127,7 @@ class QueryBuilder extends Query
      */
     private function sqlPrefix()
     {
-        $sql = "SELECT" . $this->columns . "FROM ";
+        $sql = "SELECT" . $this->getColumns() . "FROM ";
         $sql .= $this->table;
         
         return $sql;
