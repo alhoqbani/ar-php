@@ -292,6 +292,8 @@ class Arabic
                         $value[$key] = iconv($this->getInputCharset(), 'utf-8', $element);
                     }
                     $params[$name] = $value;
+                } else {
+                    $params[$name] = $value;
                 }
             }
         }
