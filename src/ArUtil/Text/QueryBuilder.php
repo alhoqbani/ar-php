@@ -11,7 +11,12 @@ class QueryBuilder extends Query
     
     public function whereReg($field, $value)
     {
-        $this->wheresReg[] = "WHERE `{$field}` REGEXP '{$value}'";
+        array_push(
+            $this->wheresReg,
+            [
+                'field' => $field,
+                'value' => $value,
+            ]);
         
         return $this;
     }
