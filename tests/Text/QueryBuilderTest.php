@@ -15,6 +15,7 @@ class QueryBuilderTest extends AbstractTestCase
             'field'   => 'title',
             'value'   => 'book',
             'pattern' => 'book',
+            'boolean' => 'and',
         ];
         $query = ArUtil::query()->whereReg('title', 'book');
         $actualStatement = $query->getWheresReg()[0];
@@ -32,6 +33,17 @@ class QueryBuilderTest extends AbstractTestCase
         
         $this->assertCount(3, $query->getWheresReg());
     }
+    
+    /** @test */
+    public function it_assigns_the_boolean_operator()
+    {
+        $query = ArUtil::query()->whereReg('title', 'book');
+        $this->assertEquals('and', $query->getWheresReg()[0]['boolean']);
+        
+        $query = ArUtil::query()->whereReg('title', 'book', 'or');
+        $this->assertEquals('or', $query->getWheresReg()[0]['boolean']);
+    }
+    
     
     /** @test */
     public function it_regexpy_all_values_of_where_statement()

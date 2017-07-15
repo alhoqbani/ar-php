@@ -9,7 +9,7 @@ class QueryBuilder extends Query
     
     protected $wheresReg = [];
     
-    public function whereReg($field, $value)
+    public function whereReg($field, $value, $boolean = 'and')
     {
         array_push(
             $this->wheresReg,
@@ -17,6 +17,7 @@ class QueryBuilder extends Query
                 'field'   => $field,
                 'value'   => $value,
                 'pattern' => $this->regexpy($value),
+                'boolean' => $boolean,
             ]);
         
         return $this;
