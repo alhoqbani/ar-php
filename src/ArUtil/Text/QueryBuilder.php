@@ -35,9 +35,9 @@ class QueryBuilder extends Query
         return $this;
     }
     
-    public function select(array $columns)
+    public function select($columns)
     {
-        $this->columns = ' `' . implode('`, `', $columns) . '` ';
+        $this->columns = ' `' . implode('`, `', (array)$columns) . '` ';
         
         return $this;
     }

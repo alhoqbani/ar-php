@@ -34,7 +34,7 @@ class QueryBuilderTest extends AbstractTestCase
             'field'   => '`title`',
             'value'   => 'book',
             'pattern' => 'book',
-            'boolean' => 'and',
+            'boolean' => 'AND',
         ];
         $this->arQ->whereReg('title', 'book');
         $actualStatement = $this->arQ->getWheresReg()[0];
@@ -57,10 +57,10 @@ class QueryBuilderTest extends AbstractTestCase
     public function it_assigns_the_boolean_operator()
     {
         $this->arQ->whereReg('title', 'book');
-        $this->assertEquals('and', $this->arQ->getWheresReg()[0]['boolean']);
+        $this->assertEquals('AND', $this->arQ->getWheresReg()[0]['boolean']);
         
-        $this->arQ->whereReg('title', 'book', 'or');
-        $this->assertEquals('or', $this->arQ->getWheresReg()[1]['boolean']);
+        $this->arQ->whereReg('title', 'book', 'OR');
+        $this->assertEquals('OR', $this->arQ->getWheresReg()[1]['boolean']);
     }
     
     /** @test */
@@ -120,8 +120,8 @@ class QueryBuilderTest extends AbstractTestCase
     public function it_return_full_sol_statement_with_multiple_and_and_or_wheres()
     {
         $this->arQ->select(['id', 'title', 'body'])->from('posts')->whereReg('title', 'book');
-        $this->arQ->whereReg('text', 'paper', 'OR');
         $this->arQ->whereReg('body', 'someBody');
+        $this->arQ->whereReg('text', 'paper', 'OR');
         $expectedSql = "SELECT `id`, `title`, `body` FROM `posts` WHERE `title` REGEXP 'book' AND `body` REGEXP 'someBody' OR `text` REGEXP 'paper'";
         $this->assertEquals($expectedSql, $this->arQ->toFullSql());
     }
