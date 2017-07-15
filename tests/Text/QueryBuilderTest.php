@@ -31,7 +31,7 @@ class QueryBuilderTest extends AbstractTestCase
     public function it_prepares_single_where_regexp_statement()
     {
         $expectedStatement = [
-            'field'   => 'title',
+            'field'   => '`title`',
             'value'   => 'book',
             'pattern' => 'book',
             'boolean' => 'and',
@@ -96,6 +96,15 @@ class QueryBuilderTest extends AbstractTestCase
         
         $this->assertEquals($expectedPattern, $actualPattern);
         
+    }
+    
+    /** @test */
+    public function it_return_full_sol_statement()
+    {
+        $this->arQ->select(['id', 'title', 'body'])->from('posts')->whereReg('title', 'العالمين');
+        $expectedStatement = "SELECT `id`, `title`, `body` FROM `posts` WHERE `title` REGEXP '((ا|أ|إ|آ)ل)?ع(ا|أ|إ|آ)لم(ين)?'";
+        
+        $this->assertEquals($expectedStatement, $this->arQ->toFullSql());
     }
     
     /** @test */

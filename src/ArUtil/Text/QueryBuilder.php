@@ -26,7 +26,7 @@ class QueryBuilder extends Query
         array_push(
             $this->wheresReg,
             [
-                'field'   => $field,
+                'field'   => '`' . $field . '`',
                 'value'   => $value,
                 'pattern' => $this->regexpy($value),
                 'boolean' => $boolean,
@@ -38,16 +38,20 @@ class QueryBuilder extends Query
     public function select(array $columns)
     {
         $this->columns = ' `' . implode('`, `', $columns) . '` ';
+        
+        return $this;
     }
     
     public function getColumns()
     {
-        return isset($this->columns) ? $this->columns : '*';
+        return isset($this->columns) ? $this->columns : ' * ';
     }
     
     public function from($table)
     {
         $this->table = "`$table`";
+        
+        return $this;
     }
     
     public function getTable()
@@ -79,5 +83,51 @@ class QueryBuilder extends Query
         }
         
         return $patterns;
+    }
+    
+    public function toFullSql()
+    {
+        $sql = $this->sqlPrefix();
+        $sql .= $this->getWheresRegString();
+        
+        return $sql;
+    }
+    
+    private function getWheresRegString()
+    {
+        $whereClauses = '';
+        foreach ($this->prepareWheresReg() as $clause) {
+            $whereClauses .= " WHERE " . $clause;
+        }
+        
+        return $whereClauses;
+    }
+    
+    private function prepareWheresReg()
+    {
+        $count = count($this->wheresReg);
+        $i = 0;
+        $wheres = [];
+        for (; $i < $count; $i++) {
+            $params = $this->wheresReg[$i];
+            $clause = $params['field'] . " REGEXP '" . $params['pattern'] . "'";
+            if ($i < $count - 1) {
+                $clause .= " " . $params['boolean'];
+            }
+            $wheres[] = $clause;
+        }
+        
+        return $wheres;
+    }
+    
+    /**
+     * @return string
+     */
+    private function sqlPrefix()
+    {
+        $sql = "SELECT" . $this->columns . "FROM ";
+        $sql .= $this->table;
+        
+        return $sql;
     }
 }
