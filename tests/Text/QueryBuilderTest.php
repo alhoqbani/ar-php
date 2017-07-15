@@ -40,4 +40,17 @@ class QueryBuilderTest extends AbstractTestCase
         
         $this->assertEquals($expectedRegex, $actualPattern);
     }
+    
+    /** @test */
+    public function it_returns_array_of_regexp_patterns_for_sentence()
+    {
+        $expectedRegex = [
+            '(ا|أ|إ|آ)بل',
+            'للح(ا|أ|إ|آ)سب(ة|(ا|أ|إ|آ)ت)?',
+        ];
+        $actualPattern = ArUtil::query()->regexpy('أبل للحاسبات');
+        
+        $this->assertEquals($expectedRegex, $actualPattern);
+    }
+    
 }

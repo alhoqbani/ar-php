@@ -28,6 +28,15 @@ class QueryBuilder extends Query
     
     public function regexpy($string)
     {
-        return $this->lex($string);
+        $words = preg_split("/\s+/", trim($string));
+        if (count($words) == 1) {
+    
+            return  $this->lex($string);
+        }
+        foreach ($words as $word) {
+            $patterns[] = $this->lex($word);
+        }
+        
+        return $patterns;
     }
 }
