@@ -58,7 +58,7 @@ class QueryBuilderTest extends AbstractTestCase
     {
         $this->arQ->whereReg('title', 'book');
         $this->assertEquals('and', $this->arQ->getWheresReg()[0]['boolean']);
-    
+        
         $this->arQ->whereReg('title', 'book', 'or');
         $this->assertEquals('or', $this->arQ->getWheresReg()[1]['boolean']);
     }
@@ -68,16 +68,22 @@ class QueryBuilderTest extends AbstractTestCase
     {
         $this->arQ->whereReg('title', 'مؤتمر أبل للمطورين');
         $wheres = $this->arQ->getWheresReg();
-
+        
         $this->assertCount(3, $wheres);
     }
     
+    /** @test */
+    public function it_defines_which_select_column_of_sql_statement()
+    {
+        $this->arQ->select(['id', 'body', 'text']);
+        $this->assertEquals(' `id`, `body`, `text` ', $this->arQ->getColumns());
+    }
     
     /** @test */
     public function it_regexpy_all_values_of_where_statement()
     {
         $expectedPattern = '(ا|أ|إ|آ)بل';
-    
+        
         $this->arQ->whereReg('title', 'أبل');
         $actualPattern = $this->arQ->getWheresReg()[0]['pattern'];
         

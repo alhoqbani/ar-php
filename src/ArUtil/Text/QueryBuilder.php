@@ -8,6 +8,7 @@ class QueryBuilder extends Query
 {
     
     protected $wheresReg = [];
+    protected $columns;
     
     public function whereReg($field, $value, $boolean = 'and')
     {
@@ -31,6 +32,16 @@ class QueryBuilder extends Query
             ]);
         
         return $this;
+    }
+    
+    public function select(array $columns)
+    {
+        $this->columns = ' `' . implode('`, `', $columns) . '` ';
+    }
+    
+    public function getColumns()
+    {
+        return isset($this->columns) ? $this->columns : '*';
     }
     
     public function getWheresReg()
