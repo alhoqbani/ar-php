@@ -186,7 +186,7 @@ class Transliteration
      */
     public static function en2ar($string, $locale='en_US')
     {
-        setlocale(LC_ALL, $locale);
+//        setlocale(LC_ALL, $locale);
         $string = iconv("UTF-8", "ASCII//TRANSLIT", $string);
         $string = preg_replace('/[^\w\s]/', '', $string);
         
