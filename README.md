@@ -16,6 +16,11 @@ A wrapper to the hijri methods in ar-php library.
 
 To use the ArDateTime: [check the documentation](https://github.com/alhoqbani/ar-php/blob/master/docs/ArDateTime.md). 
 
+### ArQuery
+A query builder to search Arabic words by its variations. 
+
+To use the ArQuery: [check the documentation](https://github.com/alhoqbani/ar-php/blob/master/docs/ArQuery.md). 
+
 
 
 
