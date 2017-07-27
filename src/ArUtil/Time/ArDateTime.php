@@ -14,11 +14,22 @@ use InvalidArgumentException;
  */
 class ArDateTime extends Carbon
 {
-    
-    /**
+	
+	const HIJRI_FORMAT = 1;
+	const ARABIC_MONTH_NAMES = 2;
+	const ARABIC_TRANSLITERATION = 3;
+	const ARABIC_AND_TRANSLITERATION = 4;
+	const LIBYA_STYLE = 5;
+	const ALGERIA_AND_TUNIS = 6;
+	const MOROCCO_STYLE = 7;
+	const HIJRI_FORMAT_IN_ENGLISH = 8;
+	
+	/**
      * @var boolean The instance date is modified.
      */
     private $isDirty;
+    
+    private $outputMode = self::HIJRI_FORMAT;
     
     /**
      * Create new instance of ArDateTime and set the hijri date to the date provided.
@@ -165,7 +176,7 @@ class ArDateTime extends Carbon
     public function arFormat($format)
     {
         $d = new Date();
-        
+	    $d->setMode($this->outputMode);
         return $d->date($format, $this->timestamp);
     }
     
@@ -216,6 +227,18 @@ class ArDateTime extends Carbon
 			) = ( new Date() )->hjConvert( $instance->year, $instance->month, $instance->day );
 		
 		return $instance;
+	}
+	
+	/**
+	 * Set the output mode from the arFormat method
+	 * @param int $outputMode
+	 *
+	 * @return ArDateTime
+	 */
+	public function setOutputMode( int $outputMode ) {
+		$this->outputMode = $outputMode;
+		
+		return $this;
 	}
 	
 	/**

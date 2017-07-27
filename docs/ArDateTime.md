@@ -59,3 +59,38 @@ echo $arD->arToDayDateTimeString();
 //  'الجمعة, شوال 19, 1438 8:21 مساءً'
 ```
 
+### Set the output of the date format:
+```
+$arD = ArUtil::date()->arCreate(1438, 10, 19, 2, 15, 30);
+
+echo $arD->arFormat('l dS F Y h:i:s A');
+ // 'الجمعة 19 شوال 1438 02:21:39 صباحاً' 
+
+$arD->setOutputMode(ArDateTime::ALGERIA_AND_TUNIS);
+echo $arD->arFormat('l dS F Y h:i:s A');
+ // 'الجمعة 14 جويلية 2017 02:15:30 صباحاً' 
+ 
+$arD->setOutputMode(ArDateTime::ARABIC_AND_TRANSLITERATION);
+echo $arD->arFormat('l dS F Y h:i:s A');
+ // 'الجمعة 14 تموز/يوليو 2017 02:15:30 صباحاً' 
+ 
+$arD->setOutputMode(ArDateTime::ARABIC_MONTH_NAMES);
+echo $arD->arFormat('l dS F Y h:i:s A');
+ // 'الجمعة 14 تموز 2017 02:15:30 صباحاً' 
+ 
+$arD->setOutputMode(ArDateTime::HIJRI_FORMAT_IN_ENGLISH);
+echo $arD->arFormat('l dS F Y h:i:s A');
+ // 'Friday 19 Shawwal 1438 02:15:30 AM' 
+ 
+$arD->setOutputMode(ArDateTime::MOROCCO_STYLE);
+echo $arD->arFormat('l dS F Y h:i:s A');
+// 'الجمعة 14 يوليوز 2017 02:15:30 صباحاً'
+
+$arD->setOutputMode(ArDateTime::LIBYA_STYLE);
+echo $arD->arFormat('l dS F Y h:i:s A');
+// 'الجمعة 14 ناصر 1385 02:15:30 صباحاً'
+
+$arD->setOutputMode(ArDateTime::ARABIC_TRANSLITERATION);
+echo $arD->arFormat('l dS F Y h:i:s A');
+// 'الجمعة 14 يوليو 2017 02:15:30 صباحاً'
+```
