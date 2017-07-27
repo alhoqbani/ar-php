@@ -202,6 +202,23 @@ class ArDateTime extends Carbon
 	}
 	
 	/**
+	 * Update the hijri date when the timestamp changes
+	 * @param int $timestamp
+	 *
+	 * @return static
+	 */
+	public function setTimestamp( $timestamp ) {
+		$instance = parent::setTimestamp( $timestamp );
+		list(
+			$instance->arYear,
+			$instance->arMonth,
+			$instance->arDay
+			) = ( new Date() )->hjConvert( $instance->year, $instance->month, $instance->day );
+		
+		return $instance;
+	}
+	
+	/**
      * Set the instance Hijri date for today.
      */
     private function setTodayHijriDate()
