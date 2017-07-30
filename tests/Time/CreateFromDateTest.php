@@ -52,4 +52,13 @@ class CreateFromDateTest extends AbstractTimeTest
         
         $this->assertEquals($expected, $actual);
     }
+    
+    /** @test */
+    public function it_adjust_the_date_based_on_provided_correction_factor()
+    {
+	    $arD = ArUtil::date()->arCreateFromDate(1430, 10, 15, null, -1);
+	
+	    $this->assertArDateTime($arD, 1430, 10, 15);
+	    $this->assertCarbon($arD, 2009, 10, 4);
+    }
 }
