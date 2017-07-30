@@ -2,6 +2,7 @@
 
 namespace ArUtil\Tests\Arabic;
 
+use Carbon\Carbon;
 use ArUtil\I18N\Date;
 use ArUtil\I18N\Arabic;
 use ArUtil\Tests\AbstractTestCase;
@@ -117,7 +118,28 @@ class DateTest extends AbstractTestCase
     /** @test */
     public function it_calculate_correction_factor_for_Um_Alqura_calendar()
     {
+    	// Timestamp 1501311600
+	    // GMT: Saturday, July 29, 2017 7:00:00 AM
+	    // DST: Saturday, July 29, 2017 12:00:00 AM
+	    // UmAlqura: 1438-11-06
         // Is this accurate?
-        $this->assertEquals(0, $this->date->dateCorrection(1009843200));
+//	    dd(Carbon::now()->startOfDay()->timestamp);
+//	    dd(ArUtil::date()->artoDateTimeString());
+//	    dd(strtotime('Jul 29, 2017 00:00:00'));
+	    $i = 0;
+	    $x = 0;
+	    foreach(range(2000, 2037) as $year) {
+	    	foreach (range(1,12) as $month) {
+			    $dt = Carbon::createFromDate($year, $month);
+			    $correctionFactor = $this->date->dateCorrection($dt->timestamp);
+			    $i++;
+			    if ($correctionFactor != 0) {
+				    $x++;
+			    	echo "\n\e[32mYear: $year, Month: $month, Correction Factor: $correctionFactor";
+			    }
+	    	}
+	    }
+	    echo "\n\033[31m Number of Tested Months: {$i}\033[0m";
+	    echo "\n\033[31m Number of correction factor != 0: {$x}\033[0m";
     }
 }
