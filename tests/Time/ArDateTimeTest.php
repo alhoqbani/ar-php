@@ -38,4 +38,11 @@ class ArDateTimeTest extends AbstractTimeTest
         $this->assertArDateTime($arD, 1405, 8, 10);
         $this->assertEquals('1985-05-01', $arD->toDateString());
     }
+    
+    /** @test */
+    public function it_adjust_hijri_date_based_on_correction_factor()
+    {
+        $arD = ArUtil::date()->arCreateFromDate(1433, 6, 12 ,$tz = null, -1);
+        $this->assertEquals('2012-05-03', $arD->toDateString());
+    }
 }
