@@ -1,5 +1,19 @@
 # Change Log
 
+## [0.1.1](https://github.com/alhoqbani/ar-php/tree/0.1.1) (2017-07-16)
+[Full Changelog](https://github.com/alhoqbani/ar-php/compare/0.1.0...0.1.1)
+
+**New Feature:**
+- Introduce QueryBuilder [\#32](https://github.com/alhoqbani/ar-php/pull/32) ([alhoqbani](https://github.com/alhoqbani))
+
+**Implemented enhancements:**
+
+- Make allForms method from the Query class return either a string or an array. [\#29](https://github.com/alhoqbani/ar-php/issues/29)
+
+**Fixed bugs:**
+
+- Booleans are not passed to the methods. [\#30](https://github.com/alhoqbani/ar-php/issues/30)
+
 ## [0.1.0](https://github.com/alhoqbani/ar-php/tree/0.1.0) (2017-07-14)
 [Full Changelog](https://github.com/alhoqbani/ar-php/compare/0.0.2...0.1.0)
 
