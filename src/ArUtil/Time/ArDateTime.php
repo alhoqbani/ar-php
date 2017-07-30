@@ -235,7 +235,7 @@ class ArDateTime extends Carbon
 	 *
 	 * @return ArDateTime
 	 */
-	public function setOutputMode( int $outputMode ) {
+	public function setOutputMode( $outputMode ) {
 		$this->outputMode = $outputMode;
 		
 		return $this;
