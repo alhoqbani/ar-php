@@ -94,3 +94,12 @@ $arD->setOutputMode(ArDateTime::ARABIC_TRANSLITERATION);
 echo $arD->arFormat('l dS F Y h:i:s A');
 // 'الجمعة 14 يوليو 2017 02:15:30 صباحاً'
 ```
+
+
+### Date Conversion Correction:
+Because of the hijri calendar is calculated, there is an error margin of -/+1 when converting from Hijri calendar to Gregorian calendar.
+
+All The create methods accept a correction parameters to deal with this error. 
+```php
+    $arD = ArUtil::date()->arCreateFromDate(1430, 10, 15, $tz = null, $correction = -1);
+```

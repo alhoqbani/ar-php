@@ -44,4 +44,18 @@ class CreateFromFormatTest extends AbstractTimeTest
         $this->assertArDateTime($arD, 1430, 10, 1);
         $this->assertCarbon($arD, 2009, 9, 21);
     }
+	
+	/** @test */
+	public function it_adjust_the_date_based_on_provided_correction_factor()
+	{
+		$arD = ArUtil::date()->arCreateFromFormat('Y/m/d', '1430/10/15', null, -1);
+		$this->assertCarbon($arD, 2009, 10, 4);
+		
+		$arD = ArUtil::date()->arCreateFromDateTimeString('1430-10-15 4:30:45', null, -1);
+		$this->assertCarbon($arD, 2009, 10, 4);
+		
+		$arD = ArUtil::date()->arCreateFromDateString('1430-10-15', null, -1);
+		$this->assertCarbon($arD, 2009, 10, 4);
+	}
+	
 }

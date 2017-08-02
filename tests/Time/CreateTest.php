@@ -81,4 +81,12 @@ class CreateTest extends AbstractTimeTest
         $this->assertCarbon($d, 1985, 5, 1, 0, 0, 0);
         $this->assertSame('Europe/London', $d->tzName);
     }
+	
+	/** @test */
+	public function testCreateWithDateCorrectionFactor()
+	{
+		$arD = ArDateTime::arCreate(1430, 10, 15, null, null, null, null, -1);
+		$this->assertCarbon($arD, 2009, 10, 4);
+	}
+	
 }
