@@ -32,7 +32,7 @@ This is the great library of Khaled Al-Shamaa with small bug fixes.
 
 You can use the original ar-php same as the docs at [ar-php.org](http://www.ar-php.org)
 
-The only diffirence is the the main class `I18N_Arabic` is renamed and namedspaced under `ArUtil\I18N\Arabic`
+The only diffirence is the the main class `I18N_Arabic` is renamed and namespaced under `ArUtil\I18N\Arabic`
 ```
 <?php 
     
