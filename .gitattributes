@@ -1,5 +1,7 @@
 * text=auto
 
+docs  export-ignore
+Procfile  export-ignore
 .codecov.yml export-ignore
 .editorconfig export-ignore
 .gitattributes export-ignore
