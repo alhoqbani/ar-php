@@ -48,8 +48,8 @@ class DateTest extends AbstractTestCase
     /** @test */
     public function it_converts_gregorian_year_to_hijri_year_year()
     {
-        $actualYear = $this->date->date('Y', strtotime('2017'));
-        $this->assertEquals(1438, $actualYear);
+        $actualYear = $this->date->date('Y', strtotime('01/01/1990'));
+        $this->assertEquals(1410, $actualYear);
     }
     
     /** @test */
